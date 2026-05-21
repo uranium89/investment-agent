@@ -63,10 +63,6 @@ async def run_backtest(
         portfolio_value = await _compute_portfolio_value(
             session, day, positions, capital,
         )
-        capital = portfolio_value - sum(
-            p["shares"] * pos_value
-            for p, pos_value in positions.values()
-        ) if isinstance(positions, dict) else portfolio_value
         equity_curve.append({"date": str(day), "value": float(portfolio_value)})
 
     total_pnl = portfolio_value - initial_capital
@@ -92,6 +88,7 @@ async def run_backtest(
 
 
 async def _get_trading_days(session: AsyncSession, start: str, end: str) -> list:
+    from datetime import date
     result = await session.execute(
         text("""
             SELECT DISTINCT time::date as d
@@ -99,7 +96,7 @@ async def _get_trading_days(session: AsyncSession, start: str, end: str) -> list
             WHERE time::date BETWEEN :start AND :end
             ORDER BY d
         """),
-        {"start": start, "end": end},
+        {"start": date.fromisoformat(start), "end": date.fromisoformat(end)},
     )
     return [r[0] for r in result.fetchall()]
 
@@ -223,7 +220,57 @@ async def _compute_historical_value(
     )
     row = result.fetchone()
     if not row or not row[0]:
-        return {"score": Decimal("0"), "pe": None, "pb": None}
+        # Fallback: compute P/E from financial_reports + OHLC
+        fi_result = await session.execute(
+            text("""
+                SELECT fr.net_income, fr.issued_shares
+                FROM financial_reports fr
+                WHERE fr.symbol = :s AND fr.net_income IS NOT NULL AND fr.issued_shares IS NOT NULL
+                ORDER BY fr.year DESC, fr.period DESC LIMIT 1
+            """),
+            {"s": symbol},
+        )
+        fi_row = fi_result.fetchone()
+        if fi_row and fi_row[0] and fi_row[1]:
+            price_result = await session.execute(
+                text("SELECT close FROM ohlc_prices WHERE symbol = :s AND time::date <= :d ORDER BY time DESC LIMIT 1"),
+                {"s": symbol, "d": day},
+            )
+            price_row = price_result.fetchone()
+            if price_row and price_row[0]:
+                ni = Decimal(str(fi_row[0]))
+                shares = Decimal(str(fi_row[1]))
+                close_price = Decimal(str(price_row[0]))
+                if ni > 0 and shares > 0:
+                    eps = ni / shares
+                    pe = close_price / eps
+                    # Compare within VN30 for percentile
+                    all_pe = await session.execute(
+                        text("""
+                            WITH ranked AS (
+                                SELECT fi.symbol, fi.pe
+                                FROM financial_indicators fi
+                                WHERE fi.date <= :d AND fi.pe IS NOT NULL
+                                ORDER BY fi.date DESC
+                            )
+                            SELECT DISTINCT ON (symbol) symbol, pe FROM ranked ORDER BY symbol
+                        """),
+                        {"d": day},
+                    )
+                    all_pe_rows = all_pe.fetchall()
+                    pe_values = sorted(set(
+                        Decimal(str(r[1])) for r in all_pe_rows if r[1] and Decimal(str(r[1])) > 0
+                    ))
+                    if pe_values and len(pe_values) >= 2:
+                        rank = sum(1 for p in pe_values if p < pe)
+                        percentile = Decimal(str(rank)) / Decimal(str(len(pe_values) - 1))
+                        pe_score = (Decimal("1") - percentile) * Decimal("10")
+                    else:
+                        pe_score = Decimal("5")  # neutral
+                    bonus = Decimal("2") if pe < Decimal("10") else Decimal("0")
+                    score = min(pe_score + bonus, Decimal("10"))
+                    return {"score": score, "pe": pe, "pb": None, "pe_percentile": pe_score / Decimal("10") if pe_score > 0 else None}
+        return {"score": Decimal("5"), "pe": None, "pb": None}  # neutral fallback
 
     current_pe = Decimal(str(row[0]))
     current_pb = Decimal(str(row[1])) if row[1] else None
@@ -263,7 +310,7 @@ async def _compute_historical_quality(
         text("""
             SELECT net_income, total_equity, debt, free_cash_flow, issued_shares
             FROM financial_reports
-            WHERE symbol = :s AND net_income IS NOT NULL
+            WHERE symbol = :s AND net_income IS NOT NULL AND total_equity IS NOT NULL
             ORDER BY year DESC, period DESC LIMIT 1
         """),
         {"s": symbol},
@@ -279,6 +326,23 @@ async def _compute_historical_quality(
             roe = Decimal(str(ind_row[0])) / Decimal("100")
             score = Decimal("7") if roe > Decimal("0.15") else (Decimal("5") if roe > Decimal("0.10") else Decimal("0"))
             return {"score": score, "roe": roe, "de": None, "fcf_yield": None}
+        # Fallback: financial_reports with most recent data even if total_equity is NULL
+        result2 = await session.execute(
+            text("""
+                SELECT net_income, total_equity, debt, free_cash_flow, issued_shares
+                FROM financial_reports
+                WHERE symbol = :s AND net_income IS NOT NULL
+                ORDER BY year DESC, period DESC LIMIT 1
+            """),
+            {"s": symbol},
+        )
+        row2 = result2.fetchone()
+        if row2 and row2[0]:
+            ni = Decimal(str(row2[0]))
+            te = Decimal(str(row2[1])) if row2[1] else None
+            roe = ni / te if te and te > 0 else Decimal("0")
+            roe_score = Decimal("10") if roe > Decimal("0.15") else (Decimal("7") if roe > Decimal("0.12") else (Decimal("5") if roe > Decimal("0.10") else Decimal("0")))
+            return {"score": roe_score, "roe": roe, "de": None, "fcf_yield": None}
         return {"score": Decimal("0"), "roe": None, "de": None, "fcf_yield": None}
 
     ni, te, debt, fcf, shares = row
@@ -325,13 +389,13 @@ async def _check_screening(session: AsyncSession, symbol: str, day) -> bool:
 async def _check_historical_de(session, symbol, day, is_bank=False):
     max_de = Decimal("10") if is_bank else Decimal("1.5")
     result = await session.execute(
-        text("SELECT debt, total_equity FROM financial_reports WHERE symbol = :s AND debt IS NOT NULL AND total_equity IS NOT NULL ORDER BY year DESC LIMIT 1"),
+        text("SELECT debt, total_equity FROM financial_reports WHERE symbol = :s AND total_equity IS NOT NULL ORDER BY year DESC LIMIT 1"),
         {"s": symbol},
     )
     row = result.fetchone()
     if not row or not row[1] or Decimal(str(row[1])) == 0:
         return True
-    de = Decimal(str(row[0])) / Decimal(str(row[1]))
+    de = Decimal(str(row[0])) / Decimal(str(row[1])) if row[0] else Decimal("0")
     return de < max_de
 
 
