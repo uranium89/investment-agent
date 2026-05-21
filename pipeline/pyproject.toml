@@ -18,6 +18,8 @@ dependencies = [
     "alembic>=1.13",
     "python-dotenv>=1.0",
     "python-dateutil>=2.9",
+    "pdfplumber>=0.11",
+    "matplotlib>=3.9",
 ]
 
 [project.scripts]

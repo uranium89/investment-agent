@@ -181,3 +181,76 @@ class ScreeningResult(Base):
     fcf_check = Column(Boolean, nullable=True)
     details = Column(Text, nullable=True)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class OrderLog(Base):
+    __tablename__ = "order_log"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    run_id = Column(String(50), nullable=False, index=True)
+    symbol = Column(String(10), nullable=False)
+    side = Column(String(10), nullable=False)
+    quantity = Column(Integer, nullable=False)
+    price = Column(Numeric(15, 2), nullable=True)
+    order_type = Column(String(10), default="LO")
+    status = Column(String(20), nullable=False)
+    remote_order_id = Column(String(50), nullable=True)
+    filled_quantity = Column(Integer, nullable=True)
+    error_message = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class ApprovalRequest(Base):
+    __tablename__ = "approval_requests"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    run_id = Column(String(50), nullable=False, unique=True, index=True)
+    proposed_trades = Column(Text, nullable=False)
+    status = Column(String(20), default="pending")
+    approval_notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    decided_at = Column(DateTime, nullable=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class RiskEvent(Base):
+    __tablename__ = "risk_events"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    event_type = Column(String(50), nullable=False, index=True)
+    severity = Column(String(20), nullable=False)
+    details = Column(Text, nullable=True)
+    triggered_at = Column(DateTime, nullable=False)
+    acknowledged = Column(Boolean, default=False)
+    acknowledged_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class TelegramLog(Base):
+    __tablename__ = "telegram_log"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    message_type = Column(String(50), nullable=False)
+    content_preview = Column(String(255), nullable=True)
+    sent_at = Column(DateTime, nullable=False)
+    success = Column(Boolean, default=False)
+    error_message = Column(Text, nullable=True)
+
+
+class PaperTrade(Base):
+    __tablename__ = "paper_trades"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    run_id = Column(String(50), nullable=False, index=True)
+    symbol = Column(String(10), nullable=False)
+    side = Column(String(10), nullable=False)
+    quantity = Column(Integer, nullable=False)
+    price = Column(Numeric(15, 2), nullable=False)
+    order_type = Column(String(10), default="LO")
+    status = Column(String(20), default="pending")
+    filled_quantity = Column(Integer, nullable=True)
+    fill_price = Column(Numeric(15, 2), nullable=True)
+    slippage_pct = Column(Numeric(10, 4), nullable=True)
+    simulated_at = Column(DateTime, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)

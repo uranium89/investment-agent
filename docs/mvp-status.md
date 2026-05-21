@@ -134,26 +134,72 @@
 ### Portfolio
 - 1 position: VNM (10%), 90% cash
 
-## ❌ Chưa làm (Phase 3)
+## ✅ Đã hoàn thành (Phase 3 — Execution & Monitoring)
 
-### Execution
-- [ ] DNSE OTP flow (email OTP → trading token → place order)
-- [ ] Human-in-the-loop approval workflow
-- [ ] Order confirmation + reconciliation
+### Execution (Week 1)
+| Module | Mô tả |
+|---|---|
+| `execution/otp.py` | Email OTP → trading token flow |
+| `execution/approval.py` | Human-in-the-loop approval: file-based JSON request, polling, timeout |
+| `execution/orders.py` | Order placement, build payload, reconcile, get portfolio value |
+| `clients/dnse.py` | Extended: trading token, order CRUD, positions, balances, PPSE |
 
-### Risk Management
-- [ ] Drawdown control (portfolio-level)
-- [ ] Position limit enforcement
-- [ ] Sector exposure monitoring
-- [ ] Black swan protocol
+### Risk Management (Week 3)
+| Module | Mô tả |
+|---|---|
+| `risk/drawdown.py` | Portfolio drawdown tracking (6-month rolling), breach alert, peak-to-current |
+| `risk/black_swan.py` | VN-Index daily drop check (-5% threshold), freeze-all action |
+| `risk/sector.py` | Per-sector exposure check, breach detection, breakdown report |
 
-### Monitoring
-- [ ] Grafana dashboard
-- [ ] Telegram alerts
-- [ ] Prometheus metrics
-- [ ] Daily performance report
+### Monitoring (Week 2)
+| Module | Mô tả |
+|---|---|
+| `monitoring/telegram.py` | Async Telegram bot alerts: trade, risk, order execution, daily report |
+| `monitoring/report.py` | Daily performance report: scores, portfolio, P&L, cash |
+| `grafana/dashboard.json` | Pre-built dashboard: portfolio value, drawdown, scores, sector, P&L, ingestion |
+| `tasks/daily_monitoring.py` | Celery task 16:00 — report + risk check + Telegram |
+
+### Database
+| Table | Mô tả |
+|---|---|
+| `order_log` | Order execution history |
+| `approval_requests` | Human approval audit trail |
+| `risk_events` | Drawdown/black swan/sector breach events |
+| `telegram_log` | Telegram message delivery log |
+| `paper_trades` | Paper trading simulation records |
+
+### Beat Schedule
+```
+daily-close (15:30) → daily-tcbs (15:32) → daily-scoring (15:35)
+→ daily-execution (15:40) → daily-monitoring (16:00)
+→ daily-open (08:30 next day)
+```
+
+## ❌ Chưa làm (Phase 3 còn lại)
+
+### Paper Trading Simulation (Week 4)
+- [ ] Historical backtest với dữ liệu 1-2 năm
+- [ ] Slippage analysis (comparing signal price vs execution price)
+- [ ] Parameter tuning (thresholds, weights)
+- [ ] Documentation kết quả
 
 ### AI Layer
 - [ ] News/sentiment analysis
 - [ ] Signal validation agent
 - [ ] Report generation
+
+## 📈 Pipeline Flow Diagram
+
+```
+15:30 ── daily_close ──► OHLC + Financials + Technicals
+   │
+15:32 ── daily_tcbs ──► TCBS PDF (balance sheet)
+   │
+15:35 ── daily_scoring ──► Screener → Score → Signal
+   │
+15:40 ── daily_execution ──► Risk checks → Approval → OTP → Orders → Reconcile
+   │
+16:00 ── daily_monitoring ──► Report → Telegram → Risk review
+   │
+08:30 ── daily_open ──► Company info update (next day)
+```

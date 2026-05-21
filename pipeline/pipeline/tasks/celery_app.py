@@ -31,8 +31,16 @@ celery_app.conf.beat_schedule = {
         "task": "pipeline.tasks.daily_score.daily_scoring_pipeline",
         "schedule": {"hour": settings.daily_close_hour, "minute": settings.daily_close_minute + 5},
     },
+    "daily-execution-pipeline": {
+        "task": "pipeline.tasks.daily_execution.daily_execution_pipeline",
+        "schedule": {"hour": settings.daily_close_hour, "minute": settings.daily_close_minute + 10},
+    },
     "daily-open-pipeline": {
         "task": "pipeline.tasks.daily_open.daily_open_pipeline",
         "schedule": {"hour": settings.daily_open_hour, "minute": settings.daily_open_minute},
+    },
+    "daily-monitoring-pipeline": {
+        "task": "pipeline.tasks.daily_monitoring.daily_monitoring_pipeline",
+        "schedule": {"hour": settings.daily_close_hour + 1, "minute": 0},
     },
 }

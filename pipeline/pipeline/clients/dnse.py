@@ -165,3 +165,96 @@ class DNSEClient:
         if isinstance(result, dict):
             return result.get("data", [])
         return result if isinstance(result, list) else []
+
+    # ── Trading wrappers (OTP + order execution) ──────────────
+
+    async def get_accounts(self) -> list[dict]:
+        result = await self.call_tool("dnse_get_accounts", {})
+        if isinstance(result, dict):
+            return result.get("data", []) or result.get("body", [])
+        return result if isinstance(result, list) else []
+
+    async def get_balances(self, account_no: str) -> dict:
+        return await self.call_tool("dnse_get_balances", {"accountNo": account_no})
+
+    async def get_positions(self, account_no: str, market_type: str = "STOCK") -> list[dict]:
+        result = await self.call_tool("dnse_get_positions", {
+            "accountNo": account_no, "marketType": market_type,
+        })
+        if isinstance(result, dict):
+            return result.get("data", []) or result.get("body", [])
+        return result if isinstance(result, list) else []
+
+    async def get_orders(self, account_no: str, market_type: str = "STOCK") -> list[dict]:
+        result = await self.call_tool("dnse_get_orders", {
+            "accountNo": account_no, "marketType": market_type,
+        })
+        if isinstance(result, dict):
+            return result.get("data", []) or result.get("body", [])
+        return result if isinstance(result, list) else []
+
+    async def get_order_detail(self, account_no: str, order_id: str, market_type: str = "STOCK") -> dict:
+        return await self.call_tool("dnse_get_order_detail", {
+            "accountNo": account_no, "orderId": order_id, "marketType": market_type,
+        })
+
+    async def get_order_history(self, account_no: str, market_type: str = "STOCK",
+                                 from_date: str | None = None, to_date: str | None = None,
+                                 page_size: int | None = None, page_index: int | None = None) -> list[dict]:
+        params = {"accountNo": account_no, "marketType": market_type}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        if page_size: params["pageSize"] = page_size
+        if page_index: params["pageIndex"] = page_index
+        result = await self.call_tool("dnse_get_order_history", params)
+        if isinstance(result, dict):
+            return result.get("data", []) or result.get("body", [])
+        return result if isinstance(result, list) else []
+
+    async def send_email_otp(self, email: str) -> dict:
+        return await self.call_tool("dnse_send_email_otp", {"email": email})
+
+    async def create_trading_token(self, otp_type: str, passcode: str) -> dict:
+        return await self.call_tool("dnse_create_trading_token", {
+            "otpType": otp_type, "passcode": passcode,
+        })
+
+    async def get_ppse(self, account_no: str, market_type: str, symbol: str,
+                        price: float, loan_package_id: int) -> dict:
+        return await self.call_tool("dnse_get_ppse", {
+            "accountNo": account_no, "marketType": market_type,
+            "symbol": symbol, "price": price, "loanPackageId": loan_package_id,
+        })
+
+    async def get_loan_packages(self, account_no: str, market_type: str, symbol: str | None = None) -> list[dict]:
+        params = {"accountNo": account_no, "marketType": market_type}
+        if symbol: params["symbol"] = symbol
+        result = await self.call_tool("dnse_get_loan_packages", params)
+        if isinstance(result, dict):
+            return result.get("data", []) or result.get("body", [])
+        return result if isinstance(result, list) else []
+
+    async def post_order(self, market_type: str, trading_token: str, payload: dict) -> dict:
+        return await self.call_tool("dnse_post_order", {
+            "marketType": market_type, "tradingToken": trading_token, "payload": payload,
+        })
+
+    async def put_order(self, account_no: str, order_id: str, market_type: str,
+                         trading_token: str, payload: dict) -> dict:
+        return await self.call_tool("dnse_put_order", {
+            "accountNo": account_no, "orderId": order_id,
+            "marketType": market_type, "tradingToken": trading_token, "payload": payload,
+        })
+
+    async def cancel_order(self, account_no: str, order_id: str, market_type: str, trading_token: str) -> dict:
+        return await self.call_tool("dnse_cancel_order", {
+            "accountNo": account_no, "orderId": order_id,
+            "marketType": market_type, "tradingToken": trading_token,
+        })
+
+    async def close_position(self, account_no: str, position_id: str, market_type: str,
+                              trading_token: str, payload: dict) -> dict:
+        return await self.call_tool("dnse_close_position", {
+            "accountNo": account_no, "positionId": position_id,
+            "marketType": market_type, "tradingToken": trading_token, "payload": payload,
+        })

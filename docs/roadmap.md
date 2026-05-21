@@ -15,25 +15,25 @@
 - [x] TCBS PDF parser cho balance sheet data
 - [x] Pipeline real data 32 VN30 symbols → 1 ENTER (VNM), 11 HOLD
 
-## Roadmap 30 ngày — Hoàn thiện Phase 3
+## ✅ Đã hoàn thành — Phase 3: Execution & Monitoring
 
-### Tuần 1: Execution & OTP
-- [ ] DNSE OTP flow integration (email OTP → trading token)
-- [ ] Human-in-the-loop approval workflow
-- [ ] Order management (place → confirm → reconcile)
+### Tuần 1: Execution & OTP ✅
+- [x] DNSE OTP flow integration (email OTP → trading token)
+- [x] Human-in-the-loop approval workflow (file-based JSON, polling, timeout)
+- [x] Order management (place → confirm → reconcile)
 
-### Tuần 2: Monitoring
-- [ ] Telegram alerting (trade signals, risk breach)
-- [ ] Grafana dashboard (P&L, drawdown, signals)
-- [ ] Daily performance report auto-generate
+### Tuần 2: Monitoring ✅
+- [x] Telegram alerting (trade signals, risk breach)
+- [x] Grafana dashboard (P&L, drawdown, signals) — JSON panel template
+- [x] Daily performance report auto-generate
 
-### Tuần 3: Risk Management
-- [ ] Max drawdown control (10%/15%/20%)
-- [ ] Black swan protocol (VN-Index -5% trigger)
-- [ ] Sector exposure monitoring
+### Tuần 3: Risk Management ✅
+- [x] Max drawdown control (configurable 10%/15%/20%)
+- [x] Black swan protocol (VN-Index -5% trigger → FREEZE_ALL)
+- [x] Sector exposure monitoring (breach detection)
 
 ### Tuần 4: Paper Trading
-- [ ] Chạy paper trading với dữ liệu lịch sử
+- [ ] Chạy paper trading với dữ liệu lịch sử (script có sẵn: `paper_trading.py`)
 - [ ] So sánh signal vs execution (slippage estimate)
 - [ ] Điều chỉnh parameters (thresholds, weights)
 - [ ] Tài liệu hóa kết quả

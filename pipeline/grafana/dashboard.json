@@ -1,0 +1,79 @@
+{
+  "title": "VN30 Pipeline",
+  "tags": ["vn30", "pipeline", "investment"],
+  "schemaVersion": 38,
+  "panels": [
+    {
+      "title": "Portfolio Value",
+      "type": "graph",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT time, SUM(current_value) as portfolio_value FROM portfolio_state WHERE status = 'active' GROUP BY time ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Drawdown %",
+      "type": "graph",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [
+        {
+          "rawSql": "WITH dd AS (SELECT time::date as d, SUM(current_value) as v FROM portfolio_state WHERE status='active' GROUP BY d) SELECT d, (v / MAX(v) OVER () - 1) * 100 as drawdown FROM dd ORDER BY d",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Score Distribution",
+      "type": "table",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "targets": [
+        {
+          "rawSql": "SELECT symbol, total_score, quality_score, value_score, technical_score, signal FROM score_snapshots WHERE time::date = CURRENT_DATE ORDER BY total_score DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Sector Exposure",
+      "type": "piechart",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "targets": [
+        {
+          "rawSql": "SELECT COALESCE(sector, 'other') as sector, SUM(weight_pct) as total FROM portfolio_state WHERE status='active' GROUP BY sector",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Position P&L",
+      "type": "table",
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 16},
+      "targets": [
+        {
+          "rawSql": "SELECT symbol, entry_price, current_price, shares, cost_basis, current_value, pnl_pct, weight_pct, sector FROM portfolio_state WHERE status='active' ORDER BY pnl_pct DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "Data Ingestion Status",
+      "type": "table",
+      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 24},
+      "targets": [
+        {
+          "rawSql": "SELECT task_name, symbol, status, started_at, completed_at, rows_inserted FROM ingestion_log WHERE started_at > CURRENT_DATE - INTERVAL '7 days' ORDER BY started_at DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    }
+  ]
+}
