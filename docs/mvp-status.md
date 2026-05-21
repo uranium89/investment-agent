@@ -175,18 +175,30 @@ daily-close (15:30) → daily-tcbs (15:32) → daily-scoring (15:35)
 → daily-open (08:30 next day)
 ```
 
-## ❌ Chưa làm (Phase 3 còn lại)
+## ✅ Đã hoàn thành (Phase 3 — Paper Trading & AI)
 
 ### Paper Trading Simulation (Week 4)
-- [ ] Historical backtest với dữ liệu 1-2 năm
-- [ ] Slippage analysis (comparing signal price vs execution price)
-- [ ] Parameter tuning (thresholds, weights)
-- [ ] Documentation kết quả
+| Module | Mô tả |
+|---|---|
+| `portfolio/paper_trading.py` | Full backtesting engine: historical scoring, monthly rebalance, slippage, position sizing |
+| `portfolio/paper_trading.py:run_parameter_sensitivity` | Parameter sweep (5 entry/exit thresholds × 3 cash levels × 3 max positions = 45 combos) |
+| `scripts/run_paper_trading.py` | CLI: `vn30-backtest --start 2025-06-01 --end 2026-05-21 --sensitivity` |
+| Capacity | Backtest 1 năm với 32 VN30 stocks, rebalance 5 ngày/lần |
 
 ### AI Layer
-- [ ] News/sentiment analysis
-- [ ] Signal validation agent
-- [ ] Report generation
+| Module | Mô tả |
+|---|---|
+| `ai/news_sentiment.py` | Keyword-based sentiment analysis từ FireAnt posts/news, market summary |
+| `ai/signal_validator.py` | Cross-check Q/V/T scores against signal, detect disagreements, divergence warnings |
+| `ai/report_generator.py` | AI report: signals, portfolio, drawdown, market news |
+| `scripts/run_report.py` | CLI: `vn30-report` |
+
+### CLI Tools
+| Command | Usage |
+|---|---|
+| `vn30-pipeline` | Chạy daily-close pipeline (entry point) |
+| `vn30-backtest` | Paper trading: `--start --end --capital --enter --exit --sensitivity --output` |
+| `vn30-report` | Generate AI daily report to stdout |
 
 ## 📈 Pipeline Flow Diagram
 

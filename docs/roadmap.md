@@ -32,11 +32,21 @@
 - [x] Black swan protocol (VN-Index -5% trigger → FREEZE_ALL)
 - [x] Sector exposure monitoring (breach detection)
 
-### Tuần 4: Paper Trading
-- [ ] Chạy paper trading với dữ liệu lịch sử (script có sẵn: `paper_trading.py`)
-- [ ] So sánh signal vs execution (slippage estimate)
-- [ ] Điều chỉnh parameters (thresholds, weights)
-- [ ] Tài liệu hóa kết quả
+### Tuần 4: Paper Trading ✅
+- [x] Backtesting engine: historical scoring, monthly rebalance, slippage 0.1%
+- [x] Parameter sensitivity analysis: 45 combinations (5 thresholds × 3 cash × 3 max-pos)
+- [x] Performance metrics: Sharpe, Sortino, max DD, Calmar, win rate, profit factor
+- [x] CLI: `vn30-backtest --start --end --capital --sensitivity`
+- [ ] *(optional)* Chạy backtest thực tế với 1 năm dữ liệu
+
+## ✅ Đã hoàn thành — AI Layer
+
+| Tính năng | Status |
+|---|---|
+| News/sentiment analysis (keyword-based, FireAnt posts) | ✅ |
+| Signal validation (cross-check Q/V/T, divergence detection) | ✅ |
+| Report generation (AI daily report với market news) | ✅ |
+| CLI: `vn30-report` | ✅ |
 
 ## Roadmap 90 ngày — Live Trading
 

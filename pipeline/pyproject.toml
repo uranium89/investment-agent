@@ -24,6 +24,8 @@ dependencies = [
 
 [project.scripts]
 vn30-pipeline = "pipeline.tasks.daily_close:run"
+vn30-backtest = "pipeline.scripts.run_paper_trading:main"
+vn30-report = "pipeline.scripts.run_report:main"
 
 [build-system]
 requires = ["setuptools>=68"]
