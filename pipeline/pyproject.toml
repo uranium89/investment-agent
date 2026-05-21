@@ -1,0 +1,34 @@
+[project]
+name = "vn30-pipeline"
+version = "0.1.0"
+description = "FireAnt Data Pipeline cho VN30 — Hội đồng Đầu tư"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "asyncpg>=0.29",
+    "sqlalchemy[asyncio]>=2.0",
+    "sqlmodel>=0.0.22",
+    "celery[redis]>=5.4",
+    "redis>=5.0",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "ta>=0.11",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "alembic>=1.13",
+    "python-dotenv>=1.0",
+    "python-dateutil>=2.9",
+]
+
+[project.scripts]
+vn30-pipeline = "pipeline.tasks.daily_close:run"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pipeline*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

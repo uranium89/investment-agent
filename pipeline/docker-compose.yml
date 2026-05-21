@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════════════
+# Docker Compose — development environment
+#
+# Có thể thay thế bằng dịch vụ cloud KHÔNG cần Docker:
+#   PostgreSQL → Supabase (free tier)
+#   Redis       → Upstash (free tier, gói TCP không phải HTTP)
+# ═══════════════════════════════════════════════════════════════
+
+services:
+  postgres:
+    image: timescale/timescaledb:latest-pg16
+    profiles: ["local-db"]
+    environment:
+      POSTGRES_USER: vn30
+      POSTGRES_PASSWORD: vn30_dev_only
+      POSTGRES_DB: vn30_pipeline
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vn30"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    profiles: ["local-db"]
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  celery-worker:
+    build: .
+    profiles: ["full"]
+    command: celery -A pipeline.tasks.celery_app worker --loglevel=info --concurrency=4
+    depends_on:
+      postgres: { condition: service_healthy, required: false }
+      redis: { condition: service_healthy, required: false }
+    environment:
+      PIPELINE_DB_URL: postgresql+asyncpg://vn30:vn30_dev_only@postgres:5432/vn30_pipeline
+      PIPELINE_REDIS_URL: redis://redis:6379/0
+      PIPELINE_FIREANT_MCP_DIR: /mcp-server
+    volumes:
+      - ./pipeline:/app/pipeline
+      - ../mcp-server:/mcp-server
+
+  celery-beat:
+    build: .
+    profiles: ["full"]
+    command: celery -A pipeline.tasks.celery_app beat --loglevel=info
+    depends_on:
+      postgres: { condition: service_healthy, required: false }
+      redis: { condition: service_healthy, required: false }
+    environment:
+      PIPELINE_DB_URL: postgresql+asyncpg://vn30:vn30_dev_only@postgres:5432/vn30_pipeline
+      PIPELINE_REDIS_URL: redis://redis:6379/0
+      PIPELINE_FIREANT_MCP_DIR: /mcp-server
+    volumes:
+      - ./pipeline:/app/pipeline
+      - ../mcp-server:/mcp-server
+
+volumes:
+  pgdata:
