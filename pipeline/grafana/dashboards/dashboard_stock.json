@@ -1,0 +1,490 @@
+{
+  "title": "Stock Detail",
+  "tags": ["vn30", "stock", "detail"],
+  "schemaVersion": 39,
+  "timezone": "browser",
+  "templating": {
+    "list": [
+      {
+        "name": "symbol",
+        "type": "query",
+        "query": "SELECT DISTINCT symbol FROM vn30_symbols WHERE status='active' ORDER BY symbol",
+        "refresh": 1,
+        "includeAll": true,
+        "multi": false,
+        "datasource": "PostgreSQL"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Company Info",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 8, "x": 0, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT company_name || ' | ' || COALESCE(icb_name, 'N/A') as info FROM vn30_symbols WHERE symbol='$symbol'",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "none"},
+          "custom": {"align": "left"},
+          "fontSize": 14
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Market Cap",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 8, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT ROUND(market_cap / 1e9, 1) as cap_ty FROM vn30_symbols WHERE symbol='$symbol'",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "none"},
+          "decimals": 1
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Last Price",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 12, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT close FROM ohlc_prices WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "none"},
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "P/E",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 16, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT pe FROM financial_indicators WHERE symbol='$symbol' AND pe IS NOT NULL ORDER BY date DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "none"},
+          "decimals": 1
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "P/B",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 20, "y": 0},
+      "targets": [
+        {
+          "rawSql": "SELECT pb FROM financial_indicators WHERE symbol='$symbol' AND pb IS NOT NULL ORDER BY date DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "none"},
+          "decimals": 1
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "ROE",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 0, "y": 4},
+      "targets": [
+        {
+          "rawSql": "SELECT ROUND(roe * 100, 1) FROM financial_indicators WHERE symbol='$symbol' AND roe IS NOT NULL ORDER BY date DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "color": {"mode": "none"},
+          "decimals": 1
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "D/E",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 4, "y": 4},
+      "targets": [
+        {
+          "rawSql": "SELECT de_ratio FROM financial_indicators WHERE symbol='$symbol' AND de_ratio IS NOT NULL ORDER BY date DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "none"},
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Dividend Yield",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 8, "y": 4},
+      "targets": [
+        {
+          "rawSql": "SELECT ROUND(dividend_yield * 100, 2) FROM financial_indicators WHERE symbol='$symbol' AND dividend_yield IS NOT NULL ORDER BY date DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "color": {"mode": "none"},
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Total Score",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 12, "y": 4},
+      "targets": [
+        {
+          "rawSql": "SELECT total_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "color": {"mode": "thresholds"},
+          "thresholds": {"mode": "absolute", "steps": [
+            {"color": "red", "value": null},
+            {"color": "yellow", "value": 3.5},
+            {"color": "green", "value": 5.0}
+          ]},
+          "decimals": 2
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Signal",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 16, "y": 4},
+      "targets": [
+        {
+          "rawSql": "SELECT signal FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "color": {"mode": "thresholds"},
+          "thresholds": {"mode": "absolute", "steps": [
+            {"color": "red", "value": null},
+            {"color": "yellow", "value": 3.5},
+            {"color": "green", "value": 5.0}
+          ]}
+        },
+        "overrides": [
+          {
+            "matcher": {"id": "byName", "options": "signal"},
+            "properties": [
+              {"id": "custom.displayMode", "value": "color-background"},
+              {"id": "color", "value": {"mode": "thresholds"}}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "title": "Price & Moving Averages",
+      "type": "timeseries",
+      "gridPos": {"h": 10, "w": 24, "x": 0, "y": 8},
+      "targets": [
+        {
+          "rawSql": "SELECT time, close FROM ohlc_prices WHERE symbol='$symbol' ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "close"
+        },
+        {
+          "rawSql": "SELECT time, ma_20 FROM technical_indicators WHERE symbol='$symbol' AND ma_20 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "ma20"
+        },
+        {
+          "rawSql": "SELECT time, ma_50 FROM technical_indicators WHERE symbol='$symbol' AND ma_50 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "ma50"
+        },
+        {
+          "rawSql": "SELECT time, ma_200 FROM technical_indicators WHERE symbol='$symbol' AND ma_200 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "ma200"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Volume",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 18},
+      "targets": [
+        {
+          "rawSql": "SELECT time, volume FROM ohlc_prices WHERE symbol='$symbol' ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 60,
+            "lineWidth": 0,
+            "showPoints": "never"
+          },
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "RSI (14)",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 18},
+      "targets": [
+        {
+          "rawSql": "SELECT time, rsi_14 FROM technical_indicators WHERE symbol='$symbol' AND rsi_14 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "rsi"
+        },
+        {
+          "rawSql": "SELECT time, 30 as oversold, 70 as overbought FROM technical_indicators WHERE symbol='$symbol' AND rsi_14 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "bands"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "MACD",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 18},
+      "targets": [
+        {
+          "rawSql": "SELECT time, macd, macd_signal FROM technical_indicators WHERE symbol='$symbol' AND macd IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "macd"
+        },
+        {
+          "rawSql": "SELECT time, macd_histogram FROM technical_indicators WHERE symbol='$symbol' AND macd_histogram IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "hist"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Bollinger Bands",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 26},
+      "targets": [
+        {
+          "rawSql": "SELECT time, close, bollinger_upper, bollinger_middle, bollinger_lower FROM technical_indicators WHERE symbol='$symbol' ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "ATR & Volume SMA",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 26},
+      "targets": [
+        {
+          "rawSql": "SELECT time, atr_14 FROM technical_indicators WHERE symbol='$symbol' AND atr_14 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "atr"
+        },
+        {
+          "rawSql": "SELECT time, volume_sma_20 FROM technical_indicators WHERE symbol='$symbol' AND volume_sma_20 IS NOT NULL ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL",
+          "refId": "volsma"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "Financial Reports (5 years)",
+      "type": "table",
+      "gridPos": {"h": 10, "w": 24, "x": 0, "y": 34},
+      "targets": [
+        {
+          "rawSql": "SELECT year, revenue, net_income, total_assets, total_equity, debt, free_cash_flow, issued_shares FROM financial_reports WHERE symbol='$symbol' ORDER BY year DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "custom": {"align": "right"},
+          "displayName": "VND billion"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Score History",
+      "type": "timeseries",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 44},
+      "targets": [
+        {
+          "rawSql": "SELECT time, quality_score, value_score, technical_score, total_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"lineInterpolation": "smooth"},
+          "color": {"mode": "palette-classic"}
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Screening History",
+      "type": "table",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 44},
+      "targets": [
+        {
+          "rawSql": "SELECT date, passed, de_check, roe_check, market_cap_check, adtv_check, fcf_check FROM screening_results WHERE symbol='$symbol' ORDER BY date DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"align": "center"}
+        },
+        "overrides": [
+          {
+            "matcher": {"id": "byName", "options": "passed"},
+            "properties": [
+              {"id": "custom.displayMode", "value": "color-background"},
+              {"id": "color", "value": {"mode": "thresholds"}},
+              {"id": "thresholds", "value": {"mode": "absolute", "steps": [
+                {"color": "red", "value": null},
+                {"color": "green", "value": 1}
+              ]}}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "title": "Component Scores Breakdown",
+      "type": "bargauge",
+      "gridPos": {"h": 6, "w": 24, "x": 0, "y": 52},
+      "targets": [
+        {
+          "rawSql": "SELECT 'Quality' as metric, quality_score as value FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1 UNION ALL SELECT 'Value', value_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1 UNION ALL SELECT 'Technical', technical_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1 UNION ALL SELECT 'Moat', moat_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1 UNION ALL SELECT 'Management', management_score FROM score_snapshots WHERE symbol='$symbol' ORDER BY time DESC LIMIT 1",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 10,
+          "thresholds": {"mode": "absolute", "steps": [
+            {"color": "red", "value": null},
+            {"color": "yellow", "value": 3},
+            {"color": "green", "value": 6}
+          ]}
+        }
+      }
+    }
+  ]
+}

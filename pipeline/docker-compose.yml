@@ -60,7 +60,7 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboard.json:/etc/grafana/dashboards/vn30_pipeline.json
+      - ./grafana/dashboards:/etc/grafana/dashboards
     depends_on:
       postgres: { condition: service_healthy, required: false }
 
