@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiến lược VMQ30 — VN30 Investment Agent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    VN30 Agent
+  </div>
+  <div class="subtitle">Investment Pipeline Documentation</div>
+
+  <div class="section-label">Tổng quan</div>
+  <a href="index.html">🏠 Giới thiệu</a>
+  <a href="architecture.html">🏗️ Kiến trúc</a>
+
+  <div class="section-label">Hướng dẫn</div>
+  <a href="pipeline-guide.html">⚙️ Vận hành</a>
+  <a href="mvp-status.html">📊 MVP Status</a>
+
+  <div class="section-label">Chiến lược</div>
+  <a href="strategy.html" class="active">📈 VMQ30</a>
+  <a href="risk-management.html">🛡️ Quản trị rủi ro</a>
+
+  <div class="section-label">Lộ trình</div>
+  <a href="roadmap.html">🗺️ Roadmap</a>
+</nav>
+
+<main>
+<h1 id="chiến-lược-đầu-tư-vmq30">Chiến lược đầu tư VMQ30</h1>
+<p><strong>VMQ30</strong> = VN30 Quality-Momentum Hybrid Model — chiến
+lược được Hội đồng Đầu tư thống nhất.</p>
+<h2 id="triết-lý">Triết lý</h2>
+<blockquote>
+<p>“Hệ thống này không được thiết kế để giàu nhanh. Nó được thiết kế để
+không nghèo khi về già.” — Warren Buffett</p>
+</blockquote>
+<h2 id="scoring-framework">Scoring Framework</h2>
+<h3 id="screening-gate-loại-ngay-nếu-không-đạt">1. Screening Gate (loại
+ngay nếu không đạt)</h3>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Điều kiện</th>
+<th>Ngoại lệ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D/E</td>
+<td>&lt; 1.5</td>
+<td>Ngân hàng (rules riêng)</td>
+</tr>
+<tr>
+<td>ROE (3 năm)</td>
+<td>&gt; 10% liên tiếp</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Market cap</td>
+<td>&gt; 5,000 tỷ</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>ADTV</td>
+<td>&gt; 30 tỷ/ngày</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>FCF</td>
+<td>Dương 2/3 năm gần nhất</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fundamental-score-50">2. Fundamental Score (50%)</h3>
+<h4 id="quality-score-25">Quality Score (25%)</h4>
+<table>
+<thead>
+<tr>
+<th>Chỉ số</th>
+<th>Trọng số</th>
+<th>Cách tính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROE</td>
+<td>40%</td>
+<td>ROE &gt; 15% = 10, &gt;12% = 7, &gt;10% = 5</td>
+</tr>
+<tr>
+<td>D/E</td>
+<td>30%</td>
+<td>&lt; 0.5 = 10, &lt;1.0 = 7, &lt;1.5 = 5</td>
+</tr>
+<tr>
+<td>FCF Yield</td>
+<td>30%</td>
+<td>&gt; 4% = 10, &gt; 2% = 7, &gt; 0% = 5</td>
+</tr>
+</tbody>
+</table>
+<h4 id="value-score-15">Value Score (15%)</h4>
+<ul>
+<li>P/E percentile trong VN30 (2 năm): thấp nhất = 10, cao nhất = 0</li>
+<li>P/B &lt; 2 bonus +2 điểm</li>
+</ul>
+<h4 id="moat-score-5">Moat Score (5%)</h4>
+<p>Đánh giá định kỳ bởi chuyên gia (update 6 tháng/lần): - Độc quyền tự
+nhiên (VNM, VCB) = 10 - Lợi thế quy mô (MWG, FPT) = 7 - Brand power
+(PNJ, SAB) = 5 - Không có moat = 0</p>
+<h4 id="management-score-5">Management Score (5%)</h4>
+<p>Dữ liệu từ FireAnt: - CEO mua cổ phiếu quỹ = bonus - ESOP pha loãng
+&gt; 5%/năm = trừ điểm - Giao dịch nội bộ bất thường = trừ điểm</p>
+<h3 id="technical-score-25">3. Technical Score (25%)</h3>
+<h4 id="trend-score-15">Trend Score (15%)</h4>
+<table>
+<thead>
+<tr>
+<th>Tín hiệu</th>
+<th>Điểm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Price &gt; EMA50</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>Price &gt; EMA200</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>EMA50 &gt; EMA200 (golden cross)</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>ADX &gt; 20 (có xu hướng)</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>Volume &gt; SMA20</td>
+<td>+3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="momentum-score-10">Momentum Score (10%)</h4>
+<ul>
+<li>RSI(14): 30-40 (oversold) = +5, 40-60 = +3, &gt;70 = -3</li>
+<li>MACD histogram dương = +3</li>
+<li>MACD vừa cắt lên signal = +2</li>
+</ul>
+<h3 id="macro-overlay-20-tổng-exposure">4. Macro Overlay (±20% tổng
+exposure)</h3>
+<table>
+<thead>
+<tr>
+<th>Điều kiện vĩ mô</th>
+<th>Adjustment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lãi suất điều hành giảm</td>
+<td>+10%</td>
+</tr>
+<tr>
+<td>Lãi suất điều hành tăng</td>
+<td>-10%</td>
+</tr>
+<tr>
+<td>VN-Index &gt; MA200 (uptrend)</td>
+<td>+10%</td>
+</tr>
+<tr>
+<td>VN-Index &lt; MA200 (downtrend)</td>
+<td>-10%</td>
+</tr>
+<tr>
+<td>Rủi ro tỷ giá cao</td>
+<td>-10%</td>
+</tr>
+<tr>
+<td>Tổng adjustment tối đa</td>
+<td>±20%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="portfolio-construction">Portfolio Construction</h2>
+<ol type="1">
+<li><strong>Chọn cổ phiếu</strong>: Top 10 scoring symbols (sau
+screening)</li>
+<li><strong>Trọng số</strong>: proportional to score, điều chỉnh bởi
+sector limit</li>
+<li><strong>Sector limits</strong>:
+<ul>
+<li>Tài chính (ngân hàng, chứng khoán, bảo hiểm): max 40%</li>
+<li>Bất động sản: max 20%</li>
+<li>Mỗi single position: max 10%</li>
+</ul></li>
+<li><strong>Cash</strong>: luôn giữ 20-30% danh mục</li>
+</ol>
+<h2 id="rebalancing">Rebalancing</h2>
+<ul>
+<li><strong>Định kỳ</strong>: 1 tháng/lần (vào phiên đầu tháng)</li>
+<li><strong>Đột xuất</strong>: khi có cổ phiếu vi phạm screening
+gate</li>
+<li><strong>Emergency</strong>: khi drawdown &gt; 10% → review toàn
+bộ</li>
+</ul>
+<h2 id="signal-types">Signal Types</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Hành động</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENTER</td>
+<td>Mua mới</td>
+<td>Score &gt; threshold, cash available</td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td>Bán hết</td>
+<td>Score &lt; threshold, hoặc vi phạm risk rule</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>Mua thêm</td>
+<td>Score cải thiện, giá giảm nhưng fundamentals tốt</td>
+</tr>
+<tr>
+<td>REDUCE</td>
+<td>Bán bớt</td>
+<td>Score giảm, hoặc cần rebalance sector</td>
+</tr>
+<tr>
+<td>HOLD</td>
+<td>Giữ</td>
+<td>Không có tín hiệu tốt hơn</td>
+</tr>
+</tbody>
+</table>
+<footer>
+  <span>VN30 Investment Agent &mdash; Hội đồng Đầu tư</span>
+  <span>Generated from Markdown &middot; May 2026</span>
+</footer>
+</main>
+
+</body>
+</html>

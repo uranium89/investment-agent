@@ -4,8 +4,8 @@
 
 - Python 3.12+
 - Node.js v22+
-- PostgreSQL + TimescaleDB (Supabase hoặc local Docker)
-- Redis (Upstash hoặc local Docker)
+- PostgreSQL (local Docker)
+- Redis (local Docker)
 
 ## Quick Start
 
@@ -23,7 +23,7 @@ pip install -e pipeline/
 
 # Copy env
 cp pipeline/.env.example pipeline/.env
-# Sửa .env với connection strings của bạn
+# Sửa .env với connection strings
 ```
 
 ### 2. Build MCP servers
@@ -35,15 +35,6 @@ cp pipeline/.env.example pipeline/.env
 
 ### 3. Setup database
 
-**Option A: Supabase (recommended)**
-```bash
-# Tạo project trên supabase.com
-# Enable TimescaleDB: CREATE EXTENSION IF NOT EXISTS timescaledb;
-# Lấy connection string từ Settings → Database
-# Điền vào .env: PIPELINE_DB_URL
-```
-
-**Option B: Local Docker**
 ```bash
 cd pipeline
 docker compose --profile local-db up -d
@@ -66,7 +57,31 @@ asyncio.run(run())
 "
 ```
 
-### 5. Chạy manual pipeline
+### 5. Seed VN30 symbols
+
+```bash
+python3 -c "
+import asyncio
+from pipeline.db.connection import async_session_factory
+from pipeline.db.models import VN30Symbol
+
+async def run():
+    async with async_session_factory() as session:
+        # Chạy seed script hoặc INSERT manually
+        print('DB ready')
+asyncio.run(run())
+"
+```
+
+### 6. Setup Grafana
+
+```bash
+docker compose --profile grafana up -d
+# Grafana at http://localhost:3000 (admin/admin)
+# Dashboard tự động provision từ grafana/dashboards/
+```
+
+### 7. Chạy manual pipeline
 
 ```bash
 cd pipeline
@@ -78,21 +93,50 @@ python -m pipeline.tasks.daily_close
 
 ```env
 # Database
-PIPELINE_DB_URL=postgresql+asyncpg://user:pass@host:5432/db
-PIPELINE_DB_URL_SYNC=postgresql://user:pass@host:5432/db
+PIPELINE_DB_URL=postgresql+asyncpg://vn30:vn30_dev_only@localhost:5432/vn30_pipeline
+PIPELINE_DB_URL_SYNC=postgresql://vn30:vn30_dev_only@localhost:5432/vn30_pipeline
 
 # Redis (cho Celery)
-PIPELINE_REDIS_URL=rediss://default:pass@host.upstash.io:6379/0
+PIPELINE_REDIS_URL=redis://localhost:6379/0
 
-# MCP servers (đường dẫn tuyệt đối hoặc relative)
+# MCP servers
 PIPELINE_FIREANT_MCP_DIR=../mcp-server
 PIPELINE_DNSE_MCP_DIR=../mcp-server-dnse
+
+# Telegram (optional—chưa config)
+PIPELINE_TELEGRAM_BOT_TOKEN=
+PIPELINE_TELEGRAM_CHAT_ID=
+
+# DNSE (optional—cần để thực thi)
+PIPELINE_DNSE_EMAIL=
+PIPELINE_DNSE_ACCOUNT_NO=
+
+# Scoring thresholds
+PIPELINE_ENTER_THRESHOLD=5.0
+PIPELINE_EXIT_THRESHOLD=3.5
+PIPELINE_MAX_DRAWDOWN_PCT=15
+PIPELINE_BLACK_SWAN_THRESHOLD_PCT=5
+PIPELINE_APPROVAL_REQUIRED=true
+PIPELINE_APPROVAL_TIMEOUT_MINUTES=30
 
 # Logging
 PIPELINE_LOG_LEVEL=INFO
 ```
 
-## Cách test FireAnt connection
+## CLI Commands
+
+```bash
+# Chạy daily-close pipeline (OHLC + financials + technicals)
+vn30-pipeline
+
+# Backtest + parameter sensitivity
+vn30-backtest --start 2025-06-01 --end 2026-05-21 --capital 1000000000 --sensitivity
+
+# Generate AI daily report
+vn30-report
+```
+
+## Kiểm tra FireAnt connection
 
 ```python
 import asyncio
@@ -117,10 +161,13 @@ asyncio.run(test())
 ## Các lệnh hữu ích
 
 ```bash
-# Chạy Celery worker (nếu dùng Redis)
+# Chạy Celery worker
 celery -A pipeline.tasks.celery_app worker --loglevel=info
 
-# Chạy manual ingestion cho 1 symbol
+# Chạy Celery Beat
+celery -A pipeline.tasks.celery_app beat --loglevel=info
+
+# Manual ingestion cho 1 symbol
 python3 -c "
 import asyncio
 from pipeline.clients.fireant import FireAntClient
@@ -149,6 +196,33 @@ async def run():
 
 asyncio.run(run())
 "
+```
+
+## Grafana
+
+- Dashboard: **VN30 Pipeline** — portfolio overview, 9 panels
+  - Portfolio Value (time series)
+  - Drawdown %
+  - Score Distribution (table)
+  - VN30 Universe Overview (table)
+  - VN30 Sector Distribution (pie)
+  - VN30 Market Cap by Sector (bar gauge)
+  - Sector Exposure (pie)
+  - Order Logs
+  - Risk Events
+  - Data Ingestion Status
+- Provisioning: auto từ `grafana/dashboards/dashboard.json`
+- Stock Detail dashboard đã xoá (theo yêu cầu)
+
+## Celery Beat Schedule
+
+```
+08:30  daily-open        — Company info update
+15:30  daily-close       — OHLC + financials + technicals
+15:32  daily-tcbs        — TCBS PDF download + balance sheet
+15:35  daily-scoring     — Screener → Score → Signal
+15:40  daily-execution    — Risk → Approval → OTP → Orders
+16:00  daily-monitoring   — Report → Telegram → Risk review
 ```
 
 ## Debug
@@ -181,7 +255,9 @@ INFO:pipeline.features.technical:Inserted 3 technical indicator rows for FPT
 | Vấn đề | Nguyên nhân | Giải pháp |
 |---|---|---|
 | `fetch failed` | FireAnt API không reachable | Kiểm tra network, proxy |
-| `connect ECONNREFUSED` | PostgreSQL không chạy | Start Docker hoặc check Supabase |
+| `connect ECONNREFUSED` | PostgreSQL không chạy | Start Docker |
 | `MCP process not running` | Node.js MCP server lỗi | Rebuild: `npm run build` |
 | `No access_token` | FireAnt API thay đổi | Check auth.ts, update endpoint |
 | `OTP required` | Cần trading token | Gọi `send_email_otp` trước |
+| `relation "xxx" does not exist` | DB chưa migrate | Chạy migration script |
+| `cannot find grafana/dashboards/` | Directory rỗng | Đảm bảo có ít nhất 1 dashboard JSON |

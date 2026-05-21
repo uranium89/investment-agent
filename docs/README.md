@@ -18,14 +18,26 @@ Hệ thống đầu tư tự động cho VN30 sử dụng **FireAnt MCP** (dữ 
 ```
 pipeline/               ← Python data pipeline (MVP đã hoàn thành)
 ├── clients/            ← FireAnt + DNSE MCP clients
-├── ingestors/          ← Data ingestion (OHLC, financials, company)
+├── ingestors/          ← Data ingestion (OHLC, financials, company, TCBS PDF)
 ├── features/           ← Technical + fundamental indicators
-├── tasks/              ← Celery tasks (daily_close, daily_open)
+├── scoring/            ← VMQ30 engine: gates, quality, value, technical, moat, management, macro
+├── portfolio/          ← Constructor, rebalancer, sizing, paper_trading (backtest)
+├── execution/          ← OTP, approval workflow, order management
+├── risk/               ← Drawdown, black swan, sector exposure
+├── monitoring/         ← Telegram alerts, daily report
+├── ai/                 ← News sentiment, signal validation, report generator
+├── tasks/              ← Celery tasks (daily_close, open, tcbs, scoring, execution, monitoring)
 ├── db/                 ← Database models + connection
-└── storage/            ← Parquet export
+├── storage/            ← Parquet export
+└── scripts/            ← CLI: vn30-pipeline, vn30-backtest, vn30-report
 
 mcp-server/             ← FireAnt MCP server (45 tools) [có sẵn]
 mcp-server-dnse/        ← DNSE MCP server (20 tools) [có sẵn]
+
+grafana/                ← Grafana provisioning
+├── dashboard.json      ← Portfolio overview dashboard (9 panels)
+├── provisioning/       ← Datasource + dashboard auto-provisioning
+└── dashboards/         ← Provisioned dashboard files
 ```
 
 ## Công nghệ
@@ -36,6 +48,8 @@ mcp-server-dnse/        ← DNSE MCP server (20 tools) [có sẵn]
 - **Celery** — task scheduling
 - **FireAnt API** — dữ liệu thị trường Việt Nam
 - **DNSE API** — thực thi lệnh
+- **Grafana** — dashboard trực quan (port 3000)
+- **Telegram Bot** — alerting
 
 ## Hội đồng Đầu tư
 

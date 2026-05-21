@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hướng dẫn vận hành Pipeline — VN30 Investment Agent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    VN30 Agent
+  </div>
+  <div class="subtitle">Investment Pipeline Documentation</div>
+
+  <div class="section-label">Tổng quan</div>
+  <a href="index.html">🏠 Giới thiệu</a>
+  <a href="architecture.html">🏗️ Kiến trúc</a>
+
+  <div class="section-label">Hướng dẫn</div>
+  <a href="pipeline-guide.html" class="active">⚙️ Vận hành</a>
+  <a href="mvp-status.html">📊 MVP Status</a>
+
+  <div class="section-label">Chiến lược</div>
+  <a href="strategy.html">📈 VMQ30</a>
+  <a href="risk-management.html">🛡️ Quản trị rủi ro</a>
+
+  <div class="section-label">Lộ trình</div>
+  <a href="roadmap.html">🗺️ Roadmap</a>
+</nav>
+
+<main>
+<h1 id="hướng-dẫn-vận-hành-pipeline">Hướng dẫn vận hành Pipeline</h1>
+<h2 id="yêu-cầu">Yêu cầu</h2>
+<ul>
+<li>Python 3.12+</li>
+<li>Node.js v22+</li>
+<li>PostgreSQL (local Docker)</li>
+<li>Redis (local Docker)</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="setup-môi-trường">1. Setup môi trường</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> investment-agent</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tạo Python venv</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.12</span> <span class="at">-m</span> venv pipeline/.venv</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> pipeline/.venv/bin/activate</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cài dependencies</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> pipeline/</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy env</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> pipeline/.env.example pipeline/.env</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sửa .env với connection strings</span></span></code></pre></div>
+<h3 id="build-mcp-servers">2. Build MCP servers</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> mcp-server <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> install <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> run build<span class="kw">)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> mcp-server-dnse <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> install <span class="kw">&amp;&amp;</span> <span class="ex">npm</span> run build<span class="kw">)</span></span></code></pre></div>
+<h3 id="setup-database">3. Setup database</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pipeline</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose <span class="at">--profile</span> local-db up <span class="at">-d</span></span></code></pre></div>
+<h3 id="run-migrations">4. Run migrations</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pipeline</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">import asyncio</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.db.connection import engine</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">async def run():</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    async with engine.begin() as conn:</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">        await conn.run_sync(__import__(&#39;pipeline.db.models&#39;, fromlist=[&#39;Base&#39;]).Base.metadata.create_all)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">    await engine.dispose()</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">    print(&#39;Schema created&#39;)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">asyncio.run(run())</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+<h3 id="seed-vn30-symbols">5. Seed VN30 symbols</h3>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">import asyncio</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.db.connection import async_session_factory</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.db.models import VN30Symbol</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">async def run():</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">    async with async_session_factory() as session:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">        # Chạy seed script hoặc INSERT manually</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">        print(&#39;DB ready&#39;)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">asyncio.run(run())</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+<h3 id="setup-grafana">6. Setup Grafana</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose <span class="at">--profile</span> grafana up <span class="at">-d</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafana at http://localhost:3000 (admin/admin)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dashboard tự động provision từ grafana/dashboards/</span></span></code></pre></div>
+<h3 id="chạy-manual-pipeline">7. Chạy manual pipeline</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pipeline</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pipeline.tasks.daily_close</span></code></pre></div>
+<h2 id="cấu-trúc-.env">Cấu trúc .env</h2>
+<pre class="env"><code># Database
+PIPELINE_DB_URL=postgresql+asyncpg://vn30:vn30_dev_only@localhost:5432/vn30_pipeline
+PIPELINE_DB_URL_SYNC=postgresql://vn30:vn30_dev_only@localhost:5432/vn30_pipeline
+
+# Redis (cho Celery)
+PIPELINE_REDIS_URL=redis://localhost:6379/0
+
+# MCP servers
+PIPELINE_FIREANT_MCP_DIR=../mcp-server
+PIPELINE_DNSE_MCP_DIR=../mcp-server-dnse
+
+# Telegram (optional—chưa config)
+PIPELINE_TELEGRAM_BOT_TOKEN=
+PIPELINE_TELEGRAM_CHAT_ID=
+
+# DNSE (optional—cần để thực thi)
+PIPELINE_DNSE_EMAIL=
+PIPELINE_DNSE_ACCOUNT_NO=
+
+# Scoring thresholds
+PIPELINE_ENTER_THRESHOLD=5.0
+PIPELINE_EXIT_THRESHOLD=3.5
+PIPELINE_MAX_DRAWDOWN_PCT=15
+PIPELINE_BLACK_SWAN_THRESHOLD_PCT=5
+PIPELINE_APPROVAL_REQUIRED=true
+PIPELINE_APPROVAL_TIMEOUT_MINUTES=30
+
+# Logging
+PIPELINE_LOG_LEVEL=INFO</code></pre>
+<h2 id="cli-commands">CLI Commands</h2>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chạy daily-close pipeline (OHLC + financials + technicals)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">vn30-pipeline</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Backtest + parameter sensitivity</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">vn30-backtest</span> <span class="at">--start</span> 2025-06-01 <span class="at">--end</span> 2026-05-21 <span class="at">--capital</span> 1000000000 <span class="at">--sensitivity</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate AI daily report</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">vn30-report</span></span></code></pre></div>
+<h2 id="kiểm-tra-fireant-connection">Kiểm tra FireAnt connection</h2>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> asyncio</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pipeline.clients.fireant <span class="im">import</span> FireAntClient</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> test():</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">async</span> <span class="cf">with</span> FireAntClient() <span class="im">as</span> client:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        info <span class="op">=</span> <span class="cf">await</span> client.symbol_info(<span class="st">&quot;FPT&quot;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(info[<span class="st">&quot;name&quot;</span>])  <span class="co"># CTCP FPT</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        quotes <span class="op">=</span> <span class="cf">await</span> client.historical_quotes(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;FPT&quot;</span>, <span class="st">&quot;2026-05-01&quot;</span>, <span class="st">&quot;2026-05-20&quot;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Quotes: </span><span class="sc">{</span><span class="bu">len</span>(quotes)<span class="sc">}</span><span class="ss"> days&quot;</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        fund <span class="op">=</span> <span class="cf">await</span> client.fundamental(<span class="st">&quot;FPT&quot;</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;P/E: </span><span class="sc">{</span>fund[<span class="st">&#39;pe&#39;</span>]<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>asyncio.run(test())</span></code></pre></div>
+<h2 id="các-lệnh-hữu-ích">Các lệnh hữu ích</h2>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chạy Celery worker</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">celery</span> <span class="at">-A</span> pipeline.tasks.celery_app worker <span class="at">--loglevel</span><span class="op">=</span>info</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Chạy Celery Beat</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">celery</span> <span class="at">-A</span> pipeline.tasks.celery_app beat <span class="at">--loglevel</span><span class="op">=</span>info</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Manual ingestion cho 1 symbol</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="st">import asyncio</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.clients.fireant import FireAntClient</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.db.connection import async_session_factory</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.ingestors.prices import ingest_ohlc</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="st">async def run():</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="st">    async with FireAntClient() as fireant:</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="st">        async with async_session_factory() as session:</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="st">            await ingest_ohlc(session, fireant, &#39;ACB&#39;, lookback_days=90)</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="st">            await session.commit()</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="st">asyncio.run(run())</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Export parquet cho backtesting</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">&quot;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="st">import asyncio</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.db.connection import async_session_factory</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="st">from pipeline.storage.warehouse import export_ohlc_parquet</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="st">async def run():</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="st">    async with async_session_factory() as session:</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="st">        path = await export_ohlc_parquet(session, &#39;ACB&#39;)</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="st">        print(f&#39;Exported: {path}&#39;)</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="st">asyncio.run(run())</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+<h2 id="grafana">Grafana</h2>
+<ul>
+<li>Dashboard: <strong>VN30 Pipeline</strong> — portfolio overview, 9
+panels
+<ul>
+<li>Portfolio Value (time series)</li>
+<li>Drawdown %</li>
+<li>Score Distribution (table)</li>
+<li>VN30 Universe Overview (table)</li>
+<li>VN30 Sector Distribution (pie)</li>
+<li>VN30 Market Cap by Sector (bar gauge)</li>
+<li>Sector Exposure (pie)</li>
+<li>Order Logs</li>
+<li>Risk Events</li>
+<li>Data Ingestion Status</li>
+</ul></li>
+<li>Provisioning: auto từ
+<code>grafana/dashboards/dashboard.json</code></li>
+<li>Stock Detail dashboard đã xoá (theo yêu cầu)</li>
+</ul>
+<h2 id="celery-beat-schedule">Celery Beat Schedule</h2>
+<pre><code>08:30  daily-open        — Company info update
+15:30  daily-close       — OHLC + financials + technicals
+15:32  daily-tcbs        — TCBS PDF download + balance sheet
+15:35  daily-scoring     — Screener → Score → Signal
+15:40  daily-execution    — Risk → Approval → OTP → Orders
+16:00  daily-monitoring   — Report → Telegram → Risk review</code></pre>
+<h2 id="debug">Debug</h2>
+<h3 id="kiểm-tra-mcp-server">Kiểm tra MCP server</h3>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kiểm tra FireAnt MCP server</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;initialize&quot;,</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">  &quot;params&quot;:{&quot;protocolVersion&quot;:&quot;2024-11-05&quot;,&quot;capabilities&quot;:{},</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">  &quot;clientInfo&quot;:{&quot;name&quot;:&quot;test&quot;,&quot;version&quot;:&quot;1.0&quot;}}}&#39;</span> <span class="dt">\</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">node</span> mcp-server/build/index.js</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kiểm tra DNSE MCP server (cần env vars)</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="va">DNSE_API_KEY</span><span class="op">=</span>xxx <span class="va">DNSE_API_SECRET</span><span class="op">=</span>xxx <span class="dt">\</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">node</span> mcp-server-dnse/build/index.js</span></code></pre></div>
+<h3 id="logs">Logs</h3>
+<p>Pipeline logs ra stdout với format:</p>
+<pre><code>INFO:pipeline.clients.fireant:FireAnt MCP client initialized
+INFO:pipeline.ingestors.prices:Ingested 5 OHLC rows for ACB
+INFO:pipeline.features.technical:Inserted 3 technical indicator rows for FPT</code></pre>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Vấn đề</th>
+<th>Nguyên nhân</th>
+<th>Giải pháp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fetch failed</code></td>
+<td>FireAnt API không reachable</td>
+<td>Kiểm tra network, proxy</td>
+</tr>
+<tr>
+<td><code>connect ECONNREFUSED</code></td>
+<td>PostgreSQL không chạy</td>
+<td>Start Docker</td>
+</tr>
+<tr>
+<td><code>MCP process not running</code></td>
+<td>Node.js MCP server lỗi</td>
+<td>Rebuild: <code>npm run build</code></td>
+</tr>
+<tr>
+<td><code>No access_token</code></td>
+<td>FireAnt API thay đổi</td>
+<td>Check auth.ts, update endpoint</td>
+</tr>
+<tr>
+<td><code>OTP required</code></td>
+<td>Cần trading token</td>
+<td>Gọi <code>send_email_otp</code> trước</td>
+</tr>
+<tr>
+<td><code>relation "xxx" does not exist</code></td>
+<td>DB chưa migrate</td>
+<td>Chạy migration script</td>
+</tr>
+<tr>
+<td><code>cannot find grafana/dashboards/</code></td>
+<td>Directory rỗng</td>
+<td>Đảm bảo có ít nhất 1 dashboard JSON</td>
+</tr>
+</tbody>
+</table>
+<footer>
+  <span>VN30 Investment Agent &mdash; Hội đồng Đầu tư</span>
+  <span>Generated from Markdown &middot; May 2026</span>
+</footer>
+</main>
+
+</body>
+</html>

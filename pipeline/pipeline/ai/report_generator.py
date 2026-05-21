@@ -44,7 +44,7 @@ async def generate_ai_report(
     dd_result = await session.execute(
         text("""
             WITH pv AS (
-                SELECT time::date as d, SUM(coalesce(current_value, 0)) as v
+                SELECT updated_at::date as d, SUM(coalesce(current_value, 0)) as v
                 FROM portfolio_state WHERE status = 'active'
                 GROUP BY d ORDER BY d DESC LIMIT 60
             )

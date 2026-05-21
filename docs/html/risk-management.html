@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị rủi ro — VN30 Investment Agent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    VN30 Agent
+  </div>
+  <div class="subtitle">Investment Pipeline Documentation</div>
+
+  <div class="section-label">Tổng quan</div>
+  <a href="index.html">🏠 Giới thiệu</a>
+  <a href="architecture.html">🏗️ Kiến trúc</a>
+
+  <div class="section-label">Hướng dẫn</div>
+  <a href="pipeline-guide.html">⚙️ Vận hành</a>
+  <a href="mvp-status.html">📊 MVP Status</a>
+
+  <div class="section-label">Chiến lược</div>
+  <a href="strategy.html">📈 VMQ30</a>
+  <a href="risk-management.html" class="active">🛡️ Quản trị rủi ro</a>
+
+  <div class="section-label">Lộ trình</div>
+  <a href="roadmap.html">🗺️ Roadmap</a>
+</nav>
+
+<main>
+<h1 id="quản-trị-rủi-ro">Quản trị rủi ro</h1>
+<p>Được thiết kế bởi Ray Dalio, phản biện bởi Benjamin Graham và Charlie
+Munger.</p>
+<h2 id="nguyên-tắc-cốt-lõi">Nguyên tắc cốt lõi</h2>
+<blockquote>
+<p><strong>Luật số 1:</strong> Không bao giờ default. <strong>Luật số
+2:</strong> Nhớ luật số 1. — Charlie Munger</p>
+</blockquote>
+<h2 id="max-drawdown-control">1. Max Drawdown Control</h2>
+<table>
+<thead>
+<tr>
+<th>Portfolio Drawdown</th>
+<th>Hành động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 10%</td>
+<td>Giảm position về 75%, rà soát toàn bộ danh mục</td>
+</tr>
+<tr>
+<td>&gt; 15%</td>
+<td>Giảm về 50% (tăng cash), chỉ giữ defensive positions</td>
+</tr>
+<tr>
+<td>&gt; 20%</td>
+<td>Đóng toàn bộ, chỉ giữ VNM, VCB (defensive)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="position-limits">2. Position Limits</h2>
+<table>
+<thead>
+<tr>
+<th>Loại limit</th>
+<th>Giới hạn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single position</td>
+<td>Không quá 10% danh mục</td>
+</tr>
+<tr>
+<td>Top 5 positions</td>
+<td>Không quá 40% tổng thể</td>
+</tr>
+<tr>
+<td>Ngành tài chính</td>
+<td>Không quá 40%</td>
+</tr>
+<tr>
+<td>Ngành bất động sản</td>
+<td>Không quá 20%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="liquidity-filter">3. Liquidity Filter</h2>
+<ul>
+<li>Chỉ mua cổ phiếu có ADTV &gt; 30 tỷ/ngày trong 20 phiên</li>
+<li>Không mua quá 10% khối lượng giao dịch trung bình 1 ngày</li>
+<li>Kiểm tra thanh khoản trước mỗi lệnh EXIT</li>
+</ul>
+<h2 id="volatility-targeting">4. Volatility Targeting</h2>
+<ul>
+<li>Target portfolio volatility: 15-20%/năm</li>
+<li>Nếu VN30 index volatility &gt; 30% → giảm 20% position</li>
+<li>Position sizing dùng ATR:</li>
+</ul>
+<pre><code>Position = RiskCapital / (ATR × Multiplier)
+
+Trong đó:
+  RiskCapital = 1% của portfolio mỗi trade
+  Multiplier = 1.5 (cá nhân), 2.0 (defensive)</code></pre>
+<h2 id="black-swan-protocol">5. Black Swan Protocol</h2>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Hành động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VN-Index giảm &gt; 3% trong 1 ngày</td>
+<td>Tự động rà soát toàn bộ danh mục</td>
+</tr>
+<tr>
+<td>VN-Index giảm &gt; 5% trong 1 ngày</td>
+<td>Bán toàn bộ, vào cash</td>
+</tr>
+<tr>
+<td>VN-Index tăng &gt; 3%/ngày + overbought</td>
+<td>Chốt lời 30%</td>
+</tr>
+<tr>
+<td>Có tin tức về khủng hoảng ngân hàng</td>
+<td>Giảm financial exposure về 0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stop-loss-chiến-lược-của-hội-đồng">6. Stop Loss — Chiến lược của
+Hội đồng</h2>
+<p><strong>Tranh luận giữa Graham và Soros:</strong></p>
+<ul>
+<li><strong>Graham:</strong> Stop loss = bán tháo. Nếu đã mua với margin
+of safety, giá xuống là cơ hội mua thêm.</li>
+<li><strong>Soros:</strong> Thị trường Việt Nam có gap risk và
+limit-down. Black swan thật sự.</li>
+</ul>
+<p><strong>Kết luận:</strong> - <strong>Không</strong> stop loss trên
+từng cổ phiếu nếu lý do đầu tư còn - <strong>Có</strong> stop loss ở cấp
+độ danh mục (drawdown control) - <strong>Không</strong> bao giờ dùng
+margin - <strong>Cash</strong> luôn 20-30% — đó là stop loss tốt
+nhất</p>
+<h2 id="kelly-criterion-half-kelly">7. Kelly Criterion (Half-Kelly)</h2>
+<pre><code>f* = (bp - q) / b
+
+Trong đó:
+  b = tỷ lệ lợi nhuận/thua lỗ
+  p = xác suất thắng
+  q = 1 - p = xác suất thua
+
+Half-Kelly: f = f* / 2</code></pre>
+<p>Ví dụ VN30: win rate ~55%, risk/reward ~1.5 - Full Kelly: ~25% -
+Half-Kelly: ~12.5% → dùng cho position sizing</p>
+<h2 id="stress-test-scenarios">8. Stress Test Scenarios</h2>
+<table>
+<thead>
+<tr>
+<th>Kịch bản</th>
+<th>VN-Index</th>
+<th>Portfolio expected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bình thường</td>
+<td>±5%</td>
+<td>±4%</td>
+</tr>
+<tr>
+<td>Correction</td>
+<td>-15%</td>
+<td>-10% (còn 5% cash buffer)</td>
+</tr>
+<tr>
+<td>Bear market</td>
+<td>-30%</td>
+<td>-18% (còn 20% cash)</td>
+</tr>
+<tr>
+<td>Crisis (COVID-style)</td>
+<td>-40%</td>
+<td>-25% (còn 30% cash)</td>
+</tr>
+<tr>
+<td>Black swan</td>
+<td>-50%</td>
+<td>-30% (black swan protocol kích hoạt)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="monitoring-checklist-hàng-ngày">9. Monitoring Checklist Hàng
+Ngày</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Drawdown hiện tại</label></li>
+<li><label><input type="checkbox" />Sector exposure</label></li>
+<li><label><input type="checkbox" />Top 5 position size</label></li>
+<li><label><input type="checkbox" />Cash level</label></li>
+<li><label><input type="checkbox" />VN-Index volatility
+(20-day)</label></li>
+<li><label><input type="checkbox" />Có vi phạm risk limits
+không</label></li>
+<li><label><input type="checkbox" />Số lệnh failed / total</label></li>
+</ul>
+<footer>
+  <span>VN30 Investment Agent &mdash; Hội đồng Đầu tư</span>
+  <span>Generated from Markdown &middot; May 2026</span>
+</footer>
+</main>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 {
+  "uid": "vn30-pipeline",
   "title": "VN30 Pipeline",
   "tags": ["vn30", "pipeline", "investment"],
   "schemaVersion": 38,
@@ -64,9 +65,50 @@
       ]
     },
     {
+      "title": "VN30 Universe Overview",
+      "type": "table",
+      "gridPos": {"h": 10, "w": 24, "x": 0, "y": 24},
+      "targets": [
+        {
+          "rawSql": "SELECT s.symbol, s.icb_name as sector, ROUND(s.market_cap/1e9, 0) as cap_tn, p.close as price, s.listed_date::text FROM vn30_symbols s LEFT JOIN LATERAL (SELECT close FROM ohlc_prices WHERE symbol=s.symbol ORDER BY time DESC LIMIT 1) p ON true ORDER BY s.market_cap DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": {"align": "center"}
+        }
+      }
+    },
+    {
+      "title": "VN30 Sector Distribution",
+      "type": "piechart",
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 34},
+      "targets": [
+        {
+          "rawSql": "SELECT COALESCE(icb_name, 'Unknown') as sector, COUNT(*) as count FROM vn30_symbols WHERE status='active' GROUP BY icb_name ORDER BY count DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
+      "title": "VN30 Market Cap by Sector",
+      "type": "bargauge",
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 34},
+      "targets": [
+        {
+          "rawSql": "SELECT COALESCE(icb_name, 'Unknown') as sector, ROUND(SUM(market_cap)/1e12, 1) as cap_tn FROM vn30_symbols WHERE status='active' GROUP BY icb_name ORDER BY cap_tn DESC",
+          "format": "table",
+          "datasource": "PostgreSQL"
+        }
+      ]
+    },
+    {
       "title": "Data Ingestion Status",
       "type": "table",
-      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 24},
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 34},
       "targets": [
         {
           "rawSql": "SELECT task_name, symbol, status, started_at, completed_at, rows_inserted FROM ingestion_log WHERE started_at > CURRENT_DATE - INTERVAL '7 days' ORDER BY started_at DESC",
