@@ -6,7 +6,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "test-fetch": "node test_fetch.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.9.0",

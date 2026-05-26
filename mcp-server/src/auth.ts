@@ -11,7 +11,12 @@ export async function getToken(): Promise<string> {
 
   const response = await fetch(ANONYMOUS_LOGIN_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Referer": "https://fireant.vn/",
+      "Origin": "https://fireant.vn"
+    },
     body: "{}",
   });
   if (!response.ok) {
