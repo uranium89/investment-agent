@@ -81,6 +81,14 @@ Sử dụng khi cần đánh giá nhanh (O = Đạt, X = Không đạt, ? = Cầ
 - [ ] Không có rủi ro vỡ nợ ngắn hạn
 - [ ] Không có nguy cơ disruptive từ đối thủ
 
+### Cross-Check (Feedback Loop learnings):
+
+- [ ] Giá mục tiêu không cao hơn consensus analysts >20%
+- [ ] DCF có sensitivity matrix (growth × discount rate 5×5)
+- [ ] Đã kiểm tra tin tức, sự kiện 30 ngày gần nhất
+- [ ] Chỉ số DuPont được cross-check giữa các báo cáo cùng ngành
+- [ ] Rủi ro chính sách/tín dụng đặc thù đã được phân tích kỹ
+
 ---
 
 ## QUY TRÌNH PHÂN TÍCH ĐẦY ĐỦ (FULL ANALYSIS)

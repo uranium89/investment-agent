@@ -231,6 +231,8 @@ fireant_icb_statistics(icbCode)          ← BẮT BUỘC (cho phân tích ngàn
 fireant_screener(...)                    ← Để lấy đối thủ so sánh
 fireant_news_feed(symbol, limit=20)      ← BẮT BUỘC (Lấy tin tức/sentiment gần nhất)
 fireant_expert_ideas(symbol)             ← BẮT BUỘC (Lấy nhận định chuyên gia)
+fireant_estimated_price(symbol)          ← BẮT BUỘC (Lấy consensus analysts để cross-check giá mục tiêu)
+fireant_historical_quotes(symbol, ...)   ← BẮT BUỘC (Lấy P/E, P/B 5 năm để so sánh lịch sử định giá)
 ```
 
 **BƯỚC 3 — VIẾT BÁO CÁO THEO ĐÚNG FORMAT fund_report_format.md:**
@@ -241,6 +243,7 @@ Báo cáo PHẢI có ĐẦY ĐỦ 9 sections theo đúng thứ tự. KHÔNG đư
 Section 1: MÔ HÌNH KINH DOANH
   → Business Model Canvas đầy đủ 9 ô
   → Bảng cơ cấu doanh thu theo mảng (tỷ lệ %)
+  → Macro context box: lãi suất, tỷ giá, GDP, lạm phát đầu mỗi báo cáo
   → Nhận xét recurring vs one-time, chu kỳ kinh doanh
 
 Section 2: PHÂN TÍCH NGÀNH
@@ -248,6 +251,7 @@ Section 2: PHÂN TÍCH NGÀNH
   → Bảng Porter's 5 Forces (5 lực lượng, đánh giá Cao/TB/Thấp)
   → Bảng xu hướng ngành 5-10 năm
   → Bảng so sánh thị phần với 3-4 đối thủ chính
+  → Competitor moves: đối thủ chính đang làm gì (mở rộng, M&A, giảm giá...)
 
 Section 3: MOAT
   → Bảng 6 loại moat (đánh dấu loại nào có, điểm /10, bằng chứng)
@@ -264,13 +268,17 @@ Section 5: TÀI CHÍNH 5 NĂM
   → Bảng dòng tiền 5 năm (CFO, Capex, FCF, FCF/LNST%)
   → Bảng chỉ số sinh lời (ROE, ROIC, ROA, so ngành)
   → Phân tích DuPont: ROE = Net Margin × Asset Turnover × Leverage (số thực)
+  → Ngân hàng: NIM stress-test ở các kịch bản lãi suất ±1%, ±2%
 
 Section 6: ĐỊNH GIÁ ĐA PHƯƠNG PHÁP
   → Bảng so sánh tương đối (P/E, P/B, P/FCF, EV/EBITDA, PEG vs ngành)
   → DCF 3 kịch bản (tích cực 20% / cơ sở 60% / tiêu cực 20%)
+  → Sensitivity Matrix DCF (ma trận growth × discount rate 5×5)
+  → Bảng cross-check giá mục tiêu với consensus analysts (chênh >20% phải giải thích)
   → Bảng tổng hợp giá mục tiêu (3 phương pháp với trọng số)
 
 Section 7: PHÂN TÍCH RỦI RO
+  → Bảng kiểm tra tin tức/sự kiện 30 ngày gần nhất (phát hiện catalyst/rủi ro mới)
   → Bảng Risk Matrix (≥5 rủi ro, Xác suất × Tác động × Mức độ)
   → Munger Inversion: ≥3 kịch bản "Điều gì sẽ giết chết khoản đầu tư này?"
   → Bảng Catalyst tích cực + Trigger bán
@@ -300,6 +308,9 @@ buffett_save_report(
 - ❌ **KHÔNG được bỏ qua Section nào** trong 9 sections
 - ❌ **KHÔNG được bỏ qua DuPont decomposition** — phải tính với số thực
 - ❌ **KHÔNG được bỏ qua DCF 3 kịch bản** — phải có giả định rõ ràng
+- ❌ **KHÔNG được bỏ qua DCF Sensitivity Matrix** — ma trận 5×5 growth × discount rate
+- ❌ **KHÔNG được bỏ qua cross-check giá mục tiêu với consensus analysts** — chênh >20% phải giải thích
+- ❌ **KHÔNG được bỏ qua kiểm tra tin tức 30 ngày gần nhất** — Section 7, phát hiện catalyst/rủi ro mới
 - ❌ **KHÔNG được bỏ qua Munger Inversion** — phải thực sự đảo ngược, ≥3 kịch bản
 - ❌ **KHÔNG được bỏ qua buffett_save_report** sau khi hoàn thành phân tích
 
@@ -458,10 +469,10 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 [P&L + BCTKT + Dòng tiền + Sinh lời + DuPont]
 
 ## SECTION 6: ĐỊNH GIÁ ĐA PHƯƠNG PHÁP
-[So sánh tương đối + DCF 3 kịch bản + Tổng hợp giá mục tiêu]
+[So sánh tương đối + DCF 3 kịch bản + Sensitivity Matrix + Tổng hợp giá mục tiêu + Cross-check consensus]
 
 ## SECTION 7: PHÂN TÍCH RỦI RO
-[Risk Matrix + Munger Inversion + Catalyst]
+[News 30-day check + Risk Matrix + Munger Inversion + Catalyst]
 
 ## SECTION 8: PHIÊN HỌP HỘI ĐỒNG
 [Buffett → Munger → Biểu quyết → Scorecard 56 điểm → Kết luận]
@@ -473,4 +484,4 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 ---
 
 _Knowledge base được xây dựng dựa trên triết lý đầu tư của Warren Buffett và được bản địa hóa cho thị trường chứng khoán Việt Nam._
-_Cập nhật lần cuối: 2026-05-28_
+_Cập nhật lần cuối: 2026-05-28 (applied lessons from Feedback Loops #1-#3)_
