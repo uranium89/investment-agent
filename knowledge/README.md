@@ -10,6 +10,8 @@ Mỗi nhà đầu tư có thư mục riêng và MCP server riêng, cho phép AI 
 | **Warren Buffett** | `buffett/` | `mcp-server-buffett` | Value investing, Moat, Margin of safety |
 | **Charlie Munger** | `munger/` | `mcp-server-munger` | Mental models, Inversion, Multidisciplinary thinking |
 
+> **Kho dữ liệu ngành:** `industries/` + `mcp-server-industry` — Kiến thức chuyên ngành khách quan (sữa, thép, ngân hàng...) để Hội Đồng hiểu ngành như chuyên gia trước khi phân tích.
+
 > **Thêm cố vấn mới**: Tạo thư mục `<tên>/` + copy pattern MCP server → tự động hoạt động.
 
 ---
@@ -31,13 +33,26 @@ knowledge/
 │   ├── 07_sector_analysis/      ← Phân tích ngành
 │   └── 08_decision_framework/   ← Checklist & quyết định
 │
-└── munger/                      ← Charlie Munger
-    ├── README.md
-    ├── 01_philosophy/           ← Triết lý đa ngành
-    ├── 02_mental_models/        ← 100+ mô hình tư duy
-    ├── 03_investing_principles/ ← Nguyên tắc đầu tư
-    ├── 04_decision_making/      ← Ra quyết định & checklist
-    └── 05_quotes_wisdom/        ← Câu nói & bài học
+├── munger/                      ← Charlie Munger
+│   ├── README.md
+│   ├── 01_philosophy/           ← Triết lý đa ngành
+│   ├── 02_mental_models/        ← 100+ mô hình tư duy
+│   ├── 03_investing_principles/ ← Nguyên tắc đầu tư
+│   ├── 04_decision_making/      ← Ra quyết định & checklist
+│   └── 05_quotes_wisdom/        ← Câu nói & bài học
+│
+├── industries/                  ← ✨ MỚI: Kho kiến thức ngành chuyên sâu
+│   ├── README.md                ← Index tất cả ngành
+│   ├── dairy/                   ← Ngành sữa (VNM, IDP, QNS)
+│   │   ├── overview.md          ← Tổng quan, quy mô, phân khúc, xu hướng
+│   │   ├── production_process.md ← Chuỗi giá trị, kỹ thuật UHT/Pasteurization/Yaourt
+│   │   ├── economics.md         ← Unit economics, margin benchmark, CAPEX
+│   │   ├── competitive_landscape.md ← Porter's 5 Forces, cấu trúc ngành
+│   │   └── regulatory.md        ← TCVN, Codex, HACCP, quy định nhập khẩu
+│   └── [banking/, steel/, retail/, ...]
+│
+└── reports/                     ← Second Brain báo cáo
+    └── {SYMBOL}/{YYYY-MM-DD}.md
 ```
 
 ---

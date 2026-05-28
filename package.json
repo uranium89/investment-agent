@@ -8,7 +8,8 @@
     "mcp-server",
     "mcp-server-dnse",
     "mcp-server-buffett",
-    "mcp-server-munger"
+    "mcp-server-munger",
+    "mcp-server-industry"
   ],
   "scripts": {
     "install:all": "npm install",

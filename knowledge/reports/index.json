@@ -14,5 +14,23 @@
       "state-owned"
     ],
     "file": "VNM/2026-05-28.md"
+  },
+  {
+    "symbol": "VIC",
+    "company": "Tập đoàn Vingroup",
+    "date": "2026-05-28",
+    "price": 214200,
+    "verdict": "THEO_DOI",
+    "score": 30,
+    "sector": "realestate",
+    "tags": [
+      "conglomerate",
+      "vinfast",
+      "high-leverage",
+      "founder-led",
+      "vingroup",
+      "real-estate"
+    ],
+    "file": "VIC/2026-05-28.md"
   }
 ]
