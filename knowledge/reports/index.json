@@ -32,5 +32,20 @@
       "real-estate"
     ],
     "file": "VIC/2026-05-28.md"
+  },
+  {
+    "symbol": "MBB",
+    "company": "Ngân hàng TMCP Quân Đội",
+    "date": "2026-05-28",
+    "price": 25050,
+    "verdict": "MUA",
+    "score": 40,
+    "sector": "banking",
+    "tags": [
+      "state-owned",
+      "Moody's-Ba2",
+      "digital-banking"
+    ],
+    "file": "MBB/2026-05-28.md"
   }
 ]
