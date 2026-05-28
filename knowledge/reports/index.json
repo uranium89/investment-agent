@@ -47,5 +47,21 @@
       "digital-banking"
     ],
     "file": "MBB/2026-05-28.md"
+  },
+  {
+    "symbol": "TCB",
+    "company": "Techcombank",
+    "date": "2026-05-28",
+    "price": 32600,
+    "verdict": "MUA",
+    "score": 41,
+    "sector": "banking",
+    "tags": [
+      "techcombank",
+      "banking",
+      "CASA",
+      "CIR"
+    ],
+    "file": "TCB/2026-05-28.md"
   }
 ]
