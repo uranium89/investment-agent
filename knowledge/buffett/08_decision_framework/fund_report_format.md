@@ -1,7 +1,11 @@
 # 📋 Template Báo Cáo Phân Tích Chuẩn Quỹ Đầu Tư
 
-> Đây là template mở rộng, được dùng SAU phiên họp Hội Đồng (council_debate_format.md).
-> Phiên họp Hội Đồng vẫn được thực hiện đầy đủ — template này là Appendix chi tiết.
+> **🔴 CHÚ Ý CHO AI:** Đây là TEMPLATE để ĐIỀN SỐ LIỆU THỰC. KHÔNG được copy nguyên template rồi để trống.
+> Mọi ô `[...]` phải được thay bằng số liệu thực từ Fireant/DNSE.
+> Mọi bảng phải được điền đầy đủ. Không được viết "N/A" hay bỏ trống nếu còn cách lấy dữ liệu.
+
+> Template này được dùng SONG SONG với council_debate_format.md, không thay thế.
+> Section 8 của báo cáo = toàn bộ nội dung phiên họp Hội Đồng (council_debate_format.md).
 
 ---
 
