@@ -67,15 +67,22 @@ jobs:
           # Chạy trực tiếp Opencode CLI với file prompt template và chỉ định mcp.json
           opencode run "hãy thực hiện task này @[agent/templates/feedback-loop.md]" -c mcp.json
 
+      - name: Apply Lessons to System Prompts
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DNSE_API_KEY: ${{ secrets.DNSE_API_KEY }}
+        run: |
+          opencode run "hãy thực hiện task này @[agent/templates/apply-lessons.md]" -c mcp.json
+
       - name: Commit and push Lessons Learned
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
           # Thêm các file thay đổi (chủ yếu là lessons_learned.md hoặc các file update)
-          git add knowledge/
+          git add knowledge/ CLAUDE.md agent/templates/
           
           # Commit nếu có thay đổi, bỏ qua nếu không
-          git commit -m "🤖 AI Tự học: Cập nhật bài học (Feedback Loop) từ diễn biến thị trường" || echo "Không có cập nhật bài học mới"
+          git commit -m "🤖 AI Tự học: Cập nhật bài học (Feedback Loop) và System Prompts" || echo "Không có cập nhật bài học mới"
           
           git push
