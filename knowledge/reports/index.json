@@ -80,5 +80,22 @@
       "dau-nganh"
     ],
     "file": "BMP/2026-05-28.md"
+  },
+  {
+    "symbol": "ACB",
+    "company": "Ngân hàng TMCP Á Châu",
+    "date": "2026-05-28",
+    "price": 24650,
+    "verdict": "MUA",
+    "score": 43,
+    "sector": "banking",
+    "tags": [
+      "retail banking",
+      "CASA",
+      "KKR",
+      "foreign ownership",
+      "dividend"
+    ],
+    "file": "ACB/2026-05-28.md"
   }
 ]
