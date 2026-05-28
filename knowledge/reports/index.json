@@ -63,5 +63,22 @@
       "FMCG"
     ],
     "file": "VNM/2026-05-28.md"
+  },
+  {
+    "symbol": "BMP",
+    "company": "CTCP Nhựa Bình Minh (Binh Minh Plastic)",
+    "date": "2026-05-28",
+    "price": 138300,
+    "verdict": "MUA",
+    "score": 42,
+    "sector": "plastic_pipes",
+    "tags": [
+      "SCG-hau-thuan",
+      "ca-co-tuc",
+      "moat-manh",
+      "it-no-vay",
+      "dau-nganh"
+    ],
+    "file": "BMP/2026-05-28.md"
   }
 ]
