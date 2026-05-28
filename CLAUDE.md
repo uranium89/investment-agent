@@ -285,7 +285,7 @@ Section 7: PHÂN TÍCH RỦI RO
 
 Section 8: PHIÊN HỌP HỘI ĐỒNG
   → Theo ĐÚNG format council_debate_format.md
-  → Buffett nhận xét → Munger inversion → Biểu quyết → Scorecard 56 điểm → Kết luận
+  → Buffett nhận xét → Munger inversion → Biểu quyết → Scorecard 64 điểm → Kết luận
 
 Section 9: KHUYẾN NGHỊ & KẾ HOẠCH
   → Box phán quyết (verdict + điểm + biên an toàn)
@@ -307,6 +307,7 @@ buffett_save_report(
 - ❌ **KHÔNG được viết "[Điền vào]"** hay placeholder — phải điền số liệu thực
 - ❌ **KHÔNG được bỏ qua Section nào** trong 9 sections
 - ❌ **KHÔNG được bỏ qua DuPont decomposition** — phải tính với số thực
+- ❌ **KHÔNG được bỏ qua Section 5.6 Tăng Trưởng FCF** — phải tính FCF CAGR 5 năm và đánh giá trajectory
 - ❌ **KHÔNG được bỏ qua DCF 3 kịch bản** — phải có giả định rõ ràng
 - ❌ **KHÔNG được bỏ qua DCF Sensitivity Matrix** — ma trận 5×5 growth × discount rate
 - ❌ **KHÔNG được bỏ qua cross-check giá mục tiêu với consensus analysts** — chênh >20% phải giải thích
@@ -383,6 +384,7 @@ Ví dụ: "Review lại danh mục hiện tại"
 | --------------- | -------- | --------- | ----- |
 | ROE             | >20%     | 15-20%    | <15%  |
 | FCF/Net Income  | >80%     | 60-80%    | <60%  |
+| FCF Growth (5Y) | >15%     | 10-15%    | <5%   |
 | D/E (ngoài NH)  | <0.5     | 0.5-1.5   | >2.0  |
 | EPS Growth (5Y) | >15%/năm | 10-15%    | <5%   |
 | PEG Ratio       | <1.0     | 1.0-1.5   | >2.0  |
@@ -392,6 +394,13 @@ Ví dụ: "Review lại danh mục hiện tại"
 | NIM | >4% | 3-4% | <2.5% |
 | NPL | <1% | 1-2% | >3% |
 | CASA | >35% | 20-35% | <15% |
+
+**Phán quyết:**
+
+🟢 **MUA MẠNH** (≥57/64 + MoS ≥25%) |
+🟡 **MUA** (48-56/64 + MoS ≥15%) |
+🟠 **THEO DÕI** (38-47/64) |
+🔴 **TRÁNH** (<38/64 hoặc có red flag nghiêm trọng)
 
 ---
 
@@ -448,7 +457,7 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 ║               [MÃ CK] — [Tên Công Ty]                       ║
 ╚══════════════════════════════════════════════════════════════╝
 📅 Ngày: [NGÀY] | 💰 Giá: [GIÁ] VNĐ | 📊 Vốn hóa: [VH] tỷ
-🎯 Phán quyết: [VERDICT] | 💎 Điểm: [X]/56 | 🛡️ MoS: [Y]%
+🎯 Phán quyết: [VERDICT] | 💎 Điểm: [X]/64 | 🛡️ MoS: [Y]%
 
 ## TÓM TẮT ĐẦU TƯ (Executive Summary)
 [Luận điểm cốt lõi + 3 lý do chính + 2 rủi ro lớn nhất]
@@ -466,7 +475,7 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 [Scorecard /16 + Cổ đông + Governance flags]
 
 ## SECTION 5: PHÂN TÍCH TÀI CHÍNH 5 NĂM
-[P&L + BCTKT + Dòng tiền + Sinh lời + DuPont]
+[P&L + BCTKT + Dòng tiền + Sinh lời + DuPont + **Tăng trưởng FCF & Earnings Power Trajectory**]
 
 ## SECTION 6: ĐỊNH GIÁ ĐA PHƯƠNG PHÁP
 [So sánh tương đối + DCF 3 kịch bản + Sensitivity Matrix + Tổng hợp giá mục tiêu + Cross-check consensus]
@@ -475,7 +484,7 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 [News 30-day check + Risk Matrix + Munger Inversion + Catalyst]
 
 ## SECTION 8: PHIÊN HỌP HỘI ĐỒNG
-[Buffett → Munger → Biểu quyết → Scorecard 56 điểm → Kết luận]
+[Buffett → Munger → Biểu quyết → Scorecard 64 điểm → Kết luận]
 
 ## SECTION 9: KHUYẾN NGHỊ & KẾ HOẠCH HÀNH ĐỘNG
 [Phán quyết + Giá mua + Tỷ trọng + Điều kiện review]
@@ -484,4 +493,4 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 ---
 
 _Knowledge base được xây dựng dựa trên triết lý đầu tư của Warren Buffett và được bản địa hóa cho thị trường chứng khoán Việt Nam._
-_Cập nhật lần cuối: 2026-05-28 (applied lessons from Feedback Loops #1-#3)_
+_Cập nhật lần cuối: 2026-05-28 (Scorecard nâng lên /64, thêm FCF Growth & Earnings Power Trajectory)_

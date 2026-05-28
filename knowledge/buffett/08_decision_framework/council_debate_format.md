@@ -80,7 +80,15 @@ Mỗi thành viên đưa ra quan điểm từ góc nhìn riêng của mình, sau
 | Ban lãnh đạo | /16 | |
 | Tài chính | /10 | |
 | Định giá | /10 | |
-| **TỔNG** | **/56** | |
+| **Tăng Trưởng & Earnings Power** | **/8** | FCF CAGR 5Y + Trajectory |
+| **TỔNG** | **/64** | |
+
+**Chi tiết nhóm Tăng Trưởng & Earnings Power (/8):**
+
+| Tiêu chí | Điểm | Thang đo |
+|----------|------|----------|
+| FCF Growth CAGR 5 năm | /4 | <0%=0 \| 0-5%=1 \| 5-15%=2 \| 15-25%=3 \| >25%=4 |
+| Earnings Power Trajectory | /4 | Âm/giảm=0 \| Ổn định thấp=1 \| Tăng đều=2 \| Tăng mạnh+conversion cao=3 \| Tăng mạnh+quy mô lớn+conversion>80%=4 |
 
 ### Tài Chính Cốt Lõi (5 năm)
 
@@ -118,10 +126,10 @@ Mỗi thành viên đưa ra quan điểm từ góc nhìn riêng của mình, sau
 
 **📋 PHÁN QUYẾT CHÍNH THỨC:**
 
-🟢 **MUA MẠNH** (≥50/56 + MoS ≥25%) |
-🟡 **MUA** (42-49/56 + MoS ≥15%) |
-🟠 **THEO DÕI** (34-41/56) |
-🔴 **TRÁNH** (<34/56 hoặc có red flag nghiêm trọng)
+🟢 **MUA MẠNH** (≥57/64 + MoS ≥25%) |
+🟡 **MUA** (48-56/64 + MoS ≥15%) |
+🟠 **THEO DÕI** (38-47/64) |
+🔴 **TRÁNH** (<38/64 hoặc có red flag nghiêm trọng)
 
 → **[PHÁN QUYẾT]: [Lý do 1-2 câu súc tích]**
 
