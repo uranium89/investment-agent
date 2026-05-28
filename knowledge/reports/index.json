@@ -18,53 +18,6 @@
     "file": "VIC/2026-05-28.md"
   },
   {
-    "symbol": "MBB",
-    "company": "Ngân hàng TMCP Quân Đội",
-    "date": "2026-05-28",
-    "price": 25050,
-    "verdict": "MUA",
-    "score": 40,
-    "sector": "banking",
-    "tags": [
-      "state-owned",
-      "Moody's-Ba2",
-      "digital-banking"
-    ],
-    "file": "MBB/2026-05-28.md"
-  },
-  {
-    "symbol": "TCB",
-    "company": "Techcombank",
-    "date": "2026-05-28",
-    "price": 32600,
-    "verdict": "MUA",
-    "score": 41,
-    "sector": "banking",
-    "tags": [
-      "techcombank",
-      "banking",
-      "CASA",
-      "CIR"
-    ],
-    "file": "TCB/2026-05-28.md"
-  },
-  {
-    "symbol": "VNM",
-    "company": "CTCP Sữa Việt Nam (Vinamilk)",
-    "date": "2026-05-28",
-    "price": 59000,
-    "verdict": "MUA",
-    "score": 44,
-    "sector": "dairy",
-    "tags": [
-      "dividend",
-      "bluechip",
-      "state-owned",
-      "FMCG"
-    ],
-    "file": "VNM/2026-05-28.md"
-  },
-  {
     "symbol": "BMP",
     "company": "CTCP Nhựa Bình Minh (Binh Minh Plastic)",
     "date": "2026-05-28",
@@ -80,40 +33,6 @@
       "dau-nganh"
     ],
     "file": "BMP/2026-05-28.md"
-  },
-  {
-    "symbol": "ACB",
-    "company": "Ngân hàng TMCP Á Châu",
-    "date": "2026-05-28",
-    "price": 24650,
-    "verdict": "MUA",
-    "score": 43,
-    "sector": "banking",
-    "tags": [
-      "retail banking",
-      "CASA",
-      "KKR",
-      "foreign ownership",
-      "dividend"
-    ],
-    "file": "ACB/2026-05-28.md"
-  },
-  {
-    "symbol": "FPT",
-    "company": "CTCP FPT",
-    "date": "2026-05-28",
-    "price": 71200,
-    "verdict": "MUA",
-    "score": 42,
-    "sector": "technology",
-    "tags": [
-      "IT-services",
-      "digital-transformation",
-      "AI",
-      "education",
-      "telecommunications"
-    ],
-    "file": "FPT/2026-05-28.md"
   },
   {
     "symbol": "PNJ",
@@ -137,17 +56,100 @@
     "symbol": "DVP",
     "company": "CTCP Đầu tư và Phát triển Cảng Đình Vũ",
     "date": "2026-05-28",
-    "price": 75900,
+    "price": 75800,
     "verdict": "MUA",
-    "score": 42,
+    "score": 49,
     "sector": "marine_port",
     "tags": [
-      "cang-bien",
-      "co-tuc-cao",
-      "hai-phong",
-      "von-hoa-nho",
-      "thanh-khoan-thap"
+      "port",
+      "state-owned",
+      "dividend",
+      "haiphong",
+      "low-debt"
     ],
     "file": "DVP/2026-05-28.md"
+  },
+  {
+    "symbol": "VNM",
+    "company": "CTCP Sữa Việt Nam (Vinamilk)",
+    "date": "2026-05-28",
+    "price": 59000,
+    "verdict": "MUA",
+    "score": 44,
+    "sector": "dairy",
+    "tags": [
+      "dividend",
+      "bluechip",
+      "state-owned",
+      "FMCG"
+    ],
+    "file": "VNM/2026-05-28.md"
+  },
+  {
+    "symbol": "MBB",
+    "company": "Ngân hàng TMCP Quân Đội (MB Bank)",
+    "date": "2026-05-28",
+    "price": 25000,
+    "verdict": "MUA",
+    "score": 51,
+    "sector": "banking",
+    "tags": [
+      "CASA",
+      "CIR-thap",
+      "P/E-thap",
+      "state-owned",
+      "Viettel"
+    ],
+    "file": "MBB/2026-05-28.md"
+  },
+  {
+    "symbol": "ACB",
+    "company": "Ngân hàng TMCP Á Châu",
+    "date": "2026-05-28",
+    "price": 24650,
+    "verdict": "MUA",
+    "score": 49,
+    "sector": "banking",
+    "tags": [
+      "ngan-hang",
+      "banking",
+      "state-owned",
+      "dividend"
+    ],
+    "file": "ACB/2026-05-28.md"
+  },
+  {
+    "symbol": "TCB",
+    "company": "Ngân hàng TMCP Kỹ thương Việt Nam (Techcombank)",
+    "date": "2026-05-28",
+    "price": 32600,
+    "verdict": "MUA",
+    "score": 53,
+    "sector": "banking",
+    "tags": [
+      "private-bank",
+      "digital-banking",
+      "CASA",
+      "tech-led",
+      "masan-linked"
+    ],
+    "file": "TCB/2026-05-28.md"
+  },
+  {
+    "symbol": "FPT",
+    "company": "Công ty Cổ phần FPT (FPT Corporation)",
+    "date": "2026-05-28",
+    "price": 71200,
+    "verdict": "MUA",
+    "score": 52,
+    "sector": "technology",
+    "tags": [
+      "AI",
+      "outsourcing",
+      "telecom",
+      "founder-led",
+      "semiconductor"
+    ],
+    "file": "FPT/2026-05-28.md"
   }
 ]
