@@ -1,13 +1,13 @@
-name: AI Agent Feedback Loop
+name: AI Daily Industry Learning
 
 on:
   schedule:
-    # Chạy tự động vào 00:00 UTC (khoảng 7:00 sáng giờ VN) thứ Hai hàng tuần
-    - cron: '0 0 * * 1'
-  workflow_dispatch: # Cho phép bạn bấm nút chạy thủ công trên GitHub UI
+    # Chạy tự động vào 00:00 UTC (khoảng 7:00 sáng giờ VN) mỗi ngày
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Cho phép chạy thủ công trên GitHub UI
 
 jobs:
-  review-and-learn:
+  daily-learning:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Cấp quyền cho GitHub Actions có thể commit và push code
@@ -29,7 +29,7 @@ jobs:
       - name: Build MCP Servers
         run: npm run build
 
-      - name: Run Opencode CLI for Feedback Loop
+      - name: Run Opencode CLI for Daily Learning
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           DNSE_API_KEY: ${{ secrets.DNSE_API_KEY }}
@@ -37,24 +37,17 @@ jobs:
           npm install -g opencode-ai
           
           # Chạy trực tiếp Opencode CLI với file prompt template và chỉ định mcp.json
-          opencode run "hãy thực hiện task này @[agent/templates/feedback-loop.md]" -c mcp.json
+          opencode run "hãy thực hiện task này @[agent/templates/daily-industry-learning.md]" -c mcp.json
 
-      - name: Apply Lessons to System Prompts
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          DNSE_API_KEY: ${{ secrets.DNSE_API_KEY }}
-        run: |
-          opencode run "hãy thực hiện task này @[agent/templates/apply-lessons.md]" -c mcp.json
-
-      - name: Commit and push Lessons Learned
+      - name: Commit and push Knowledge Base updates
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Thêm các file thay đổi (chủ yếu là lessons_learned.md hoặc các file update)
-          git add knowledge/ CLAUDE.md agent/templates/
+          # Thêm các file thay đổi trong thư mục knowledge/industries
+          git add knowledge/industries/
           
           # Commit nếu có thay đổi, bỏ qua nếu không
-          git commit -m "🤖 AI Tự học: Cập nhật bài học (Feedback Loop) và System Prompts" || echo "Không có cập nhật bài học mới"
+          git commit -m "🤖 AI Tự học: Cập nhật kiến thức ngành hàng ngày" || echo "Không có cập nhật kiến thức mới hôm nay"
           
           git push

@@ -1,21 +1,5 @@
 [
   {
-    "symbol": "VNM",
-    "company": "CTCP Sữa Việt Nam",
-    "date": "2026-05-28",
-    "price": 59400,
-    "verdict": "MUA",
-    "score": 40,
-    "sector": "food",
-    "tags": [
-      "dairy",
-      "consumer-staples",
-      "dividend",
-      "state-owned"
-    ],
-    "file": "VNM/2026-05-28.md"
-  },
-  {
     "symbol": "VIC",
     "company": "Tập đoàn Vingroup",
     "date": "2026-05-28",
@@ -63,5 +47,21 @@
       "CIR"
     ],
     "file": "TCB/2026-05-28.md"
+  },
+  {
+    "symbol": "VNM",
+    "company": "CTCP Sữa Việt Nam (Vinamilk)",
+    "date": "2026-05-28",
+    "price": 59000,
+    "verdict": "MUA",
+    "score": 44,
+    "sector": "dairy",
+    "tags": [
+      "dividend",
+      "bluechip",
+      "state-owned",
+      "FMCG"
+    ],
+    "file": "VNM/2026-05-28.md"
   }
 ]
