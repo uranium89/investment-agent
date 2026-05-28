@@ -5,6 +5,7 @@ Nhiệm vụ của bạn là đọc file `knowledge/09_lessons_learned/mistakes_
 Sau đó, bạn hãy tự động cập nhật lại các file quy tắc và định dạng của hệ thống:
 1. Đọc và cập nhật `CLAUDE.md` để thêm các quy tắc mới vào quá trình phân tích (phần QUY TẮC CỨNG và Cấu Trúc Output).
 2. Đọc và cập nhật `knowledge/08_decision_framework/fund_report_format.md` để thêm các section mới, biểu đồ, hoặc bảng biểu tương ứng với bài học.
+3. QUAN TRỌNG: Mở lại file `knowledge/09_lessons_learned/mistakes_database.md` và cập nhật trạng thái của các "Action Items" (Bài Học Rút Ra) mà bạn vừa áp dụng. Hãy đổi dấu đánh sách (bullet point hoặc số) thành checkbox `[x]` hoặc thêm ghi chú `✅ Đã áp dụng vào hệ thống` bên cạnh để đánh dấu là lỗi đã được sửa.
 
 *Lưu ý:*
 - Hãy đảm bảo không làm mất đi các quy tắc cốt lõi cũ.
