@@ -4,6 +4,7 @@ import { DNSEOpenAPIClient } from "./client.js";
 import { getAuthConfig } from "./auth.js";
 import { getMarketDataTools } from "./tools/marketdata.js";
 import { getAccountTools } from "./tools/account.js";
+import { safeHandler } from "./tools/types.js";
 
 function main() {
   const config = getAuthConfig();
@@ -14,16 +15,17 @@ function main() {
     { capabilities: { tools: {} } },
   );
 
-  const tools = [
-    ...getMarketDataTools(client),
-    ...getAccountTools(client),
-  ];
+  const tools = [...getMarketDataTools(client), ...getAccountTools(client)];
 
   for (const tool of tools) {
-    server.registerTool(tool.name, {
-      description: tool.description,
-      inputSchema: tool.inputSchema,
-    }, tool.handler as any);
+    server.registerTool(
+      tool.name,
+      {
+        description: tool.description,
+        inputSchema: tool.inputSchema,
+      },
+      safeHandler(tool.handler) as any,
+    );
   }
 
   const transport = new StdioServerTransport();

@@ -1,9 +1,12 @@
 import { z } from "zod";
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { join, resolve } from "path";
-// Resolve the knowledge base directory relative to the built JS file
-// mcp-server/build/tools/knowledge.js → ../../knowledge (project root/knowledge)
-const KNOWLEDGE_DIR = resolve(import.meta.dirname ?? __dirname, "../../../knowledge");
+// Resolve the knowledge base directory.
+// Priority: KNOWLEDGE_DIR env var → relative path from built JS file
+// (mcp-server/build/tools/knowledge.js → ../../../knowledge = project root/knowledge)
+const KNOWLEDGE_DIR = process.env.KNOWLEDGE_DIR
+    ? resolve(process.env.KNOWLEDGE_DIR)
+    : resolve(import.meta.dirname ?? __dirname, "../../../knowledge");
 function readKnowledgeFile(relativePath) {
     const fullPath = join(KNOWLEDGE_DIR, relativePath);
     if (!existsSync(fullPath)) {

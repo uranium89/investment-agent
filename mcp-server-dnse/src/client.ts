@@ -14,11 +14,7 @@ export class DNSEOpenAPIClient {
     body?: unknown,
     extraHeaders?: Record<string, string>,
   ): Promise<{ status: number; body: T }> {
-    const { dateValue, signatureHeader } = generateSignatureHeaders(
-      this.config,
-      method,
-      path,
-    );
+    const { dateValue, signatureHeader } = generateSignatureHeaders(this.config, method, path);
 
     const dateHeaderName = getDateHeaderName();
     const url = this.buildUrl(path, query);
@@ -54,9 +50,7 @@ export class DNSEOpenAPIClient {
     }
 
     if (!response.ok) {
-      throw new Error(
-        `DNSE API error (${response.status}): ${JSON.stringify(parsedBody)}`,
-      );
+      throw new Error(`DNSE API error (${response.status}): ${JSON.stringify(parsedBody)}`);
     }
 
     return { status: response.status, body: parsedBody };
@@ -74,19 +68,36 @@ export class DNSEOpenAPIClient {
     return url.toString();
   }
 
-  get<T>(path: string, query?: Record<string, string | number | undefined>): Promise<{ status: number; body: T }> {
+  get<T>(
+    path: string,
+    query?: Record<string, string | number | undefined>,
+  ): Promise<{ status: number; body: T }> {
     return this.request<T>("GET", path, query);
   }
 
-  post<T>(path: string, body?: unknown, query?: Record<string, string | number | undefined>, extraHeaders?: Record<string, string>): Promise<{ status: number; body: T }> {
+  post<T>(
+    path: string,
+    body?: unknown,
+    query?: Record<string, string | number | undefined>,
+    extraHeaders?: Record<string, string>,
+  ): Promise<{ status: number; body: T }> {
     return this.request<T>("POST", path, query, body, extraHeaders);
   }
 
-  delete<T>(path: string, query?: Record<string, string | number | undefined>, extraHeaders?: Record<string, string>): Promise<{ status: number; body: T }> {
+  delete<T>(
+    path: string,
+    query?: Record<string, string | number | undefined>,
+    extraHeaders?: Record<string, string>,
+  ): Promise<{ status: number; body: T }> {
     return this.request<T>("DELETE", path, query, undefined, extraHeaders);
   }
 
-  put<T>(path: string, body?: unknown, query?: Record<string, string | number | undefined>, extraHeaders?: Record<string, string>): Promise<{ status: number; body: T }> {
+  put<T>(
+    path: string,
+    body?: unknown,
+    query?: Record<string, string | number | undefined>,
+    extraHeaders?: Record<string, string>,
+  ): Promise<{ status: number; body: T }> {
     return this.request<T>("PUT", path, query, body, extraHeaders);
   }
 }

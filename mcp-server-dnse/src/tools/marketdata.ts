@@ -1,18 +1,14 @@
 import { z } from "zod";
 import { DNSEOpenAPIClient } from "../client.js";
 
-interface ToolDefinition {
-  name: string;
-  description: string;
-  inputSchema: z.ZodTypeAny;
-  handler: (args: Record<string, unknown>) => Promise<{ content: Array<{ type: string; text: string }> }>;
-}
+import type { ToolDefinition } from "./types.js";
 
 export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] {
   return [
     {
       name: "dnse_security_definition",
-      description: "Get security definition & trading parameters (price limits, lot size, board info) for a symbol",
+      description:
+        "Get security definition & trading parameters (price limits, lot size, board info) for a symbol",
       inputSchema: z.object({
         symbol: z.string().describe("Stock symbol (e.g. HPG, VNM, FPT)"),
         boardId: z.string().optional().describe("Trading board ID (e.g. G1)"),
@@ -22,7 +18,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           `/price/${args.symbol}/secdef`,
           args.boardId ? { boardId: args.boardId as string } : undefined,
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -46,7 +44,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           limit: args.limit as number | undefined,
           page: args.page as number | undefined,
         });
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -68,7 +68,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           to: args.to as number,
           type: (args.barType as string) || "STOCK",
         });
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -93,7 +95,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           order: args.order as string | undefined,
           nextPageToken: args.nextPageToken as string | undefined,
         });
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -109,7 +113,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           `/price/${args.symbol}/trades/latest`,
           args.boardId ? { boardId: args.boardId as string } : undefined,
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -125,7 +131,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
           `/price/${args.symbol}/close`,
           args.boardId ? { boardId: args.boardId as string } : undefined,
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -135,7 +143,9 @@ export function getMarketDataTools(client: DNSEOpenAPIClient): ToolDefinition[] 
       inputSchema: z.object({}),
       handler: async () => {
         const { status, body } = await client.get("/market/working-dates");
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
   ];

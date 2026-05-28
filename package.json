@@ -1,0 +1,28 @@
+{
+  "name": "investment-agent",
+  "version": "1.0.0",
+  "description": "AI Investment Agent for Vietnamese Stock Market",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "mcp-server",
+    "mcp-server-dnse",
+    "mcp-server-buffett",
+    "mcp-server-munger"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{ts,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.16.0",
+    "typescript-eslint": "^8.18.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
+  }
+}

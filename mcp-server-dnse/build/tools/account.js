@@ -7,7 +7,9 @@ export function getAccountTools(client) {
             inputSchema: z.object({}),
             handler: async () => {
                 const { status, body } = await client.get("/accounts");
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -18,7 +20,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/accounts/${args.accountNo}/balances`);
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -34,7 +38,9 @@ export function getAccountTools(client) {
                     marketType: args.marketType,
                     symbol: args.symbol,
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -54,7 +60,9 @@ export function getAccountTools(client) {
                     price: String(args.price),
                     loanPackageId: String(args.loanPackageId),
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -65,8 +73,12 @@ export function getAccountTools(client) {
                 marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
             }),
             handler: async (args) => {
-                const { status, body } = await client.get(`/accounts/${args.accountNo}/orders`, { marketType: args.marketType });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                const { status, body } = await client.get(`/accounts/${args.accountNo}/orders`, {
+                    marketType: args.marketType,
+                });
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -79,7 +91,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/accounts/${args.accountNo}/orders/${args.orderId}`, { marketType: args.marketType });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -89,14 +103,20 @@ export function getAccountTools(client) {
                 accountNo: z.string().describe("Account number"),
                 orderId: z.string().describe("Order ID"),
                 marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
-                orderCategory: z.string().optional().default("NORMAL").describe("Order category (default: NORMAL)"),
+                orderCategory: z
+                    .string()
+                    .optional()
+                    .default("NORMAL")
+                    .describe("Order category (default: NORMAL)"),
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/accounts/${args.accountNo}/executions/${args.orderId}`, {
                     marketType: args.marketType,
                     orderCategory: args.orderCategory || "NORMAL",
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -118,7 +138,9 @@ export function getAccountTools(client) {
                     pageSize: args.pageSize,
                     pageIndex: args.pageIndex,
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -129,8 +151,12 @@ export function getAccountTools(client) {
                 marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
             }),
             handler: async (args) => {
-                const { status, body } = await client.get(`/accounts/${args.accountNo}/positions`, { marketType: args.marketType });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                const { status, body } = await client.get(`/accounts/${args.accountNo}/positions`, {
+                    marketType: args.marketType,
+                });
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -143,7 +169,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.post("/accounts/orders", args.payload, { marketType: args.marketType, orderCategory: "NORMAL" }, { "trading-token": args.tradingToken });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -158,7 +186,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.put(`/accounts/${args.accountNo}/orders/${args.orderId}`, args.payload, { marketType: args.marketType }, { "trading-token": args.tradingToken });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -172,7 +202,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.delete(`/accounts/${args.accountNo}/orders/${args.orderId}`, { marketType: args.marketType }, { "trading-token": args.tradingToken });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -187,7 +219,9 @@ export function getAccountTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.post(`/accounts/${args.accountNo}/positions/${args.positionId}/close`, args.payload, { "trading-token": args.tradingToken, marketType: args.marketType });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -202,7 +236,9 @@ export function getAccountTools(client) {
                     otpType: args.otpType,
                     passcode: args.passcode,
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -216,7 +252,9 @@ export function getAccountTools(client) {
                     email: args.email,
                     otpType: "email_otp",
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
     ];

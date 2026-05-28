@@ -25,13 +25,13 @@ npm run build
 
 Set these environment variables:
 
-| Variable | Description | Default |
-|---|---|---|
-| `DNSE_API_KEY` | Your DNSE API key | **(required)** |
-| `DNSE_API_SECRET` | Your DNSE API secret | **(required)** |
-| `DNSE_BASE_URL` | API base URL | `https://openapi.dnse.com.vn` |
-| `DNSE_API_VERSION` | API version header | `2026-05-07` |
-| `DNSE_HMAC_NONCE` | Enable/disable nonce in signature | `true` |
+| Variable           | Description                       | Default                       |
+| ------------------ | --------------------------------- | ----------------------------- |
+| `DNSE_API_KEY`     | Your DNSE API key                 | **(required)**                |
+| `DNSE_API_SECRET`  | Your DNSE API secret              | **(required)**                |
+| `DNSE_BASE_URL`    | API base URL                      | `https://openapi.dnse.com.vn` |
+| `DNSE_API_VERSION` | API version header                | `2026-05-07`                  |
+| `DNSE_HMAC_NONCE`  | Enable/disable nonce in signature | `true`                        |
 
 ## Usage
 
@@ -54,15 +54,15 @@ Add to your MCP host configuration:
 
 ## Tools
 
-| Tool | Description |
-|---|---|
+| Tool                       | Description                                              |
+| -------------------------- | -------------------------------------------------------- |
 | `dnse_security_definition` | Get security trading parameters (price limits, lot size) |
-| `dnse_instruments` | Search/filter available instruments |
-| `dnse_ohlc` | Get historical OHLC price bars |
-| `dnse_trades` | Get historical trade executions |
-| `dnse_latest_trade` | Get most recent trade |
-| `dnse_close_price` | Get previous session closing price |
-| `dnse_working_dates` | Get valid trading days |
+| `dnse_instruments`         | Search/filter available instruments                      |
+| `dnse_ohlc`                | Get historical OHLC price bars                           |
+| `dnse_trades`              | Get historical trade executions                          |
+| `dnse_latest_trade`        | Get most recent trade                                    |
+| `dnse_close_price`         | Get previous session closing price                       |
+| `dnse_working_dates`       | Get valid trading days                                   |
 
 ## Tech Stack
 

@@ -10,7 +10,9 @@ export function getMarketDataTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/price/${args.symbol}/secdef`, args.boardId ? { boardId: args.boardId } : undefined);
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -33,7 +35,9 @@ export function getMarketDataTools(client) {
                     limit: args.limit,
                     page: args.page,
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -54,7 +58,9 @@ export function getMarketDataTools(client) {
                     to: args.to,
                     type: args.barType || "STOCK",
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -78,7 +84,9 @@ export function getMarketDataTools(client) {
                     order: args.order,
                     nextPageToken: args.nextPageToken,
                 });
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -90,7 +98,9 @@ export function getMarketDataTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/price/${args.symbol}/trades/latest`, args.boardId ? { boardId: args.boardId } : undefined);
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -102,7 +112,9 @@ export function getMarketDataTools(client) {
             }),
             handler: async (args) => {
                 const { status, body } = await client.get(`/price/${args.symbol}/close`, args.boardId ? { boardId: args.boardId } : undefined);
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
         {
@@ -111,7 +123,9 @@ export function getMarketDataTools(client) {
             inputSchema: z.object({}),
             handler: async () => {
                 const { status, body } = await client.get("/market/working-dates");
-                return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+                return {
+                    content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+                };
             },
         },
     ];

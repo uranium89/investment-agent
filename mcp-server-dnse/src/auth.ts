@@ -1,4 +1,14 @@
 import { createHmac, randomUUID } from "node:crypto";
+import { z } from "zod";
+
+const envSchema = z.object({
+  DNSE_API_KEY: z.string().min(1, "DNSE_API_KEY is required"),
+  DNSE_API_SECRET: z.string().min(1, "DNSE_API_SECRET is required"),
+  DNSE_BASE_URL: z.string().default("https://openapi.dnse.com.vn"),
+  DNSE_ALGORITHM: z.string().default("hmac-sha256"),
+  DNSE_HMAC_NONCE: z.preprocess((val) => val !== "false", z.boolean()).default(true),
+  DNSE_API_VERSION: z.string().default("2026-05-07"),
+});
 
 export function getDateHeaderName(): string {
   return process.env["DNSE_DATE_HEADER"] || "Date";
@@ -52,22 +62,40 @@ export interface AuthConfig {
 }
 
 export function getAuthConfig(): AuthConfig {
-  const apiKey = process.env["DNSE_API_KEY"];
-  const apiSecret = process.env["DNSE_API_SECRET"];
+  const result = envSchema.safeParse({
+    DNSE_API_KEY: process.env["DNSE_API_KEY"],
+    DNSE_API_SECRET: process.env["DNSE_API_SECRET"],
+    DNSE_BASE_URL: process.env["DNSE_BASE_URL"],
+    DNSE_ALGORITHM: process.env["DNSE_ALGORITHM"],
+    DNSE_HMAC_NONCE: process.env["DNSE_HMAC_NONCE"],
+    DNSE_API_VERSION: process.env["DNSE_API_VERSION"],
+  });
 
-  if (!apiKey || !apiSecret) {
-    throw new Error(
-      "Missing DNSE API credentials. Set DNSE_API_KEY and DNSE_API_SECRET environment variables.",
-    );
+  if (!result.success) {
+    console.error("⚠️ WARNING: DNSE MCP Server configuration validation failed!");
+    result.error.errors.forEach((err) => {
+      console.error(`   - ${err.path.join(".")}: ${err.message}`);
+    });
+    console.error("   The server will start, but authenticated tools will fail when invoked.\n");
+
+    return {
+      apiKey: process.env["DNSE_API_KEY"] || "",
+      apiSecret: process.env["DNSE_API_SECRET"] || "",
+      baseUrl: process.env["DNSE_BASE_URL"] || "https://openapi.dnse.com.vn",
+      algorithm: process.env["DNSE_ALGORITHM"] || "hmac-sha256",
+      hmacNonceEnabled: process.env["DNSE_HMAC_NONCE"] !== "false",
+      apiVersion: process.env["DNSE_API_VERSION"] || "2026-05-07",
+    };
   }
 
+  const data = result.data;
   return {
-    apiKey,
-    apiSecret,
-    baseUrl: process.env["DNSE_BASE_URL"] || "https://openapi.dnse.com.vn",
-    algorithm: process.env["DNSE_ALGORITHM"] || "hmac-sha256",
-    hmacNonceEnabled: process.env["DNSE_HMAC_NONCE"] !== "false",
-    apiVersion: process.env["DNSE_API_VERSION"] || "2026-05-07",
+    apiKey: data.DNSE_API_KEY,
+    apiSecret: data.DNSE_API_SECRET,
+    baseUrl: data.DNSE_BASE_URL,
+    algorithm: data.DNSE_ALGORITHM,
+    hmacNonceEnabled: data.DNSE_HMAC_NONCE,
+    apiVersion: data.DNSE_API_VERSION,
   };
 }
 
@@ -76,6 +104,12 @@ export function generateSignatureHeaders(
   method: string,
   path: string,
 ): { dateValue: string; signatureHeader: string } {
+  if (!config.apiKey || !config.apiSecret) {
+    throw new Error(
+      "DNSE API credentials are not configured. Please set DNSE_API_KEY and DNSE_API_SECRET environment variables.",
+    );
+  }
+
   const dateValue = formatDate(new Date());
   const nonce = config.hmacNonceEnabled ? randomUUID().replace(/-/g, "") : undefined;
 

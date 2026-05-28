@@ -3,9 +3,12 @@ import { readFileSync, readdirSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import type { ToolDefinition } from "./types.js";
 
-// Resolve the knowledge base directory relative to the built JS file
-// mcp-server/build/tools/knowledge.js → ../../knowledge (project root/knowledge)
-const KNOWLEDGE_DIR = resolve(import.meta.dirname ?? __dirname, "../../../knowledge");
+// Resolve the knowledge base directory.
+// Priority: KNOWLEDGE_DIR env var → relative path from built JS file
+// (mcp-server/build/tools/knowledge.js → ../../../knowledge = project root/knowledge)
+const KNOWLEDGE_DIR = process.env.KNOWLEDGE_DIR
+  ? resolve(process.env.KNOWLEDGE_DIR)
+  : resolve(import.meta.dirname ?? __dirname, "../../../knowledge");
 
 function readKnowledgeFile(relativePath: string): string {
   const fullPath = join(KNOWLEDGE_DIR, relativePath);
@@ -88,7 +91,7 @@ export function getKnowledgeTools(): ToolDefinition[] {
         file: z
           .string()
           .describe(
-            "Relative path to knowledge file, e.g. '01_philosophy/core_principles.md' or 'README.md'"
+            "Relative path to knowledge file, e.g. '01_philosophy/core_principles.md' or 'README.md'",
           ),
       },
       handler: async (args: { file: string }) => {
@@ -147,7 +150,7 @@ export function getKnowledgeTools(): ToolDefinition[] {
           .string()
           .optional()
           .describe(
-            "Optional sector name to get specific guidance (e.g. 'banking', 'steel', 'consumer', 'tech')"
+            "Optional sector name to get specific guidance (e.g. 'banking', 'steel', 'consumer', 'tech')",
           ),
       },
       handler: async (args: { sector?: string }) => {

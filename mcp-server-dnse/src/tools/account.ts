@@ -1,12 +1,7 @@
 import { z } from "zod";
 import { DNSEOpenAPIClient } from "../client.js";
 
-interface ToolDefinition {
-  name: string;
-  description: string;
-  inputSchema: z.ZodTypeAny;
-  handler: (args: Record<string, unknown>) => Promise<{ content: Array<{ type: string; text: string }> }>;
-}
+import type { ToolDefinition } from "./types.js";
 
 export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
   return [
@@ -16,7 +11,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
       inputSchema: z.object({}),
       handler: async () => {
         const { status, body } = await client.get("/accounts");
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -27,10 +24,10 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         accountNo: z.string().describe("Account number"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/balances`,
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/balances`);
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -43,14 +40,13 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         symbol: z.string().optional().describe("Filter by stock symbol"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/loan-packages`,
-          {
-            marketType: args.marketType as string,
-            symbol: args.symbol as string | undefined,
-          },
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/loan-packages`, {
+          marketType: args.marketType as string,
+          symbol: args.symbol as string | undefined,
+        });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -65,16 +61,15 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         loanPackageId: z.number().describe("Loan package ID"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/ppse`,
-          {
-            marketType: args.marketType as string,
-            symbol: args.symbol as string,
-            price: String(args.price),
-            loanPackageId: String(args.loanPackageId),
-          },
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/ppse`, {
+          marketType: args.marketType as string,
+          symbol: args.symbol as string,
+          price: String(args.price),
+          loanPackageId: String(args.loanPackageId),
+        });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -86,11 +81,12 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/orders`,
-          { marketType: args.marketType as string },
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/orders`, {
+          marketType: args.marketType as string,
+        });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -107,7 +103,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           `/accounts/${args.accountNo}/orders/${args.orderId}`,
           { marketType: args.marketType as string },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -118,7 +116,11 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         accountNo: z.string().describe("Account number"),
         orderId: z.string().describe("Order ID"),
         marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
-        orderCategory: z.string().optional().default("NORMAL").describe("Order category (default: NORMAL)"),
+        orderCategory: z
+          .string()
+          .optional()
+          .default("NORMAL")
+          .describe("Order category (default: NORMAL)"),
       }),
       handler: async (args) => {
         const { status, body } = await client.get(
@@ -128,7 +130,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
             orderCategory: (args.orderCategory as string) || "NORMAL",
           },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -144,17 +148,16 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         pageIndex: z.number().optional().describe("Page index"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/orders/history`,
-          {
-            marketType: args.marketType as string,
-            from: args.from as string | undefined,
-            to: args.to as string | undefined,
-            pageSize: args.pageSize as number | undefined,
-            pageIndex: args.pageIndex as number | undefined,
-          },
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/orders/history`, {
+          marketType: args.marketType as string,
+          from: args.from as string | undefined,
+          to: args.to as string | undefined,
+          pageSize: args.pageSize as number | undefined,
+          pageIndex: args.pageIndex as number | undefined,
+        });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -166,11 +169,12 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
         marketType: z.enum(["STOCK", "DERIVATIVE"]).describe("Market type (STOCK or DERIVATIVE)"),
       }),
       handler: async (args) => {
-        const { status, body } = await client.get(
-          `/accounts/${args.accountNo}/positions`,
-          { marketType: args.marketType as string },
-        );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        const { status, body } = await client.get(`/accounts/${args.accountNo}/positions`, {
+          marketType: args.marketType as string,
+        });
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -189,7 +193,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           { marketType: args.marketType as string, orderCategory: "NORMAL" },
           { "trading-token": args.tradingToken as string },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -210,7 +216,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           { marketType: args.marketType as string },
           { "trading-token": args.tradingToken as string },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -229,7 +237,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           { marketType: args.marketType as string },
           { "trading-token": args.tradingToken as string },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -249,7 +259,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           args.payload,
           { "trading-token": args.tradingToken as string, marketType: args.marketType as string },
         );
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -265,7 +277,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           otpType: args.otpType as string,
           passcode: args.passcode as string,
         });
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
 
@@ -280,7 +294,9 @@ export function getAccountTools(client: DNSEOpenAPIClient): ToolDefinition[] {
           email: args.email as string,
           otpType: "email_otp",
         });
-        return { content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }] };
+        return {
+          content: [{ type: "text", text: JSON.stringify({ status, data: body }, null, 2) }],
+        };
       },
     },
   ];

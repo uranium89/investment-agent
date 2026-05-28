@@ -61,7 +61,13 @@ export function getSymbolTools(client: FireAntClient): ToolDefinition[] {
         offset: z.number().optional().describe("Pagination offset"),
         limit: z.number().optional().describe("Number of records (default 20)"),
       },
-      handler: async (args: { symbol: string; startDate?: string; endDate?: string; offset?: number; limit?: number }) => {
+      handler: async (args: {
+        symbol: string;
+        startDate?: string;
+        endDate?: string;
+        offset?: number;
+        limit?: number;
+      }) => {
         const data = await client.get(`/symbols/${args.symbol}/historical-quotes`, {
           startDate: args.startDate,
           endDate: args.endDate,

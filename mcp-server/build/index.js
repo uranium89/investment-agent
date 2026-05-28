@@ -6,7 +6,7 @@ import { getIcbTools } from "./tools/icb.js";
 import { getPostsTools } from "./tools/posts.js";
 import { getSearchTools } from "./tools/search.js";
 import { getOtherTools } from "./tools/other.js";
-import { getKnowledgeTools } from "./tools/knowledge.js";
+import { safeHandler } from "./tools/types.js";
 const client = new FireAntClient();
 const server = new McpServer({ name: "fireant-mcp-server", version: "1.0.0" }, { capabilities: { tools: {} } });
 const allTools = [
@@ -15,13 +15,13 @@ const allTools = [
     ...getPostsTools(client),
     ...getSearchTools(client),
     ...getOtherTools(client),
-    ...getKnowledgeTools(), // Warren Buffett knowledge base tools
+    // Knowledge tools moved to mcp-server-buffett and mcp-server-munger
 ];
 for (const tool of allTools) {
     server.registerTool(tool.name, {
         description: tool.description,
         inputSchema: tool.inputSchema,
-    }, tool.handler);
+    }, safeHandler(tool.handler));
 }
 async function main() {
     const transport = new StdioServerTransport();
