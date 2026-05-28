@@ -31,7 +31,7 @@ jobs:
           npm install -g opencode-ai
           
           # Chạy trực tiếp Opencode CLI với file prompt template
-          opencode run "@[agent/templates/feedback-loop.md]"
+          opencode run "hãy thực hiện task này @[agent/templates/feedback-loop.md]"
 
       - name: Commit and push Lessons Learned
         run: |
