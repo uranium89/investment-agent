@@ -114,5 +114,23 @@
       "telecommunications"
     ],
     "file": "FPT/2026-05-28.md"
+  },
+  {
+    "symbol": "PNJ",
+    "company": "CTCP Vàng bạc Đá quý Phú Nhuận",
+    "date": "2026-05-28",
+    "price": 65900,
+    "verdict": "MUA",
+    "score": 41,
+    "sector": "retail",
+    "tags": [
+      "jewelry",
+      "luxury",
+      "consumer-discretionary",
+      "founder-led",
+      "retail",
+      "CASA"
+    ],
+    "file": "PNJ/2026-05-28.md"
   }
 ]
