@@ -26,12 +26,46 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build MCP Servers
+        run: npm run build
+
       - name: Run Opencode CLI for Feedback Loop
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DNSE_API_KEY: ${{ secrets.DNSE_API_KEY }}
         run: |
           npm install -g opencode-ai
           
-          # Chạy trực tiếp Opencode CLI với file prompt template
-          opencode run "hãy thực hiện task này @[agent/templates/feedback-loop.md]"
+          # Tạo cấu hình MCP cho GitHub Actions để Opencode biết các MCP servers
+          cat <<EOF > mcp.json
+          {
+            "mcpServers": {
+              "fireant-mcp": {
+                "type": "local",
+                "command": ["node", "mcp-server/build/index.js"]
+              },
+              "dnse-mcp": {
+                "type": "local",
+                "command": ["node", "mcp-server-dnse/build/index.js"]
+              },
+              "buffett-mcp": {
+                "type": "local",
+                "command": ["node", "mcp-server-buffett/build/index.js"]
+              },
+              "munger-mcp": {
+                "type": "local",
+                "command": ["node", "mcp-server-munger/build/index.js"]
+              },
+              "industry-mcp": {
+                "type": "local",
+                "command": ["node", "mcp-server-industry/build/index.js"]
+              }
+            }
+          }
+          EOF
+          
+          # Chạy trực tiếp Opencode CLI với file prompt template và chỉ định mcp.json
+          opencode run "hãy thực hiện task này @[agent/templates/feedback-loop.md]" -c mcp.json
 
       - name: Commit and push Lessons Learned
         run: |
