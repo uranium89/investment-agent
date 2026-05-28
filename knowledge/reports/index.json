@@ -97,5 +97,22 @@
       "dividend"
     ],
     "file": "ACB/2026-05-28.md"
+  },
+  {
+    "symbol": "FPT",
+    "company": "CTCP FPT",
+    "date": "2026-05-28",
+    "price": 71200,
+    "verdict": "MUA",
+    "score": 42,
+    "sector": "technology",
+    "tags": [
+      "IT-services",
+      "digital-transformation",
+      "AI",
+      "education",
+      "telecommunications"
+    ],
+    "file": "FPT/2026-05-28.md"
   }
 ]
