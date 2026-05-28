@@ -125,3 +125,96 @@ CEO Mai Kiều Liên chỉ sở hữu 0.3% — đây là red flag về alignment
 | 🧠 Munger | "Inversion cho thấy điểm yếu nhất là thiếu historical context. Không biết quá khứ thì không hiểu hiện tại. Thêm historical P/E range vào checklist." |
 
 **Kế hoạch:** Áp dụng 5 action items trên vào báo cáo tiếp theo.
+
+---
+
+## Feedback Loop #2 — 28/05/2026
+
+### Kiểm tra giá thị trường sau báo cáo
+
+| Mã CK | Phán quyết | Giá PT | Giá HN (28/05) | Chênh lệch | Thời gian |
+|-------|-----------|--------|---------------|-----------|-----------|
+| MBB | MUA | 25.050 | ~25.300 | +1.0% | Cùng ngày |
+| TCB | MUA | 32.600 | 33.250 | +2.0% | Cùng ngày |
+| VIC | THEO_DÕI | 214.200 | 207.900 | -2.9% | Cùng ngày |
+| VNM | MUA | 59.400 | 58.900 | -0.8% | Cùng ngày |
+
+**Nhận xét:** Cả 4 mã đều biến động nhẹ trong phiên. TCB dẫn đầu (+2.0%) nhờ dòng tiền vào ngân hàng. VIC giảm nhiều nhất (-2.9%) — phù hợp với rủi ro đòn bẩy cao đã nêu.
+
+---
+
+### 🎩 Buffett — Đánh giá phán quyết
+
+**MBB (MUA @ 25.050 → 25.300, +1.0%):**
+- Phán quyết chưa thể đánh giá do thời gian ngắn
+- Luận điểm MUA (P/E 7.36x, ROE 20.67%, NIM 4.13%) vẫn còn nguyên giá trị
+- TTCK biến động nhẹ, không có tin xấu đột biến
+
+**TCB (MUA @ 32.600 → 33.250, +2.0%):**
+- Đã tăng nhẹ, đang tiến về giá mục tiêu 39.500
+- CIR 30.7% vẫn là lợi thế lớn nhất
+- Cần theo dõi NIM quý tới
+
+**VIC (THEO_DÕI @ 214.200 → 207.900, -2.9%):**
+- Giá giảm phù hợp với rủi ro đã chỉ ra
+- P/E 117x vẫn quá cao
+- D/E 6.67x vẫn là điểm nghẽn
+
+**VNM (MUA @ 59.400 → 58.900, -0.8%):**
+- Giảm nhẹ, cơ hội mua tích lũy
+- Cổ tức 8.2% là điểm tựa tốt
+- Kỳ vọng giá về 55.000 để mua thêm
+
+---
+
+### 🧠 Munger — Inversion & Blind Spots mới phát hiện
+
+#### Blind Spot #8: Các báo cáo không có chỉ số market breadth khi phân tích
+**Vấn đề:** Cả 4 báo cáo đều bỏ qua thanh khoản giao dịch và dòng tiền khối ngoại — yếu tố ảnh hưởng lớn đến biến động giá ngắn hạn và khả năng thoát hàng.
+
+#### Blind Spot #9: Thiếu so sánh chiến lược cổ tức giữa các kịch bản
+**Vấn đề:** Các báo cáo chưa phân tích kịch bản "nếu công ty thay đổi chính sách cổ tức" — như MBB tăng vốn gây pha loãng 27.5%, hay VIC không trả cổ tức từ 2018.
+
+#### Blind Spot #10: Không phân tích quyền biểu quyết & rủi ro governance từ cổ đông nhà nước (MBB)
+**Vấn đề:** MBB có Viettel (19%) và SCIC (9.8%) — tổng gián tiếp ~44% từ pháp nhân quân đội. Đây là rủi ro quản trị đặc thù chưa được phân tích sâu.
+
+---
+
+### 📊 Chất lượng báo cáo — Cập nhật sau Blind Spot Fixes
+
+| Tiêu chí | MBB | TCB | VIC | VNM | Ghi chú |
+|----------|-----|-----|-----|-----|---------|
+| Dữ liệu thực | 9/10 | 9/10 | 9/10 | 9/10 | Vẫn chuẩn |
+| Độ sâu phân tích | 7/10 | 7/10 | 8/10 | 6/10 | VIC tốt nhất |
+| Munger Inversion | 7/10 | 7/10 | 8/10 | 6/10 | Cần thêm chiều sâu |
+| Risk flags mới | 7/10 | 8/10 | 9/10 | 6/10 | VIC đã nêu rõ rủi ro nợ |
+| DCF 3 kịch bản | 8/10 | 8/10 | 8/10 | 8/10 | OK |
+| Phân tích governance | 6/10 | 7/10 | 8/10 | 6/10 | MBB thiếu phân tích NN |
+| **Tổng** | **74/100** | **76/100** | **83/100** | **68/100** | |
+
+---
+
+### 🔴 Tổng hợp rủi ro cần ưu tiên theo dõi (Portfolio Monitoring)
+
+| Mã CK | Rủi ro chính | Trigger | Trạng thái |
+|-------|-------------|---------|-----------|
+| MBB | Nợ xấu BĐS (Novaland) + Pha loãng 27.5% | NPL > 2%, EPS quý giảm | 🟢 Bình thường |
+| TCB | NIM giảm + Phụ thuộc họ Hồ | NIM < 3.2%, CASA < 33% | 🟢 Bình thường |
+| VIC | D/E 6.67x + Vinfast đốt tiền | ICR < 1.5x, D/E > 8x | 🟡 Cần theo dõi |
+| VNM | Tăng trưởng chậm + Room ngoại đầy | Biên gộp < 38%, Thị phần < 50% | 🟢 Bình thường |
+
+---
+
+### 🎯 Kết Luận Feedback Loop #2
+
+> **"Lô báo cáo đầu tiên được tạo hôm nay. Giá chưa biến động đủ để đánh giá phán quyết. Tuy nhiên, đã phát hiện thêm 3 blind spots mới (market breadth, cổ tức scenario, governance nhà nước) và xây dựng bảng theo dõi rủi ro cho 4 mã."**
+
+| Thành viên | Nhận xét |
+|-----------|----------|
+| 🎩 Buffett | "Chất lượng phân tích nền tảng tốt. Hãy nhớ: việc giám sát sau mua quan trọng không kém việc phân tích. Bảng trigger là khởi đầu tốt." |
+| 🧠 Munger | "3 blind spots mới đều đáng giá. Đặc biệt là governance nhà nước ở MBB — tôi muốn thấy phân tích sâu hơn về việc cổ đông NN 44% ảnh hưởng thế nào đến quyết định kinh doanh." |
+
+**Kế hoạch:**
+1. ✅ Áp dụng 5 action items từ Feedback Loop #1 vào báo cáo tiếp theo
+2. ✅ Bổ sung 3 blind spots mới (#8, #9, #10) vào checklist
+3. 🔄 Review lại sau mỗi KQKD quý với bảng trigger
