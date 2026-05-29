@@ -144,3 +144,194 @@
 
 *Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
 *Nguồn: Tổng hợp web search — ngày 2026-05-28*
+
+---
+
+## Ngày 2026-05-29
+
+### Vĩ mô
+
+| Chỉ Số | Giá Trị | Ghi Chú |
+|--------|---------|---------|
+| GDP Q1/2026 | +7.83% | Q1/2025: +7.07%, chậm lại từ Q4/2025 (+8.46%) |
+| CPI Tháng 4/2026 | +5.46% | Cao nhất từ tháng 1/2020 — trên mục tiêu 4.5% |
+| Core CPI Tháng 4/2026 | +4.66% | Nhanh nhất từ tháng 3/2023 |
+| Lãi suất tái cấp vốn | 4.5% | NHNN giữ nguyên |
+| CPI Tháng 3/2026 | +4.65% | Tăng mạnh từ 3.35% tháng 2 |
+| Dự báo GDP 2026 (IMF) | 7.1% | World Bank thận trọng hơn 6.5% |
+| Dự báo GDP 2026 (ADB) | 7.2% | ADO tháng 4/2026 |
+| Dự báo GDP 2026 (KPMG) | 8.3-8.5% | Lạc quan nhất |
+
+**Rủi ro vĩ mô chính:** CPI tháng 4 vượt 5.46% — giá xăng dầu tăng (Brent dự báo 90 USD/thùng), xung đột Trung Đông kéo dài, giá nhà ở và vật liệu xây dựng tăng 7.95%, chi phí vận tải tăng 11.08% — áp lực lên NHNN phải cân nhắc tăng lãi suất. Mục tiêu lạm phát 4.5% đang bị thách thức nghiêm trọng.
+
+**Đầu tư công:** Tiếp tục là động lực chính. Hạ tầng giao thông, cao tốc Bắc Nam, đường sắt tốc độ cao, sân bay Long Thành.
+
+---
+
+### 1. Ngân Hàng (Banking)
+
+**Tin tức mới (24-48h qua):**
+- FiinRatings công bố báo cáo Vietnam Banking Sector Spotlight 2026: NIM toàn ngành có thể duy trì dưới 3.0% — chi phí vốn tăng, lợi suất cho vay bị nén
+- Chênh lệch hiệu suất giữa các ngân hàng ngày càng rộng — áp lực margin, chi phí huy động tăng
+- Tín dụng tăng trưởng 16% mục tiêu 2026 (Asian Banking & Finance)
+- Basel III triển khai, hạn ngạch tín dụng được dỡ bỏ dần — ngân hàng yếu vốn gặp khó
+- Citi bổ nhiệm Thai Nguyet Minh làm Markets Head cho Việt Nam
+
+**Phân tích Buffett/Munger:**
+- **Moat — Phân hóa mạnh.** Cuộc chơi đang chia làm 2 phe: ngân hàng có CASA cao & chi phí vốn thấp (VCB, MBB, ACB, TCB) vs ngân hàng phụ thuộc huy động đắt đỏ. NIM dưới 3% sẽ siết chặt biên lợi nhuận của phe sau.
+- **Rủi ro cấu trúc:** Basel III và dỡ bỏ hạn ngạch tín dụng là con dao hai lưỡi — tạo sân chơi bình đẳng nhưng cũng loại bỏ các ngân hàng yếu kém. Các ngân hàng thiếu vốn sẽ phải tăng vốn cấp 1 — pha loãng cổ đông hiện hữu.
+- **Cơ hội:** Wealth management đang là mảng tăng trưởng mới (dự báo thị trường 600 tỷ USD vào 2027 theo McKinsey). Ngân hàng nào chiếm lĩnh sớm sẽ có nguồn thu phí bền vững.
+
+**Kết luận:** Môi trường vận hành đang phân hóa mạnh. NIM bị nén là câu chuyện chung, nhưng bank có nền tảng CASA và thu nhập phí tốt sẽ vượt qua. Cần theo dõi chặt kết quả Q2/2026 để đánh giá mức độ chịu áp lực margin.
+
+---
+
+### 2. Sữa (Dairy)
+
+**Tin tức mới:**
+- **Vietnam Dairy 2026 Exhibition** khai mạc 28/5 tại I.C.E Hanoi (Hà Nội) — kéo dài đến 31/5 — sự kiện B2B lớn nhất ngành
+- Hiệp hội Sữa VN (VDA) chủ trì, quy tụ các doanh nghiệp sữa trong nước và quốc tế
+- Chiến lược phát triển ngành sữa được phê duyệt: mục tiêu tăng trưởng 12-14%/năm đến 2030
+- Thị trường sữa VN 2025: ~USD 6.3 tỷ, dự báo đạt USD 14.4 tỷ vào 2034 (CAGR 9.4%)
+- Sản lượng sữa nước chế biến mục tiêu 2030: 4.2 tỷ lít/năm
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng nhẹ.** Việc Chiến lược phát triển ngành sữa được Chính phủ phê duyệt là tín hiệu dài hạn tích cực cho toàn ngành. VNM với gần 50% thị phần hưởng lợi nhiều nhất từ chính sách hỗ trợ ngành.
+- **Rủi ro:** CPI tháng 4 tăng 5.46% — nhập khẩu nguyên liệu (60-65% sữa bột) chịu áp lực từ chi phí vận tải và giá dầu. Biên lợi nhuận của toàn ngành có thể bị nén.
+- **Cơ hội:** Triển lãm Vietnam Dairy 2026 tạo cơ hội kết nối xuất khẩu, mở rộng thị trường cho các doanh nghiệp trong nước. Mục tiêu tự chủ nguyên liệu (60-65% năm 2030) là định hướng đúng — giảm phụ thuộc nhập khẩu.
+
+**Kết luận:** Ngành sữa đang trong chu kỳ tăng trưởng dài hạn được Chính phủ hậu thuẫn. Rủi ro ngắn hạn từ chi phí đầu vào nhưng câu chuyện cấu trúc tích cực.
+
+---
+
+### 3. Thép (Steel)
+
+**Tin tức mới:**
+- **🔥 LẦN ĐẦU TIÊN Việt Nam lọt top 10 nước sản xuất thép thô lớn nhất thế giới** (Worldsteel, tháng 4/2026)
+- Sản lượng thép thô tháng 4/2026: 2.1 triệu tấn (+4% YoY), 4 tháng đầu năm: 8.5 triệu tấn (+8.4% YoY)
+- **VinMetal (Vingroup) ký MoU với Primetals Technologies** (7/5) xây tổ hợp thép tích hợp lớn tại Hà Tĩnh
+- Dự án gồm 2 dây chuyền: thép dài và thép dẹt (BOF + cán nóng)
+- VSA dự báo ngành thép 2026 tăng trưởng 8-10%, sản lượng thép thành phẩm đạt 33-34.5 triệu tấn
+- Giá thép dự báo phục hồi nhờ BĐS phục hồi và đầu tư công giải ngân mạnh
+
+**Phân tích Buffett/Munger:**
+- **Moat — Cạnh tranh gia tăng, HPG vẫn vững.** Việc Vingroup (VinMetal) nhảy vào thép với công nghệ Primetals hàng đầu thế giới làm thay đổi cục diện cạnh tranh dài hạn. HPG với Dung Quất 2 (9 triệu tấn HRC/năm) vẫn có lợi thế đi trước về quy mô và chi phí.
+- **Inversion (Munger):** Điều gì sẽ giết các khoản đầu tư ngành thép? (1) VinMetal thành công — dư cung nội địa — biên giảm. (2) Trung Quốc dump giá HRC nếu thuế chống bán phá giá không được áp. (3) BĐS suy yếu trở lại. (4) CBAM (EU) làm tăng chi phí xuất khẩu — cần đầu tư lớn vào công nghệ xanh.
+- **Cơ hội lớn:** Top 10 thế giới về sản lượng — vị thế mới cho ngành thép VN. Nhu cầu nội địa mạnh nhờ đầu tư công và BĐS phục hồi. Thuế chống bán phá giá HRC là catalyst quan trọng.
+- **Lưu ý:** Vingroup có tiềm lực tài chính khủng và kinh nghiệm triển khai dự án lớn. Nếu VinMetal thành công, HPG sẽ mất dần lợi thế độc tôn HRC. Dài hạn, có thể dư cung thép nội địa.
+
+**Kết luận:** Ngành thép VN đang ở đỉnh cao lịch sử về sản lượng. Ngắn hạn: thuận lợi nhờ nội địa. Dài hạn: cạnh tranh nội bộ gia tăng với sự tham gia của Vingroup. Phân biệt giữa HPG (dẫn đầu chi phí) và phần còn lại.
+
+---
+
+### 4. Bán Lẻ (Retail)
+
+**Tin tức mới:**
+- **🔥 MWG chính thức phê duyệt IPO Điện Máy Xanh (DMX) năm 2026** — tách mảng bán lẻ điện máy lớn nhất
+- DMX hiện vận hành 2.000+ cửa hàng, đóng góp 44% doanh thu MWG (10 tháng 2025)
+- Chào bán riêng lẻ 1% vốn điều lệ trước IPO, hạn chế chuyển nhượng 18 tháng
+- Thị trường bán lẻ VN 2026: USD 171.4 tỷ, dự báo USD 217.44 tỷ vào 2031 (CAGR 4.87%)
+- Tổng mức bán lẻ 2025: ~VND 7.093 triệu tỷ ($270 tỷ), +10% YoY
+- Báo cáo SSI Research Q1/2026: MWG +45% LNST, FRT +74%, PNJ +121%, DGW +60%
+- Xu hướng chuyển từ cạnh tranh giá sang trải nghiệm khách hàng
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng (MWG).** IPO DMX là bước đi chiến lược mở khóa giá trị — giống việc Berkshire tách các mảng kinh doanh. DMX có lợi thế quy mô 2.000+ cửa hàng, chuỗi cung ứng tối ưu — là tài sản moat hiếm có trong bán lẻ điện máy.
+- **Chất lượng lợi nhuận:** MWG dự báo LNST Q1/2026 kỷ lục 2,250 tỷ (+45% YoY) — cho thấy đây không chỉ là phục hồi chu kỳ mà là base lợi nhuận mới bền vững hơn.
+- **Rủi ro:** Bong bóng DMX IPO — định giá quá cao so với giá trị nội tại. Bách Hóa Xanh vẫn đang lỗ lũy kế. Cạnh tranh TMĐT (TikTok Shop 41% thị phần) tiếp tục gia tăng.
+- **Cơ hội:** DMX IPO sẽ là "anchor stock" cho ngành bán lẻ VN, thu hút vốn ngoại. Siết quản lý thuế TMĐT loại bỏ đối thủ nhỏ lẻ.
+
+**Kết luận:** Ngành bán lẻ bước vào chu kỳ mới với DMX IPO là sự kiện landmark. MWG tiếp tục dẫn dắt với chiến lược mở khóa giá trị. PNJ tăng trưởng ấn tượng nhờ quản lý hàng tồn kho thông minh.
+
+---
+
+### 5. Bất Động Sản (Real Estate)
+
+**Tin tức mới:**
+- Hội thảo "Thị trường BĐS 2026: Vượt sóng, đón chu kỳ mới" ngày 12/5 — các chuyên gia nhận định chu kỳ mới đã bắt đầu
+- Nguồn cung nhà ở Q1/2026 tăng 2.5 lần so với cùng kỳ, phục hồi có chọn lọc
+- Top 10 doanh nghiệp BĐS uy tín 2026: Vinhomes đứng đầu, theo sau là Nam Long, Khang Điền, Ecopark
+- Giá chung cư HCMC Q4/2025: $4,057/sqm (+24.3% YoY)
+- Hà Nội: 33,000 căn hộ mới dự kiến trong 2026
+- Áp lực tín dụng thắt chặt, lãi suất cho vay tăng cao
+- Xu hướng TOD (phát triển đô thị theo định hướng giao thông) mở rộng ra Vành đai 3, 4
+
+**Phân tích Buffett/Munger:**
+- **Moat — Ổn định nhưng đang test.** VHM vẫn thống trị 31% thị phần căn hộ — quy mô và thương hiệu là rào cản lớn. Tuy nhiên thị trường đang bước vào chu kỳ mới đòi hỏi khác: minh bạch pháp lý, năng lực tài chính, chất lượng sản phẩm.
+- **Inversion (Munger):** Điều gì làm hỏng chu kỳ BĐS? (1) Lãi suất duy trì cao kỷ lục — CPI 5.46% có thể buộc NHNN tăng lãi suất — "giết chết" người mua nhà. (2) Bảng giá đất mới 2026 đẩy chi phí đầu vào. (3) Pháp lý chậm cải thiện dù 3 Luật đã có hiệu lực.
+- **Cơ hội:** Chu kỳ mới đã mở — lần đầu tiên sau 4 năm thị trường có cả cung và cầu cùng phục hồi. Nhà ở xã hội là mảng được Chính phủ ưu tiên.
+
+**Kết luận:** BĐS đang phục hồi rõ nét hơn — nguồn cung tăng 2.5 lần là tín hiệu tích cực. Nhưng giá nhà tăng 24.3% YoY và CPI leo thang là rủi ro lớn cho sức mua.
+
+---
+
+### 6. Cảng Biển & Logistics (Marine Port)
+
+**Tin tức mới:**
+- Tổng lượng hàng qua cảng 2025: ~1.17 tỷ tấn (+12%), container đạt 34.36 triệu TEU (+11%)
+- PMI sản xuất duy trì trên 50 từ tháng 7/2025 đến nay — tín hiệu đơn hàng mới tăng
+- Thị trường logistics VN 2025: USD 31.1 tỷ, dự báo USD 42.8 tỷ vào 2034 (CAGR 3.61%)
+- Chuỗi lạnh (cold chain) tăng trưởng 11.8% CAGR — nhu cầu từ xuất khẩu thủy sản & dược phẩm
+- Cảng nước sâu (Cai Mép - Thị Vải, Lạch Huyện) tiếp tục mở rộng công suất
+- FDI vào logistics tăng nhờ dịch chuyển chuỗi cung ứng khỏi Trung Quốc
+
+**Phân tích Buffett/Munger:**
+- **Moat — Đang hình thành.** Cảng nước sâu là tài sản hạ tầng có moat tự nhiên (vị trí địa lý, vốn đầu tư lớn, thời gian xây dựng dài). Các doanh nghiệp như Gemadept, H2T, VSC sở hữu quỹ đất và vị trí chiến lược.
+- **Rủi ro:** Căng thẳng Trung Đông ảnh hưởng tuyến hàng hải, giá cước vận tải biến động.
+- **Cơ hội:** Thương mại điện tử tăng trưởng nóng và dịch chuyển sản xuất khỏi Trung Quốc tạo động lực dài hạn cho logistics và cảng biển VN.
+
+**Kết luận:** Ngành cảng biển hưởng lợi từ câu chuyện tăng trưởng thương mại dài hạn. Tăng trưởng hàng hóa 2 con số là base tốt. Chuỗi lạnh là mảng tăng trưởng nhanh đáng chú ý.
+
+---
+
+### 7. Ống Nhựa (Plastic Pipes)
+
+**Tin tức mới:**
+- Thị trường ống nhựa VN 2025: USD 450 triệu, dự báo USD 862.76 triệu vào 2034 (CAGR 7.5%)
+- Tăng trưởng nhờ đô thị hóa, đầu tư hạ tầng cấp thoát nước, thủy lợi
+- Quy hoạch Thủy lợi Quốc gia 2030 thúc đẩy nhu cầu ống HDPE và PPR
+- Chính phủ ban hành quy định khuyến khích vật liệu thân thiện môi trường trong xây dựng
+- BMP (Bình Minh Plastic) và NTP (Tiền Phong Plastic) vẫn dẫn đầu thị trường
+- 80% nhà sản xuất sử dụng nguyên liệu tái chế — xu hướng xanh
+
+**Phân tích Buffett/Munger:**
+- **Moat — Ổn định.** BMP và NTP có moat thương hiệu và mạng lưới phân phối. NTP chiếm 37% thị phần, BMP dẫn đầu phân khúc PVC chất lượng cao. Ngành này có switching cost nhất định (tiêu chuẩn kỹ thuật, mối quan hệ nhà thầu).
+- **Cơ hội:** Đầu tư công mạnh (hạ tầng nước, thủy lợi) là động lực trực tiếp. Xu hướng thay thế ống thép và bê tông bằng ống nhựa (CPVC cho PCCC, HDPE cho cấp thoát nước) tạo dư địa tăng trưởng.
+- **Rủi ro:** Giá nguyên liệu nhựa (PE, PP, PVC) phụ thuộc giá dầu thế giới — CPI dầu tăng cao ảnh hưởng biên lợi nhuận.
+
+**Kết luận:** Không có biến động đáng chú ý. Ngành ống nhựa tăng trưởng ổn định nhờ đầu tư hạ tầng và xu hướng xanh hóa vật liệu xây dựng.
+
+---
+
+### 8. Công Nghệ & IT (Technology)
+
+**Tin tức mới:**
+- **Các ông lớn công nghệ tiếp tục mở rộng tại VN:** Google, Apple, Intel, Nvidia, Qualcomm
+- Nvidia ký thỏa thuận xây dựng R&D center tại VN
+- Thị trường IT services VN 2026: USD 2.63 tỷ, dự báo USD 4.39 tỷ 2031 (CAGR 10.82%)
+- Chi tiêu CNTT toàn cầu 2025: ~USD 5,540 tỷ (+10%) — tập trung AI, cloud, cybersecurity, data center
+- Chính phủ phê duyệt Chiến lược bán dẫn quốc gia (Decision 1018): 3 giai đoạn đến 2050
+- Hệ sinh thái khởi nghiệp HCMC được định giá ~$7 tỷ
+- Top IT outsourcing destinations: VN #1 Đông Nam Á với rate $25-60/hr
+
+**Phân tích Buffett/Munger:**
+- **Moat — Khó đánh giá do thiếu doanh nghiệp niêm yết thuần tech.** Đa số doanh nghiệp IT niêm yết tại VN là nhà thầu dịch vụ hoặc hạ tầng viễn thông (FPT, CTR, VGI) — không phải mô hình platform hay sản phẩm có moat mạng lưới.
+- **Cơ hội:** Semiconductor strategy và FDI từ Nvidia, Google là tín hiệu dài hạn cho ngành công nghệ VN. Sự phát triển của AI và data center tạo nhu cầu lớn về hạ tầng (điện, đất, cooling).
+- **Rủi ro:** Cạnh tranh nhân lực với nước ngoài — chảy máu chất xám. Chính sách thuế và bảo hộ dữ liệu (Decree 13) làm tăng chi phí tuân thủ.
+
+**Kết luận:** Ngành công nghệ VN đang trong giai đoạn "xây nền móng" dài hạn. Chiến lược bán dẫn quốc gia và FDI chất lượng cao là tín hiệu tích cực. Tuy nhiên còn quá sớm để xác định doanh nghiệp niêm yết nào có moat thực sự trong lĩnh vực này.
+
+---
+
+### Tổng quan Buffett/Munger hôm nay
+
+**Buffett nhận xét:**
+> "Hôm nay tôi thấy 2 sự kiện đáng chú ý nhất: (1) Lần đầu tiên VN vào top 10 thép thế giới — vị thế này không tự nhiên mà có, nó phản ánh 20 năm nỗ lực của HPG và các doanh nghiệp đầu ngành. (2) MWG IPO DMX — đây là quyết định mở khóa giá trị đúng đắn, cho phép thị trường định giá riêng từng mảng kinh doanh. Tuy nhiên tôi lo ngại về lạm phát 5.46% — Mr. Market đang phớt lờ rủi ro này. Khi lạm phát cao kéo dài, chi phí vốn tăng lên và định giá giảm xuống. Biên an toàn là thứ duy nhất bảo vệ nhà đầu tư."
+
+**Munger inversion check:**
+> "Hãy nghĩ ngược lại: 2026 — điều gì hủy hoại cả danh mục? (1) Lạm phát 5.46% là đỉnh tảng băng — giá dầu leo thang do Trung Đông — NHNN buộc tăng lãi suất — cả BĐS và ngân hàng cùng đau. (2) Thép: VinMetal đổ thêm 10 triệu tấn công suất vào thị trường, VN dư cung nội địa, biên lợi nhuận HPG giảm 50%. (3) DMX IPO thất bại hoặc định giá quá cao — làm hỏng câu chuyện mở khóa giá trị của MWG. Cả 3 kịch bản đều có xác suất không nhỏ. Nhà đầu tư thông minh không chỉ tìm kiếm lợi nhuận — họ tìm kiếm sự an toàn."
+
+---
+
+*Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
+*Nguồn: Tổng hợp web search — ngày 2026-05-29*
