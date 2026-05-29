@@ -102,6 +102,56 @@
     "file": "MBB/2026-05-29.md"
   },
   {
+    "symbol": "VNM",
+    "company": "CTCP Sữa Việt Nam (Vinamilk)",
+    "date": "2026-05-29",
+    "price": 59000,
+    "verdict": "MUA",
+    "score": 50,
+    "sector": "dairy",
+    "tags": [
+      "state-owned",
+      "dividend",
+      "consumer-staples",
+      "SCIC"
+    ],
+    "file": "VNM/2026-05-29.md"
+  },
+  {
+    "symbol": "IDC",
+    "company": "Tổng Công Ty IDICO - CTCP",
+    "date": "2026-05-29",
+    "price": 43400,
+    "verdict": "MUA",
+    "score": 48,
+    "sector": "real_estate",
+    "tags": [
+      "industrial_park",
+      "hydropower",
+      "state_owned",
+      "dividend",
+      "FDI"
+    ],
+    "file": "IDC/2026-05-29.md"
+  },
+  {
+    "symbol": "QNS",
+    "company": "CTCP Đường Quảng Ngãi",
+    "date": "2026-05-29",
+    "price": 48500,
+    "verdict": "THEO_DOI",
+    "score": 44,
+    "sector": "food",
+    "tags": [
+      "sugar",
+      "dairy",
+      "ethanol",
+      "defensive",
+      "dividend"
+    ],
+    "file": "QNS/2026-05-29.md"
+  },
+  {
     "symbol": "VIC",
     "company": "Tập đoàn Vingroup",
     "date": "2026-05-28",
