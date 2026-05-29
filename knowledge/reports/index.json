@@ -1,5 +1,56 @@
 [
   {
+    "symbol": "ACB",
+    "company": "Ngân hàng TMCP Á Châu",
+    "date": "2026-05-29",
+    "price": 24650,
+    "verdict": "MUA",
+    "score": 51,
+    "sector": "banking",
+    "tags": [
+      "bán lẻ",
+      "NPL thấp",
+      "CIR thấp",
+      "cổ tức"
+    ],
+    "file": "ACB/2026-05-29.md"
+  },
+  {
+    "symbol": "DVP",
+    "company": "CTCP Đầu tư và Phát triển Cảng Đình Vũ",
+    "date": "2026-05-29",
+    "price": 75800,
+    "verdict": "MUA",
+    "score": 49,
+    "sector": "marine_port",
+    "tags": [
+      "state-owned",
+      "dividend",
+      "port",
+      "cash-cow",
+      "low-liquidity"
+    ],
+    "file": "DVP/2026-05-29.md"
+  },
+  {
+    "symbol": "FPT",
+    "company": "CTCP FPT (FPT Corporation)",
+    "date": "2026-05-29",
+    "price": 71200,
+    "verdict": "MUA",
+    "score": 51,
+    "sector": "technology",
+    "tags": [
+      "cach-mang-so-57",
+      "AI",
+      "outsourcing",
+      "nvidia-partnership",
+      "founder-led",
+      "global-delivery"
+    ],
+    "file": "FPT/2026-05-29.md"
+  },
+  {
     "symbol": "VIC",
     "company": "Tập đoàn Vingroup",
     "date": "2026-05-28",

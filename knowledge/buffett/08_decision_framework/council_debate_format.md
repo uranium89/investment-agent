@@ -79,9 +79,18 @@ Mỗi thành viên đưa ra quan điểm từ góc nhìn riêng của mình, sau
 | Doanh nghiệp & Moat | /20 | |
 | Ban lãnh đạo | /16 | |
 | Tài chính | /10 | |
-| Định giá | /10 | |
-| **Tăng Trưởng & Earnings Power** | **/8** | FCF CAGR 5Y + Trajectory |
+| Định giá & Biên An Toàn | /10 | MoS /6 + Relative valuation /4 |
+| Tăng Trưởng & Earnings Power | /8 | FCF CAGR 5Y + Trajectory |
 | **TỔNG** | **/64** | |
+
+**Chi tiết nhóm Định giá & Biên An Toàn (/10):**
+
+| Tiêu chí | Điểm | Thang đo |
+|----------|------|----------|
+| **Biên An Toàn — MoS** | /6 | MoS <0%=0 \| 0-10%=1 \| 10-20%=2 \| 20-30%=3 \| 30-40%=4 \| 40-50%=5 \| >50%=6 |
+| **Định giá tương đối** | /4 | P/E, P/B, PEG so ngành: Đắt hơn nhiều=0 \| Ngang ngành=1 \| Chiết khấu nhẹ=2 \| Chiết khấu đáng kể=3 \| Chiết khấu lớn=4 |
+
+> **Lưu ý:** MoS được tính từ giá trị nội tại DCF (kịch bản cơ sở). Cổ phiếu có MoS >50% được 6/6 điểm — đây là tín hiệu mạnh nhất Buffett tìm kiếm.
 
 **Chi tiết nhóm Tăng Trưởng & Earnings Power (/8):**
 
@@ -126,10 +135,10 @@ Mỗi thành viên đưa ra quan điểm từ góc nhìn riêng của mình, sau
 
 **📋 PHÁN QUYẾT CHÍNH THỨC:**
 
-🟢 **MUA MẠNH** (≥57/64 + MoS ≥25%) |
-🟡 **MUA** (48-56/64 + MoS ≥15%) |
+🟢 **MUA MẠNH** (≥57/64) — tự nhiên bao gồm MoS ≥30% (4/6 điểm MoS) |
+🟡 **MUA** (48-56/64) — tự nhiên bao gồm MoS ≥10% (2/6 điểm MoS) |
 🟠 **THEO DÕI** (38-47/64) |
-🔴 **TRÁNH** (<38/64 hoặc có red flag nghiêm trọng)
+🔴 **TRÁNH** (<38/64 hoặc MoS âm hoặc có red flag nghiêm trọng)
 
 → **[PHÁN QUYẾT]: [Lý do 1-2 câu súc tích]**
 

@@ -352,6 +352,16 @@ Ma trận nhạy cảm giá trị nội tại theo các kịch bản growth × d
 | P/B so sánh  |                 | 20%      |          |
 | **Giá mục tiêu tổng hợp** | | **100%** | **___VNĐ** |
 
+### 6.5 Scorecard Định Giá & Biên An Toàn (Bắt Buộc)
+
+| Tiêu chí | Điểm (/điểm tối đa) | Giá trị thực tế | Nhận xét |
+|----------|---------------------|----------------|----------|
+| **Biên An Toàn — MoS** | **/6** | MoS = __% | MoS<0%=0 \| 0-10%=1 \| 10-20%=2 \| 20-30%=3 \| 30-40%=4 \| 40-50%=5 \| >50%=6 |
+| **Định giá tương đối** | **/4** | P/E=__x, P/B=__x | Đắt hơn ngành=0 \| Ngang=1 \| Chiết khấu nhẹ=2 \| Chiết khấu đáng kể=3 \| Chiết khấu lớn=4 |
+| **Tổng nhóm này** | **/10** | | |
+
+> **Lưu ý:** MoS được tính từ giá trị nội tại DCF kịch bản cơ sở (xác suất 60%). Cổ phiếu có MoS >50% được 6/6 điểm — Buffett gọi đây là *"fat pitch"* — cơ hội mà người ta phải đầu tư mạnh.
+
 ### 6.4 Cross-Check với Consensus Analysts (Bắt Buộc)
 
 | Nguồn | Giá Mục Tiêu | Chênh lệch vs Báo Cáo | Nhận Xét |

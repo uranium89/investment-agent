@@ -308,6 +308,7 @@ buffett_save_report(
 - ❌ **KHÔNG được bỏ qua Section nào** trong 9 sections
 - ❌ **KHÔNG được bỏ qua DuPont decomposition** — phải tính với số thực
 - ❌ **KHÔNG được bỏ qua Section 5.6 Tăng Trưởng FCF** — phải tính FCF CAGR 5 năm và đánh giá trajectory
+- ❌ **KHÔNG được bỏ qua Section 6.5 Scorecard MoS** — phải điền điểm số MoS thực tế (không được ghi thiếu)
 - ❌ **KHÔNG được bỏ qua DCF 3 kịch bản** — phải có giả định rõ ràng
 - ❌ **KHÔNG được bỏ qua DCF Sensitivity Matrix** — ma trận 5×5 growth × discount rate
 - ❌ **KHÔNG được bỏ qua cross-check giá mục tiêu với consensus analysts** — chênh >20% phải giải thích
@@ -378,17 +379,27 @@ Ví dụ: "Review lại danh mục hiện tại"
 
 ---
 
-## 📏 Tiêu Chuẩn Đánh Giá Nhanh (Buffett Scorecard)
+## 📏 Tiêu Chuẩn Đánh Giá Nhanh (Buffett Scorecard tổng hợp /64):
 
+| Nhóm | Điểm tối đa | Trọng tâm |
+|---|---|---|
+| Doanh nghiệp & Moat | /20 | Lợi thế cạnh tranh bền vững |
+| Ban lãnh đạo | /16 | Chính trực + năng lực + alignment |
+| Tài chính | /10 | ROE, FCF/NI, D/E |
+| **Định giá & Biên An Toàn** | **/10** | **MoS /6 + Relative valuation /4** |
+| **Tăng Trưởng & Earnings Power** | **/8** | **FCF CAGR 5Y + Trajectory** |
+| **TỔNG** | **/64** | |
+
+**Chỉ số Benchmark:**
 | Chỉ Số          | Tốt      | Chấp Nhận | Tránh |
 | --------------- | -------- | --------- | ----- |
 | ROE             | >20%     | 15-20%    | <15%  |
 | FCF/Net Income  | >80%     | 60-80%    | <60%  |
 | FCF Growth (5Y) | >15%     | 10-15%    | <5%   |
+| **Biên An Toàn (MoS)** | **>40%** | **20-40%** | **<10%** |
 | D/E (ngoài NH)  | <0.5     | 0.5-1.5   | >2.0  |
 | EPS Growth (5Y) | >15%/năm | 10-15%    | <5%   |
 | PEG Ratio       | <1.0     | 1.0-1.5   | >2.0  |
-| Biên an toàn    | >25%     | 15-25%    | <15%  |
 
 **Ngân hàng — Thêm:**
 | NIM | >4% | 3-4% | <2.5% |
@@ -397,10 +408,12 @@ Ví dụ: "Review lại danh mục hiện tại"
 
 **Phán quyết:**
 
-🟢 **MUA MẠNH** (≥57/64 + MoS ≥25%) |
-🟡 **MUA** (48-56/64 + MoS ≥15%) |
+🟢 **MUA MẠNH** (≥57/64) — bao gồm ít nhất 4/6 điểm MoS (MoS ≥30%) |
+🟡 **MUA** (48-56/64) — bao gồm ít nhất 2/6 điểm MoS (MoS ≥10%) |
 🟠 **THEO DÕI** (38-47/64) |
-🔴 **TRÁNH** (<38/64 hoặc có red flag nghiêm trọng)
+🔴 **TRÁNH** (<38/64 hoặc MoS âm hoặc có red flag nghiêm trọng)
+
+> **Lưu ý:** MoS đã được nhúng vào điểm số /64 (tối đa 6/64 điểm). Cổ phiếu MoS cao tự nhiên được điểm cao hơn — không cần điều kiện riêng biệt nữa. Chỉ còn 1 hard floor: **KHÔNG được MUÁ MẠNH nếu MoS < 15%** dù điểm /64 cao.
 
 ---
 
