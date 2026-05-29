@@ -152,6 +152,39 @@
     "file": "QNS/2026-05-29.md"
   },
   {
+    "symbol": "BMP",
+    "company": "CTCP Nhựa Bình Minh",
+    "date": "2026-05-29",
+    "price": 138300,
+    "verdict": "MUA",
+    "score": 51,
+    "sector": "chemicals",
+    "tags": [
+      "plastic-pipes",
+      "SCG",
+      "high-dividend",
+      "market-leader",
+      "low-debt"
+    ],
+    "file": "BMP/2026-05-29.md"
+  },
+  {
+    "symbol": "MWG",
+    "company": "Công ty Cổ phần Đầu tư Thế Giới Di Động",
+    "date": "2026-05-29",
+    "price": 77700,
+    "verdict": "MUA",
+    "score": 48,
+    "sector": "retail",
+    "tags": [
+      "BHX turnaround",
+      "ICT retail",
+      "founder-led",
+      "room-foreign-limited"
+    ],
+    "file": "MWG/2026-05-29.md"
+  },
+  {
     "symbol": "VIC",
     "company": "Tập đoàn Vingroup",
     "date": "2026-05-28",
