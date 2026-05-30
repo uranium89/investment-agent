@@ -335,3 +335,185 @@
 
 *Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
 *Nguồn: Tổng hợp web search — ngày 2026-05-29*
+
+---
+
+## Ngày 2026-05-30
+
+### Vĩ mô
+
+| Chỉ Số | Giá Trị | Ghi Chú |
+|--------|---------|---------|
+| Tỷ giá trung tâm | 25,139 VND/USD | Tăng 2 đồng |
+| Lạm phát CPI T4/2026 | +5.46% | Trên mục tiêu 4.5% |
+| Lãi suất tái cấp vốn | 4.5% | NHNN giữ nguyên |
+| Chênh lệch huy động - cho vay | ~2 triệu tỷ | Áp lực thanh khoản hệ thống |
+
+**🔴 Sự kiện nổi bật:**
+- **Việt Nam và Hoa Kỳ ra Tuyên bố chung về tiền tệ** (29/5) — NHNN cam kết không thao túng tỷ giá, công bố số liệu mua ngoại tệ ròng từ 2027. Đây là tín hiệu giảm căng thẳng thương mại với Mỹ, tích cực cho vĩ mô dài hạn.
+- Đà giảm lãi suất huy động **chững lại** trong tháng 5 — chỉ 7 ngân hàng giảm (tháng 4 có 30+). Các ngân hàng bắt đầu trả lãi đầu kỳ để hút vốn — tín hiệu áp lực thanh khoản gia tăng.
+
+---
+
+### 1. Ngân Hàng (Banking)
+
+**Tin tức mới (24-48h qua):**
+- Lãi suất huy động chững lại — tháng 5 chỉ 7 ngân hàng giảm (MB, MBV, LPBank, Sacombank, ACB, VPBank, Saigonbank)
+- Cuộc đua trả lãi đầu kỳ nóng trở lại — ngân hàng quốc doanh bắt đầu trả lãi trước (6.38%/năm kỳ hạn 6 tháng)
+- BIDV chi 21,955 tỷ lãi tiền gửi Q1 (+20%), VietinBank 19,204 tỷ (+33%), VCB 13,640 tỷ (+31%)
+- MB: chi phí lãi vượt 10,000 tỷ (+82%) — mức tăng mạnh nhất
+- NHNN công bố tuyên bố chung tiền tệ với Bộ Tài chính Mỹ — không thao túng tỷ giá
+
+**Phân tích Buffett/Munger:**
+- **Moat — Phân hóa mạnh.** Áp lực huy động vốn đang tạo ra sự phân hóa rõ rệt: bank có CASA cao (VCB, MBB, ACB, TCB) chịu áp lực ít hơn. Bank phụ thuộc huy động đắt đỏ (MB +82% chi phí lãi) đang bị nén margin nghiêm trọng.
+- **Rủi ro cấu trúc:** Chênh lệch huy động - cho vay 2 triệu tỷ là báo động đỏ. Nếu tín dụng tiếp tục tăng nhanh hơn huy động, NHNN có thể phải can thiệp — nguy cơ tăng lãi suất điều hành.
+- **Tích cực:** Tuyên bố chung tiền tệ với MỸ giảm rủi ro bị gán ép thao túng tỷ giá. Ổn định vĩ mô là nền tảng cho ngành ngân hàng.
+
+**Kết luận:** Áp lực chi phí vốn gia tăng là chủ đề chính. Phân hóa giữa các ngân hàng đang rộng hơn. Cần theo dõi chặt NIM Q2/2026.
+
+---
+
+### 2. Sữa (Dairy)
+
+**Tin tức mới:**
+- VNM dự báo biên lợi nhuận gộp giảm nhẹ các quý tới do giá nguyên liệu tăng (Vietcap)
+- VNM dự kiến tăng giá bán 2-3% để bù đắp chi phí — thực hiện thận trọng
+- MCM Q1: doanh thu 741.5 tỷ, LN ròng +68% — hưởng lợi từ căng thẳng Campuchia-Thái Lan
+- VNM chi 4,128 tỷ cho đầu tư XDCB năm 2026 (trang trại Mộc Châu, Tây Ninh 2, Bình Định)
+- Ngành sữa Q1: phân hóa — VNM và MCM bứt tốc, doanh nghiệp nhỏ hụt hơi vì chi phí
+
+**Phân tích Buffett/Munger:**
+- **Moat — Ổn định.** VNM vẫn là tài sản vững chắc. Biên gộp sẽ giảm nhẹ nhưng VNM có sức mạnh pricing power (tăng giá 2-3%) — minh chứng cho brand moat.
+- **Rủi ro:** Chi phí logistics và nguyên liệu thô tăng do xung đột Trung Đông. CPI 5.46% ảnh hưởng sức mua tiêu dùng.
+- **Cơ hội:** Giảm trừ gia cảnh được nâng — tăng thu nhập ròng 2-3%, hỗ trợ tiêu dùng FMCG.
+
+**Kết luận:** VNM vững nhưng biên lợi nhuận gộp đang chịu áp lực. MCM cho thấy sức bật từ thị trường ngách. Cần theo dõi giá sữa bột thế giới.
+
+---
+
+### 3. Thép (Steel)
+
+**Tin tức mới:**
+- **🔥 Việt Nam lần đầu lọt top 10 nước sản xuất thép thô lớn nhất thế giới** (Worldsteel, tháng 4/2026) — sản lượng 8.5 triệu tấn (+8.4%) trong 4 tháng đầu năm
+- HPG nâng giá HRC lên ~15.7 triệu/tấn (+19% từ đáy tháng 1/2026)
+- **HPG đề xuất khai thác mỏ sắt Thạch Khê** — trữ lượng 544 triệu tấn, mỏ sắt lớn nhất Đông Nam Á
+- HPG tham gia dự án Đại lộ Cảnh quan Sông Hồng (20-25% cổ phần), tổng vốn 855,000 tỷ
+- VNSteel đề xuất đầu tư 100 triệu USD nhà máy tôn mạ + thép cán nguội tại Quảng Ngãi
+- Úc mở điều tra chống bán phá giá thép mạ kẽm từ Việt Nam (biên độ 56%)
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng chiến lược (HPG).** Việc HPG đề xuất khai thác Thạch Khê là bước đi thay đổi cuộc chơi — nếu thành công, HPG sẽ tự chủ nguyên liệu (giảm 3 tỷ USD nhập khẩu/năm), tạo moat chi phí gần như không thể sao chép. Dài hạn cực kỳ tích cực nhưng rủi ro môi trường & pháp lý lớn.
+- **Inversion (Munger):** (1) Mỏ Thạch Khê không được phê duyệt — kỳ vọng tự chủ nguyên liệu sụp đổ. (2) VinMetal 5 triệu tấn + VNSteel 1 triệu tấn = dư cung nội địa, biên giảm. (3) Thuế chống bán phá giá từ Úc lan sang các thị trường khác.
+- **Cơ hội:** Top 10 thế giới là vị thế mới — thu hút đầu tư và nâng tầm ngành. Giá HRC tăng 19% là tailwind cho Q2. Đầu tư công & BĐS phục hồi.
+
+**Kết luận:** Ngành thép đang ở thời điểm lịch sử — top 10 thế giới và mỏ Thạch Khê có thể thay đổi cấu trúc dài hạn. Nhưng rủi ro phòng vệ thương mại và dư cung nội địa gia tăng.
+
+---
+
+### 4. Bán Lẻ (Retail)
+
+**Tin tức mới:**
+- MWG 4 tháng: doanh thu 62,500 tỷ (+29%), hoàn thành 34% kế hoạch năm
+- **Bách Hóa Xanh mở 4 cửa hàng/ngày** trong tháng 4 (tổng 2,962 cửa hàng), có lãi 400 tỷ Q1
+- MWG chi gần 3,000 tỷ cổ tức tiền mặt 20% — cao nhất lịch sử
+- EraBlue (Indonesia) dự kiến xóa lỗ lũy kế Q3/2026 — doanh thu gấp 1.5-2.6 lần cửa hàng cùng quy mô ở VN
+- Các chuỗi đều có lãi: DMX (+33%), BHX (lãi), TGDD, AVAKids (lãi từ Q3/2025)
+- An Khang mục tiêu 100 cửa hàng mới, tăng trưởng 30% doanh thu năm 2026
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng mạnh.** MWG đang ở giai đoạn "tất cả các con đều mang tiền về cho mẹ". Mô hình platform bán lẻ (ICT + FMCG + dược + quốc tế) tạo ra moat tổng hợp: quy mô, chi phí, data, brand. BHX mở 4 cửa hàng/ngày và có lãi là thành tựu vận hành đáng kinh ngạc.
+- **Chất lượng lợi nhuận:** Lợi nhuận Q1 tăng 75% và cổ tức 20% là tín hiệu mạnh về sức khỏe dòng tiền. Mô hình "vay ngắn hạn lãi thấp → gửi ngân hàng lãi cao" (float) tạo thêm lợi nhuận tài chính.
+- **Rủi ro:** Tốc độ mở rộng BHX rất nhanh — rủi ro kiểm soát chất lượng. Tỷ giá (hàng nhập khẩu ICT). Lạm phát 5.46% ảnh hưởng sức mua.
+
+**Kết luận:** MWG đang ở đỉnh cao năng lực vận hành. Việc tất cả chuỗi có lãi là bước ngoặt. Rủi ro chính là kỳ vọng quá cao và tốc độ mở rộng BHX.
+
+---
+
+### 5. Bất Động Sản (Real Estate)
+
+**Tin tức mới:**
+- **🔴 Hà Nội "khóa" giao dịch nhà ở 3 năm** tại khu đô thị đa mục tiêu — không được chuyển nhượng trong 3 năm, chỉ được bán lại cho CĐT với giá gốc
+- **Thủ tướng chỉ đạo phát triển nhà ở cho thuê** — phân khúc chiến lược dài hạn, Hà Nội khởi công trong tháng 6/2026
+- Nguồn cung căn hộ TP.HCM phục hồi — hàng loạt dự án mới khởi động (The Emerald River Park 2,500 căn)
+- Giá căn hộ neo cao: 50-90 triệu/m2, Bình Dương tăng lên 50-75 triệu/m2
+- **Politburo yêu cầu hoàn thành cụm siêu cảng Cần Giờ — Cai Mép** (Nghị quyết 09)
+- Sun Group + Central Pattana (Thái Lan) phát triển trung tâm thương mại tại Đà Nẵng, TP.HCM, Phú Quốc
+
+**Phân tích Buffett/Munger:**
+- **Moat — Biến động.** Chính sách "khóa" giao dịch 3 năm tại Hà Nội là thay đổi cấu trúc tiềm năng — giảm đầu cơ, chuyển dịch sang đầu tư dài hạn. Tác động đến thanh khoản ngắn hạn nhưng lành mạnh cho thị trường dài hạn.
+- **Inversion (Munger):** (1) "Khóa" giao dịch lan rộng — giảm mạnh thanh khoản, giá giảm. (2) Lạm phát 5.46% — NHNN tăng lãi suất — người mua nhà mất khả năng vay. (3) Thị trường phục hồi yếu hơn kỳ vọng — nguồn cung tăng nhưng cầu thực không theo kịp.
+- **Cơ hội lớn:** Nhà ở cho thuê được xác định là chiến lược quốc gia — mở ra thị trường mới cho các CĐT có năng lực vận hành. Sun Group + Central Pattana là tín hiệu FDI bán lẻ/BĐS mạnh.
+
+**Kết luận:** Thị trường BĐS đang ở ngã rẽ quan trọng — chính sách "khóa" giao dịch là thay đổi có thể tái cấu trúc thị trường. Nhà ở cho thuê là mảng hoàn toàn mới cần theo dõi.
+
+---
+
+### 6. Cảng Biển & Logistics (Marine Port)
+
+**Tin tức mới:**
+- **🔥 Lượng hàng qua cảng 5 tháng 2026: 546 triệu tấn (+15%), container 15 triệu TEU (+14%)**
+- **ZIM mở tuyến tàu LNG trực tiếp Cai Mép - Bờ Đông Mỹ** — ZIM MOUNT RAINIER, 15,124 TEU
+- Khởi công Trung tâm Logistics Tân Cảng Lạch Huyện (40 ha, phased)
+- **Cấp thiết mở rộng luồng Lạch Huyện** — tàu 197,000 DWT (400m) liên tục cập cảng
+- **Politburo yêu cầu hoàn thành siêu cảng Cần Giờ** — công suất 4.8 triệu TEU (2030), 16.9 triệu TEU (2047)
+- Hải Phòng Port Q1: doanh thu 745 tỷ (+29%); VIMC Q1: 6,610 tỷ (+76%)
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng.** Cảng nước sâu là tài sản moat tự nhiên đang gia tăng giá trị nhờ dòng chảy thương mại. Siêu cảng Cần Giờ và mở rộng Lạch Huyện là tín hiệu dài hạn tích cực.
+- **Rủi ro:** Đầu tư hạ tầng lớn nhưng ROI có thể kéo dài. Cạnh tranh từ cảng Thái Lan/Campuchia.
+- **Cơ hội:** ZIM mở tuyến Mỹ trực tiếp và LNG là cột mốc — VN đang lên vị thế trong chuỗi cung ứng toàn cầu.
+
+**Kết luận:** Ngành cảng biển đang bùng nổ — hàng hóa +15% là tín hiệu tăng trưởng thương mại cực mạnh. Đầu tư hạ tầng cảng lớn (Cần Giờ, Lạch Huyện) mở ra dư địa tăng trưởng dài hạn.
+
+---
+
+### 7. Ống Nhựa (Plastic Pipes)
+
+**Tin tức mới:**
+- SHS khuyến nghị tăng tỷ trọng BMP — giá mục tiêu 175,000 VND (+25.1% upside) + cổ tức 8.9%
+- BMP 2025: doanh thu 5,510 tỷ (+19.4%), LNST 1,229 tỷ (+24%), biên gộp kỷ lục 46.1%
+- BMP ROE 42.7% (gần gấp đôi NTP) — không nợ vay, vốn CSH chiếm 85% tổng tài sản
+- Dự báo BMP 2026: LNST giảm 2.3% do giá PVC tăng 18% (cú sốc dầu Trung Đông); 2027+: phục hồi +13%/năm
+- Công nghệ PVC-O lần đầu tiên được đưa vào hạ tầng nước tại VN (Molecor, Bến Tre)
+- Chính phủ khuyến khích vật liệu thân thiện môi trường — xu hướng xanh
+
+**Phân tích Buffett/Munger:**
+- **Moat — Rất vững (BMP).** BMP là ví dụ hiếm hoi về "doanh nghiệp không nợ vay, ROE 42.7%" — moat thương hiệu + chi phối kênh phân phối PVC chất lượng cao. Nguồn cung PVC nội bộ từ TPC Vina (SCG) là lợi thế chi phí.
+- **Rủi ro ngắn hạn:** Giá PVC nhập khẩu tăng 18% do dầu Trung Đông — biên gộp từ 46.1% về 40.4%. Tuy nhiên đây là chu kỳ, không phải cấu trúc.
+- **Cơ hội:** Đầu tư công 320 tỷ USD 2026-2030 — hạ tầng nước, thủy lợi tạo nhu cầu ống HDPE dài hạn.
+
+**Kết luận:** BMP là tài sản chất lượng cao với đặc điểm phòng thủ: không nợ, ROE >40%, cổ tức 8.9%. Rủi ro ngắn hạn từ giá PVC nhưng câu chuyện dài hạn tích cực nhờ đầu tư công.
+
+---
+
+### 8. Công Nghệ & IT (Technology)
+
+**Tin tức mới:**
+- **🔥 Nvidia mở rộng tuyển dụng tại VN** — Foxconn chuẩn bị sản xuất GPU SXM cao cấp tại nhà máy VN
+- Nvidia xem VN là "ngôi nhà thứ hai" (Jensen Huang) — R&D center + AI data center
+- BE Semiconductor (Hà Lan) xây nhà máy 1 tỷ USD tại VN
+- HCM City đặt mục tiêu 4 dự án bán dẫn trong 2026 (AMD, Nvidia, Qualcomm)
+- Chiến lược bán dẫn quốc gia (Decision 1018) đang triển khai 3 giai đoạn đến 2050
+- Foxconn sản xuất GPU SXM — VN lên vị thế trong chuỗi cung ứng AI toàn cầu
+
+**Phân tích Buffett/Munger:**
+- **Moat — Đang hình thành cho quốc gia, khó cho doanh nghiệp niêm yết.** Việc Nvidia chọn VN làm "ngôi nhà thứ hai" và Foxconn sản xuất GPU SXM là tín hiệu dài hạn lớn nhất cho ngành công nghệ VN. Tuy nhiên, lợi ích trực tiếp cho doanh nghiệp niêm yết còn hạn chế.
+- **Cơ hội:** VN đang chuyển từ lắp ráp điện tử giá rẻ sang sản xuất AI infrastructure. BE Semiconductor 1 tỷ USD + Nvidia GPU SXM là cột mốc. Cần 3-5 năm nữa để thấy tác động rõ rệt.
+- **Rủi ro:** Cạnh tranh nhân lực công nghệ cao — chảy máu chất xám vào các tập đoàn nước ngoài.
+
+**Kết luận:** Ngành công nghệ VN đang bước vào giai đoạn "cất cánh" về sản xuất AI & chip. Cần thêm thời gian để lợi ích lan tỏa đến doanh nghiệp niêm yết. Đây là câu chuyện dài hạn >5 năm.
+
+---
+
+### Tổng quan Buffett/Munger hôm nay
+
+**Buffett nhận xét:**
+> "Hôm nay, 2 sự kiện nổi bật nhất: (1) Việt Nam vào top 10 thép thế giới và HPG đề xuất khai thác mỏ Thạch Khê — nếu thành công, đây sẽ là một trong những quyết định chiến lược làm thay đổi cục diện ngành thép VN. Nhưng tôi sẽ chờ xem liệu mỏ Thạch Khê có thực sự được khai thác hay không. (2) Nvidia chọn VN sản xuất GPU SXM — đây là dấu hiệu cho thấy VN đang đi lên trong chuỗi giá trị toàn cầu. Tuy nhiên, tôi thấy rủi ro lãi suất vẫn rình rập: lạm phát 5.46%, cuộc đua lãi suất huy động nóng trở lại, chênh lệch huy động-cho vay 2 triệu tỷ. Biên an toàn hôm nay càng quan trọng hơn."
+
+**Munger inversion check:**
+> "Hãy nghĩ ngược lại: 2026 — điều gì làm hỏng danh mục? (1) Lạm phát kéo dài trên 5% — NHNN buộc tăng lãi suất — cả ngân hàng (NIM nén) và BĐS (người mua mất khả năng vay) cùng đau. (2) Mỏ Thạch Khê bị từ chối hoặc vướng mắc môi trường — kỳ vọng tự chủ nguyên liệu của HPG sụp đổ — cổ phiếu giảm 30%. (3) Chính sách 'khóa giao dịch 3 năm' của Hà Nội lan rộng — thanh khoản BĐS khô cạn — tác động dây chuyền đến ngân hàng và thép. (4) Chiến tranh thương mại leo thang — thuế chống bán phá giá thép lan rộng — xuất khẩu thép VN giảm mạnh. Cả 4 kịch bản đều có xác suất không hề nhỏ. Nhà đầu tư thông minh là người không bị cuốn theo sự phấn khích — họ luôn giữ biên an toàn."
+
+---
+
+*Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
+*Nguồn: Tổng hợp web search — ngày 2026-05-30*
