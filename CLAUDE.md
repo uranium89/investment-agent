@@ -229,7 +229,8 @@ fireant_officers(symbol)
 fireant_dividends(symbol)                ← LUÔN DÙNG CÁI NÀY cho cổ tức
 fireant_icb_statistics(icbCode)          ← BẮT BUỘC (cho phân tích ngành)
 fireant_screener(...)                    ← Để lấy đối thủ so sánh
-fireant_news_feed(symbol, limit=20)      ← BẮT BUỘC (Lấy tin tức/sentiment gần nhất)
+fireant_news_feed(symbol, limit=20)      ← BẮT BUỘC (Lấy tin tức/sentiment gần nhất, kiểm tra 30 ngày)
+fireant_news_feed(symbol, limit=5)       ← BẮT BUỘC (Kiểm tra T-1: tin tức 24h trước khi gửi)
 fireant_expert_ideas(symbol)             ← BẮT BUỘC (Lấy nhận định chuyên gia)
 fireant_estimated_price(symbol)          ← BẮT BUỘC (Lấy consensus analysts để cross-check giá mục tiêu)
 fireant_historical_quotes(symbol, ...)   ← BẮT BUỘC (Lấy P/E, P/B 5 năm để so sánh lịch sử định giá)
@@ -315,6 +316,10 @@ buffett_save_report(
 - ❌ **KHÔNG được bỏ qua kiểm tra tin tức 30 ngày gần nhất** — Section 7, phát hiện catalyst/rủi ro mới
 - ❌ **KHÔNG được bỏ qua Munger Inversion** — phải thực sự đảo ngược, ≥3 kịch bản
 - ❌ **KHÔNG được bỏ qua buffett_save_report** sau khi hoàn thành phân tích
+- ❌ **KHÔNG được MUA nếu MoS < 15%** — dù điểm /64 cao; MoS <15% chỉ được THEO_DÕI (áp dụng sau Feedback Loop #4)
+- ❌ **KHÔNG được bỏ qua kiểm tra tin tức 24h trước khi gửi** — Section 7.0, phải kiểm tra T-1 bổ sung, không chỉ 30 ngày (áp dụng sau Feedback Loop #4)
+- ❌ **KHÔNG được kết luận MUA cho TẤT CẢ** — Với mỗi đợt phân tích ≥5 mã, phải có ít nhất 1 BÁN/TRÁNH; nếu không, chứng tỏ confirmation bias, cần review lại (áp dụng sau Feedback Loop #4)
+- ❌ **KHÔNG được bỏ qua phân tích tương quan danh mục** — Khi phân tích ≥2 mã cùng ngành, cần đánh giá rủi ro tập trung (áp dụng sau Feedback Loop #4)
 
 ---
 
@@ -409,11 +414,11 @@ Ví dụ: "Review lại danh mục hiện tại"
 **Phán quyết:**
 
 🟢 **MUA MẠNH** (≥57/64) — bao gồm ít nhất 4/6 điểm MoS (MoS ≥30%) |
-🟡 **MUA** (48-56/64) — bao gồm ít nhất 2/6 điểm MoS (MoS ≥10%) |
+🟡 **MUA** (48-56/64) — bao gồm ít nhất 2/6 điểm MoS (MoS ≥15%) |
 🟠 **THEO DÕI** (38-47/64) |
 🔴 **TRÁNH** (<38/64 hoặc MoS âm hoặc có red flag nghiêm trọng)
 
-> **Lưu ý:** MoS đã được nhúng vào điểm số /64 (tối đa 6/64 điểm). Cổ phiếu MoS cao tự nhiên được điểm cao hơn — không cần điều kiện riêng biệt nữa. Chỉ còn 1 hard floor: **KHÔNG được MUÁ MẠNH nếu MoS < 15%** dù điểm /64 cao.
+> **Lưu ý:** MoS đã được nhúng vào điểm số /64 (tối đa 6/64 điểm). Cổ phiếu MoS cao tự nhiên được điểm cao hơn — không cần điều kiện riêng biệt nữa. Hard floor: **KHÔNG được MUA (MUA hoặc MUA MẠNH) nếu MoS < 15%** dù điểm /64 cao. (Áp dụng sau Feedback Loop #4)
 
 ---
 
@@ -506,4 +511,4 @@ Output PHẢI có đúng cấu trúc sau (không được thay đổi):
 ---
 
 _Knowledge base được xây dựng dựa trên triết lý đầu tư của Warren Buffett và được bản địa hóa cho thị trường chứng khoán Việt Nam._
-_Cập nhật lần cuối: 2026-05-28 (Scorecard nâng lên /64, thêm FCF Growth & Earnings Power Trajectory)_
+_Cập nhật lần cuối: 2026-06-01 (Áp dụng Feedback Loop #4: MoS floor 15%, news T-1, forced ranking BÁN, portfolio correlation)_

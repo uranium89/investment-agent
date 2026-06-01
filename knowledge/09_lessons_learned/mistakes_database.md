@@ -1,7 +1,7 @@
 ---
 title: Mistakes Database & Lessons Learned
 created: 2026-05-28
-updated: 2026-05-28 (applied lessons to CLAUDE.md, fund_report_format.md, investment_checklist.md)
+updated: 2026-06-01 (applied Feedback Loop #4: MoS floor 15%, T-1 news check, forced ranking BÁN, portfolio correlation to CLAUDE.md & fund_report_format.md)
 ---
 
 # 📚 Mistakes Database & Lessons Learned
@@ -353,3 +353,143 @@ Viettel (19%) và SCIC (9.8%) là cổ đông lớn. Nếu có chủ trương th
 1. ✅ Đã Fix: Action items #1, #2, #4 (cross-check consensus → fund_report Section 6.4, sensitivity matrix → Section 6.2b, news check → Section 7.0)
 2. 🟡 Fix trong báo cáo tới: Action items #3, #5 (đã thêm vào checklist, cần thực thi)
 3. 🔄 Bổ sung 16 blind spots vào checklist cố định — đã cập nhật `investment_checklist.md` và `fund_report_format.md`
+
+---
+
+## Feedback Loop #4 — 01/06/2026
+
+### Kiểm tra giá thị trường sau 3-4 ngày
+
+| Mã CK | Phán quyết | Giá PT (29/05) | Giá HN (nguồn) | Chênh lệch | Ghi chú |
+|-------|-----------|---------------|---------------|-----------|---------|
+| ACB | MUA @ 24,650 | 24,650 | ~25,100 | +1.8% | Tăng nhẹ, đà ngân hàng khả quan |
+| BMP | MUA @ 138,300 | 138,300 | ~139,400 | +0.8% | Ổn định (dữ liệu 25/05) |
+| DVP | MUA @ 75,800 | 75,800 | ~76,500 | +0.9% | Dữ liệu hạn chế |
+| FOX | THEO_DÕI @ 80,200 | 80,200 | N/A | N/A | UPCOM, ít dữ liệu |
+| FPT | MUA @ 71,200 | 71,200 | ~73,500 | +3.2% | Đã hồi phục từ đáy 70,000 |
+| IDC | MUA @ 43,400 | 43,400 | N/A | N/A | Không có dữ liệu cập nhật |
+| MBB | MUA @ 25,000 | 25,000 | ~25,100 | +0.4% | Ổn định |
+| MWG | MUA @ 77,700 | 77,700 | ~79,600 | +2.4% | Tăng nhẹ, phục hồi tốt |
+| PNJ | MUA @ 65,900 | 65,900 | ~65,200 | -1.1% | Giảm nhẹ |
+| QNS | THEO_DÕI @ 48,500 | 48,500 | N/A | N/A | Không có dữ liệu cập nhật |
+| TCB | MUA @ 32,600 | 32,600 | ~33,250 | +2.0% | Tăng tốt nhất nhóm NH |
+| VIC | THEO_DÕI @ 214,200 | 214,200 | ~207,900 | -2.9% | Tiếp tục giảm — đúng luận điểm đã nêu |
+| VNM | MUA @ 59,000 | 59,000 | ~58,800 | -0.3% | Ổn định |
+
+**Nhận xét tổng thể:** Sau 3-4 ngày, biến động giá rất hạn chế (-2.9% đến +3.2%). VIC giảm nhiều nhất (-2.9%) — phù hợp với luận điểm THEO_DÕI (P/E quá cao, D/E 6.67x). FPT (+3.2%) phục hồi tốt từ vùng đáy 70,000. MWG (+2.4%) — dấu hiệu phục hồi tiêu dùng.
+
+### 🆕 Tin tức & sự kiện quan trọng sau báo cáo
+
+#### 🔴 VNM — Cổ đông ngoại muốn bán 126 triệu cổ phiếu
+Theo CafeF (01/06/2026), một cổ đông ngoại muốn bán toàn bộ gần 126 triệu cổ phiếu VNM, tương đương ~6% vốn điều lệ, giá trị ~9,000 tỷ đồng. Đây là áp lực cung rất lớn trong ngắn hạn.
+
+**Phân tích:** 
+- F&N (Thái Lan) sở hữu ~11% VNM và SCIC sở hữu ~36%. Nếu F&N thoái toàn bộ hoặc một phần, đây là rủi ro overhang nghiêm trọng
+- Tin này CHƯA được phản ánh trong báo cáo VNM (29/05) — báo cáo ra trước tin ~2 ngày
+- Tác động: Áp lực bán ~9,000 tỷ có thể đẩy VNM xuống vùng 55,000-56,000
+- **Lesson:** Cần kiểm tra news ngay trước khi publish — Section 7 đã yêu cầu nhưng chưa đủ nhạy
+
+#### 🟡 VIC — Lao dốc tiếp
+Theo VnEconomy (28/05): "VIC, VHM tiếp tục lao dốc nặng" — VIC giảm -2.9% sau báo cáo. Vingroup vẫn chịu áp lực từ Vinfast và đòn bẩy tài chính.
+
+#### 🟡 FPT — Consensus analysts lạc quan
+Consensus 14 analysts: giá mục tiêu 118,640 VND, P/E 13.6x. Báo cáo của chúng ta dùng P/E mục tiêu 17x với giá 97,200 — thấp hơn consensus ~18%. Điều này cho thấy phân tích thận trọng hơn thị trường, nhưng cần giải thích.
+
+### 🧠 Munger — Inversion & Blind Spots mới
+
+#### 🔴 Blind Spot #17: Rủi ro overhang từ cổ đông lớn không được phát hiện kịp thời
+**Vấn đề:** Báo cáo VNM không phát hiện rủi ro F&N hoặc cổ đông ngoại bán ra. Mặc dù mục tin tức 30 ngày (Section 7) đã được thêm vào format sau Feedback Loop #3, nhưng có tin TỪ SAU khi báo cáo hoàn tất — đây là rủi ro timing không thể tránh hoàn toàn. Cần có cơ chế kiểm tra *ngay trước khi gửi*.
+
+#### 🟡 Blind Spot #18: Không có kịch bản "giảm mạnh" trong MoS
+**Vấn đề:** Trong số 10 mã MUA, có 3 mã có MoS <10% (BMP 7.8%, MWG 8.0%, VNM 9.4%). Ở những mã này, chỉ cần một tin xấu nhỏ (như VNM có cổ đông bán) là MoS biến mất hoàn toàn. **MoS quá thấp + thời gian ngắn = rủi ro cao.** Cần đặt ngưỡng MoS tối thiểu cho MUA là 15%.
+
+#### 🔴 Blind Spot #19: Không có BÁN — thiên lệch lạc quan (Confirmation Bias toàn hệ thống)
+**Vấn đề:** Trong 13 báo cáo, không có mã nào bị khuyến nghị BÁN. Tỷ lệ 10 MUA : 3 THEO_DÕI : 0 BÁN là bất thường. Ngay cả khi đội ngũ phân tích giỏi, một danh mục thực tế sẽ có cả MUA, NẮM GIỮ, và BÁN.
+
+**Munger Inversion:** *"Điều gì sẽ làm cho 13 báo cáo này trở nên vô dụng?"* ➡️ Nếu chúng ta chỉ nhìn thấy điều tốt mà bỏ qua điều xấu. Thiếu BÁN là dấu hiệu của confirmation bias:
+- MBB có rủi ro NPL BĐS +73%, pha loãng 27.5% — vẫn MUA
+- BMP MoS 7.8% — vẫn MUA
+- PNJ score 41/64 (sát ngưỡng THEO_DÕI) — vẫn MUA
+- **Lesson:** Cần forced ranking: ít nhất 1 BÁN hoặc TRÁNH mỗi đợt 10 mã. Nếu không tìm được mã nào để BÁN, chứng tỏ phân tích chưa đủ khách quan.
+
+#### 🟡 Blind Spot #20: Thiếu phân tích correlation giữa các mã trong danh mục
+**Vấn đề:** 13 mã bao gồm 3 ngân hàng (ACB, MBB, TCB) — chiếm 23% danh mục. Nếu rủi ro hệ thống ngân hàng xảy ra (NIM siết, nợ xấu tăng), cả 3 sẽ bị ảnh hưởng cùng lúc. Phân tích từng mã riêng lẻ bỏ qua correlation risk.
+
+#### 🟢 Blind Spot #21: Thành công — VIC THEO_DÕI đã đúng
+**Vấn đề ngược:** VIC là trường hợp hiếm hoi bị khuyến nghị THEO_DÕI dù là doanh nghiệp lớn, thương hiệu mạnh. Giá đã giảm -2.9% sau báo cáo, xác nhận luận điểm "doanh nghiệp tốt ≠ cổ phiếu tốt". Đây là quyết định khó khăn nhất nhưng chính xác nhất.
+
+#### 🟢 Blind Spot #22: FPT — P/E 13.6x gần đáy 5 năm là tín hiệu đúng
+MBS Research (26/03/2026) xác nhận FPT "trading at around 13.7x P/E, close to its five-year valuation trough — lower than Indian technology peers at ~20x". Luận điểm của chúng ta cho FPT (P/E mục tiêu 17x) hoàn toàn hợp lý.
+
+### 📊 Đánh giá chất lượng 13 báo cáo — Scorecard tổng hợp
+
+| Tiêu chí | Nhóm NH (3) | FPT/FOX | MWG/PNJ | IDC/VIC | VNM/BMP/DVP/QNS |
+|----------|------------|---------|---------|---------|----------------|
+| Dữ liệu thực | 9/10 | 8/10 | 8/10 | 8/10 | 8/10 |
+| Độ sâu PT ngành | 7/10 | 7/10 | 7/10 | 7/10 | 6/10 |
+| Moat assessment | 7/10 | 7/10 | 7/10 | 8/10 | 6/10 |
+| DCF định giá | 8/10 | 8/10 | 7/10 | 8/10 | 7/10 |
+| Quản trị | 7/10 | 7/10 | 7/10 | 8/10 | 6/10 |
+| Risk flags | 7/10 | 7/10 | 7/10 | 9/10 | 6/10 |
+| **Tổng** | **75/100** | **73/100** | **72/100** | **78/100** | **67/100** |
+
+**Nhận xét:** VIC và ACB là 2 báo cáo chất lượng nhất. QNS và DVP có ít dữ liệu nhất (hạn chế của Fireant cho mã nhỏ).
+
+### 📊 Cross-check giá mục tiêu vs Consensus Analysts
+
+| Mã CK | Giá mục tiêu (báo cáo) | Consensus (nguồn) | Chênh lệch |
+|-------|----------------------|-------------------|-----------|
+| TCB | 39,472 | 42,598 (11 analysts) | -7.3% |
+| MBB | 29,600 | 34,571 (9 analysts) | -14.4% |
+| VNM | 67,400 | 72,306 (13 analysts) | -6.8% |
+| VIC | 130,000 | 101,600 (analysts) | +28.0% |
+| FPT | 97,200 | 118,640 (14 analysts) | -18.1% |
+| MWG | 84,500 | 86,200 (analysts) | -2.0% |
+
+**Phát hiện:** 
+- FPT chênh -18.1% so với consensus (đã giảm target từ các đợt trước) — cần review DCF assumptions cho FPT
+- VIC vẫn chênh +28% so với consensus (đã phát hiện từ Feedback Loop #3) — chưa fix
+
+### 🎯 Tổng hợp Blind Spots sau 4 vòng
+
+| # | Blind Spot | Loại | Mức độ | Đã fix? |
+|---|-----------|------|--------|---------|
+| 1-16 | (Xem các vòng trước) | — | — | 13/16 đã fix |
+| 17 | VNM: Rủi ro overhang từ cổ đông ngoại | News timing | 🔴 Cao | 🔄 Cần cơ chế news check ngay trước khi gửi |
+| 18 | MoS quá thấp (<10%) cho 3 mã MUA | Methodology | 🔴 Cao | 🔄 Cần ngưỡng MoS tối thiểu 15% cho MUA |
+| 19 | Không có BÁN nào — confirmation bias | Methodology | 🔴 Cao | 🔄 Cần forced ranking |
+| 20 | Thiếu correlation analysis giữa các mã | Portfolio | 🟡 TB | 🔄 Cần phân tích portfolio risk |
+| 21 | ✅ VIC THEO_DÕI đúng | Positive | 🟢 Tốt | Giữ nguyên |
+| 22 | ✅ FPT gần đáy 5 năm — phát hiện đúng | Positive | 🟢 Tốt | Giữ nguyên |
+
+### 📝 Bài Học Rút Ra (Action Items cho Feedback Loop #5)
+
+#### Cần THÊM vào quy trình:
+1. **🔴 News check T-1** — Kiểm tra tin tức trong vòng 24h trước khi gửi báo cáo (không chỉ 30 ngày)
+2. **🔴 Ngưỡng MoS tối thiểu cho MUA: 15%** — MoS <15% chỉ được THEO_DÕI, không MUA (ảnh hưởng đến BMP, MWG, VNM)
+3. **🔴 Forced ranking: ít nhất 1 BÁN mỗi đợt 10 mã** — Nếu không có, review lại tất cả
+4. **🟡 Portfolio correlation check** — Khi có >2 mã cùng ngành, cần phân tích rủi ro tập trung
+
+#### Cần GIỮ NGUYÊN:
+1. Cấu trúc 9 sections ✅
+2. DuPont decomposition ✅
+3. DCF 3 kịch bản ✅
+4. Munger Inversion ✅
+5. VIC THEO_DÕI — chuẩn mực phân biệt doanh nghiệp tốt vs cổ phiếu tốt ✅
+6. FPT — phát hiện vùng định giá đáy 5 năm ✅
+
+### 🎯 Kết Luận Feedback Loop #4
+
+> *"Sau 4 vòng feedback, 22 blind spots đã được phát hiện (16 từ vòng 1-3, 6 mới ở vòng 4). Blind spot #18 (MoS <10% cho MUA) là nguy hiểm nhất — nếu thị trường đảo chiều, đây là những mã chết đầu tiên. Blind spot #19 (không có BÁN) là dấu hiệu cảnh báo về confirmation bias toàn hệ thống."*
+
+| Thành viên | Nhận xét |
+|-----------|----------|
+| 🎩 Buffett | "Rule #1: Never lose money. Rule #2: Never forget Rule #1. MUA với MoS 7.8% (BMP) vi phạm Rule #1. Một cổ phiếu tốt với mức giá quá đắt sẽ trở thành khoản đầu tư tồi. Tôi đề nghị: không MUA nếu MoS <15%. Period." |
+| 🧠 Munger | "Inversion cho thấy điều nguy hiểm nhất: 13 báo cáo, 10 MUA, 0 BÁN. Tôi không tin bất kỳ ai có thể đúng 100% thời gian. Nếu không có BÁN, chúng ta đang yêu con mình — không thấy khuyết điểm. Hãy tìm ra ít nhất 1 mã trong 13 mã này đáng bị BÁN. Nếu không thể, chúng ta đang tự lừa dối." |
+
+**Kế hoạch ưu tiên:**
+1. ✅ `CLAUDE.md`: Đã sửa ngưỡng MoS cho MUA từ ≥10% lên ≥15%. Đã thêm hard floor rule "KHÔNG MUA nếu MoS <15%". Đã cập nhật `fund_report_format.md` (Note Section 9).
+2. ✅ `CLAUDE.md`: Đã thêm forced ranking rule: "mỗi đợt ≥5 mã phải có ≥1 BÁN/TRÁNH". Đã cập nhật `fund_report_format.md` (Note Section 9).
+3. 🔴 **Chưa làm:** Review các mã MoS <15% (BMP, MWG, VNM) — cần hạ verdict từ MUA xuống THEO_DÕI nếu MoS không được cải thiện.
+4. ✅ `CLAUDE.md`: Đã thêm `fireant_news_feed(symbol, limit=5)` cho T-1 check. Đã cập nhật `fund_report_format.md` Section 7.0 với ghi chú T-1.
+5. ✅ `CLAUDE.md`: Đã thêm portfolio correlation rule. Đã cập nhật `fund_report_format.md` (Note Section 9).
