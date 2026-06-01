@@ -100,6 +100,7 @@
 - **China+1 strategy**: Hưởng lợi từ dịch chuyển chuỗi cung ứng khỏi Trung Quốc
 - **NVIDIA partnership**: $200M AI factory với FPT, R&D center tại VN (2024)
 - **Semiconductor**: 241 dự án FDI ($14.2B), 50 công ty, 7.000 kỹ sư chip design
+- **🇻🇳 FPT Semiconductor (2026)**: Nhà máy testing & packaging bán dẫn đầu tiên do người Việt làm chủ — Phase 1 (2026-27) 1.600m², 6 dây chuyền; Phase 2 (2028-30) 6.000m², công suất hàng tỷ đơn vị/năm. Đã nhận đơn hàng 70 triệu chip từ Nhật, Hàn, Đài Loan, Úc. Xuất khẩu lô chip PMIC thương mại đầu tiên sang Nhật Bản. Hợp tác Viettel phát triển AI-on-Edge SoC 28-32nm.
 
 ---
 
@@ -111,7 +112,7 @@
 | Cloud migration (multi-cloud) | Dịch chuyển từ CAPEX → OPEX, tăng nhu cầu managed services | 2025-2028 |
 | Digital transformation SME | 100.000 DN số hóa (mục tiêu CP), đẩy SaaS adoption | 2025-2027 |
 | 5G deployment (Viettel, VNPT) | 23.500 trạm 5G mới (2025), tạo nền tảng IoT/smart city | 2025-2028 |
-| Semiconductor localization | Viettel fab (32nm, 2027), chip design services | 2026-2030 |
+| Semiconductor localization | FPT testing & packaging plant (2026), Viettel fab (32nm, 2027), chip design services | 2026-2030 |
 | Cybersecurity demand | Luật ATTT, Nghị định 85, tăng chi tiêu bắt buộc | 2025-2030 |
 | Talent shortage (~200K) | Tăng chi phí nhân sự, áp lực margin, cạnh tranh nhân tài | 2025-2035 |
 
