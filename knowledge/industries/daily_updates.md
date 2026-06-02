@@ -947,3 +947,205 @@
 
 *Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
 *Nguồn: Tổng hợp web search — ngày 2026-06-01*
+
+---
+
+## Ngày 2026-06-02
+
+### Vĩ mô
+
+| Chỉ Số | Giá Trị | Ghi Chú |
+|--------|---------|---------|
+| ADB dự báo GDP VN 2026 | 6.6-7.2% | Duy trì dự báo tích cực, VN dẫn đầu ASEAN |
+| VN-Index đầu tháng 6 | Giằng co 1.850-1.870 | Thanh khoản thấp, dòng tiền thận trọng |
+| Khối ngoại (12 tuần) | Bán ròng liên tiếp | Áp lực lên thị trường |
+| NHNN OMO | Tiếp tục bơm thanh khoản | Kỳ hạn dài, lãi 4.5% |
+| Lãi suất huy động | Chững lại trong tháng 5 | Chỉ 7 ngân hàng giảm, 0 tăng |
+| CPI đầu 2026 | +3.51% Q1 | Trong tầm kiểm soát |
+
+**Sự kiện nổi bật:**
+- Diễn đàn Bất động sản Việt Nam 2026 diễn ra hôm nay (2/6), chủ đề "Phát triển thị trường bất động sản trong mô hình tăng trưởng mới"
+- Thị trường cổ phiếu đầu tháng 6 thận trọng, thanh khoản thấp, chờ tín hiệu mới
+- NHNN duy trì chính sách nới lỏng có kiểm soát, tiếp tục bơm OMO dài hạn
+
+**Rủi ro vĩ mô:** Khối ngoại bán ròng kéo dài (12 tuần); lãi suất liên ngân hàng neo cao; dòng tiền đầu cơ chưa quay lại.
+
+---
+
+### 1. Ngân Hàng (Banking)
+
+**Tin tức mới (24-48h qua):**
+- **FIDT:** Cổ phiếu ngân hàng Q2/2026 đang rẻ nhưng tiền chưa vào — P/B nhiều mã dưới 1.0x, nhưng dòng tiền thông minh chưa quay lại
+- **SHB:** Miễn nhiệm chức vụ Phó TGĐ Đỗ Đức Hải sau 20 năm gắn bó
+- **Ngân hàng đang rẻ:** P/B toàn ngành ~1.3x, thấp hơn trung bình 5 năm
+- NHNN tiếp tục nới tín dụng BĐS cho 25 ngân hàng (không tính NOXH & KCN vào hạn mức)
+- Lãi suất huy động tháng 5 ổn định, cuộc đua hạ nhiệt so với tháng 4
+
+**Phân tích Buffett/Munger:**
+- **Định giá rẻ có bẫy không?** P/B toàn ngành 1.3x — rẻ so với lịch sử. Nhưng rẻ không đồng nghĩa với hấp dẫn. Cần phân biệt: (1) Ngân hàng có CASA cao & NPL thấp (VCB, MBB, ACB) — rẻ thật. (2) Ngân hàng nhỏ yếu thanh khoản — rẻ vì lý do.
+- **Tín hiệu mới từ SHB:** Thay đổi nhân sự cấp cao sau 20 năm — có thể là tín hiệu tái cấu trúc hoặc bất ổn nội bộ. Cần theo dõi.
+- **Rủi ro:** Dòng tiền ngoại vẫn rút, thanh khoản thấp. NHNN đang "cầm tay chỉ việc" để giữ lãi suất — nếu áp lực lạm phát từ CPI +3.51% tăng, NHNN hết dư địa.
+
+**Kết luận:** Ngân hàng định giá rẻ nhưng chưa có catalyst để dòng tiền quay lại. Phân hóa lớn giữa ngân hàng có và không có CASA. SHB thay đổi nhân sự cần theo dõi.
+
+---
+
+### 2. Sữa (Dairy)
+
+**Tin tức mới (24-48h qua):**
+- **🔥 Đầu tư SCIC đăng ký mua 1 triệu cổ phiếu VNM** — tổ chức nhà nước tăng tỷ trọng (giao dịch dự kiến 3-10/6)
+- VNM Q1/2026: LNST +55% YoY, doanh thu thuần tăng trưởng 2 con số
+- Kế hoạch 2026: doanh thu 66,477 tỷ đồng — tăng trưởng bền vững
+- Vietnam Dairy 2026 kết thúc ngày 31/5 — Vinamilk gây ấn tượng với booth trải nghiệm 50 năm
+- Brand Finance: Vinamilk top 5% thương hiệu mạnh nhất toàn cầu
+- Cổ tức VNM 2025: tỷ lệ cao, duy trì chính sách cổ tức tiền mặt
+
+**Phân tích Buffett/Munger:**
+- **Moat — Củng cố.** SCIC (tổ chức nhà nước) đăng ký mua 1 triệu cp VNM là tín hiệu cực kỳ tích cực — tổ chức am hiểu nhất về VNM đang tăng tỷ trọng. Kết hợp với Brand Finance top 5% toàn cầu, VNM khẳng định brand moat hiếm có.
+- **Chất lượng lợi nhuận:** LNST +55% YoY — là kết quả từ cơ cấu lại (không chỉ one-time). Kế hoạch 66,477 tỷ doanh thu cho thấy ban lãnh đạo tự tin.
+- **Cơ hội:** Đầu tư SCIC + tăng giá bán 2-3% + cổ tức tiền mặt cao = tổ hợp hấp dẫn cho dòng tiền dài hạn.
+- **Rủi ro:** Chi phí nguyên liệu nhập khẩu (60-65%). GDT và vận tải biển chịu áp lực từ xung đột Trung Đông.
+
+**Kết luận:** VNM nhận tín hiệu tích cực kép: (1) SCIC mua vào — xác nhận giá trị từ tổ chức nhà nước; (2) Brand Finance top 5% — khẳng định moat quốc tế. Kế hoạch doanh thu 66,477 tỷ cho thấy tầm nhìn rõ ràng. Đây là một trong những cổ phiếu phòng thủ tốt nhất thị trường.
+
+---
+
+### 3. Thép (Steel)
+
+**Tin tức mới (24-48h qua):**
+- **HPG P/E 8.31, P/B 1.79** — định giá thấp nhất 3 năm
+- HPG Q1: LNST 9,000 tỷ (+73% YoY) — kỷ lục, nhưng ~3,800 tỷ one-time từ chuyển nhượng Phố Nối
+- Giá HRC giao tháng 6: 597 USD/tấn (+20.6% từ tháng 1, +50 USD so với tháng trước)
+- Tiến độ Dung Quất 2: đạt 35%, lắp đặt thiết bị từ T6/2026
+- HPG đề xuất khai thác mỏ sắt Thạch Khê (544 triệu tấn) — liên danh Vinacomin, Thaco, Vingroup
+- **Trung Quốc giảm 4.1% sản lượng thép** trong 4 tháng đầu 2026 — cơ hội cho VN
+- Ngành thép Q1: HPG bứt phá, NKG+HSG (tôn mạ) đối mặt áp lực biên
+- Giá thép CB240 trong nước: 15,430 đồng/kg (ổn định)
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng chiến lược.** HPG đang đầu tư mạnh tay vào cả 3 hướng: (1) Hạ nguồn — Dung Quất 2 (thêm 5 triệu tấn HRC); (2) Thượng nguồn — Thạch Khê (tự chủ quặng sắt); (3) Cao cấp — nhà máy ray tàu & thép đặc biệt. Chiến lược tích hợp dọc hiếm thấy ở VN.
+- **Inversion (Munger):** (1) Thạch Khê có 8 vấn đề môi trường — xác suất bị từ chối không nhỏ (30-40%). (2) Trung Quốc giảm 4.1% sản lượng nhưng vẫn dư cung toàn cầu ~600 triệu tấn — giá thép khó tăng mạnh. (3) VinMetal (Vingroup) tham gia thị trường thép — tăng áp lực cạnh tranh nội địa.
+- **Định giá:** P/E 8.31 là rẻ nếu lợi nhuận lõi thép Q2 duy trì tốt. Nhưng cần loại one-time 3,800 tỷ để đánh giá đúng earnings power.
+- **Cơ hội:** Trung Quốc giảm sản lượng + thuế carbon CBAM EU (EAF ưu thế) + đầu tư công đường sắt tốc độ cao = hỗ trợ dài hạn cho HPG.
+
+**Kết luận:** HPG có P/E 8.31 — hấp dẫn nếu nhìn vào lợi nhuận lõi. Chiến lược tích hợp dọc (Thạch Khê + Dung Quất 2) có thể tạo moat khổng lồ trong 3-5 năm tới. Nhưng rủi ro pháp lý/dự án cần được theo dõi sát. Tôn mạ (NKG, HSG) yếu thế hơn trong chu kỳ này.
+
+---
+
+### 4. Bán Lẻ (Retail)
+
+**Tin tức mới (24-48h qua):**
+- **🔥 DMX IPO tiếp tục là tâm điểm:** Đăng ký mua đang mở (27/5 - 17/6), giá 80,000 đ/cp
+- **Ông Nguyễn Đức Tài (Chủ tịch MWG) đăng ký mua 1 triệu cp DMX**
+- **CEO MWG Đoàn Văn Hiểu Em đăng ký mua 2 triệu cp DMX**
+- **Chủ tịch HĐQT MWG cùng người nhà đăng ký mua 1.6 triệu cp DMX**
+- DMX IPO roadshow: CEO khẳng định "80,000 đ/cp là quá rẻ, P/E ~10 lần"
+- DMX có khả năng lọt VN30 sau 6 tháng niêm yết
+- EraBlue (Indonesia) dự kiến xóa lỗ Q3/2026
+- MWG: giá mục tiêu các CTCK ~95,000 đ/cp
+
+**Phân tích Buffett/Munger:**
+- **Alignment cực mạnh.** Khi Chủ tịch MWG mua 1 triệu cp, CEO mua 2 triệu cp, và cả HĐQT cùng mua — đây là tín hiệu insider buying hiếm thấy. Họ đang "đặt tiền bạc vào miệng mình" — Buffett gọi đó là dấu hiệu đáng tin cậy nhất.
+- **DMX định giá hấp dẫn?** P/E ~10 lần với mức tăng trưởng 16%/năm và cổ tức 5% yield — PEG <1. Nếu DMX sau IPO duy trì tăng trưởng, đây là mức định giá hấp dẫn cho một doanh nghiệp bán lẻ hàng đầu.
+- **Rủi ro:** (1) IPO huy động 14,360 tỷ — dòng tiền hút từ thị trường. (2) Toàn bộ tiền đi trả nợ MWG — không có vốn cho tăng trưởng. (3) Định giá DMX (102,000 tỷ) gần bằng MWG (117,000 tỷ) — nếu DMX giảm, MWG ảnh hưởng.
+- **Cơ hội:** Era Blue xóa lỗ + BHX có lãi 400 tỷ Q1 + DMX IPO = MWG đang bước vào chu kỳ tăng trưởng mới.
+
+**Kết luận:** DMX IPO là sự kiện lớn nhất tháng 6. Insider buying của toàn bộ lãnh đạo MWG là tín hiệu alignment cực mạnh — đây là yếu tố Buffett đặc biệt coi trọng. DMX P/E ~10, PEG <1, cổ tức 5% — hấp dẫn nếu duy trì tăng trưởng. Nhưng dòng tiền IPO không dùng cho tăng trưởng là điểm cần lưu ý.
+
+---
+
+### 5. Bất Động Sản (Real Estate)
+
+**Tin tức mới (24-48h qua):**
+- **🔥 Diễn đàn Bất động sản Việt Nam 2026 diễn ra hôm nay (2/6)** — chủ đề: "Thị trường bất động sản trong mô hình tăng trưởng mới"
+- **Hà Nội đặt mục tiêu vận hành 2-3 khu đô thị đa mục tiêu (TOD) đến 2030**
+- **Nhà ở cho thuê được xác định là chiến lược quốc gia** — chính sách hỗ trợ đang được hoàn thiện
+- Politburo Nghị quyết 09 về phát triển TP.HCM: yêu cầu hoàn thành siêu cảng Cần Giờ
+- Các tham luận tại Diễn đàn: tín dụng BĐS, nhà ở xã hội, chuyển đổi số, quy hoạch đô thị
+- Giá chung cư Hà Nội ~100 triệu/m2, TPHCM ~69-87 triệu/m2
+- Thị trường BĐS Q1: nguồn cung mới 38,000 căn (+2.5 lần YoY)
+
+**Phân tích Buffett/Munger:**
+- **Diễn đàn BĐS Việt Nam 2026:** Sự kiện quy tụ Bộ Xây dựng, NHNN, các chuyên gia. Chủ đề "mô hình tăng trưởng mới" cho thấy Chính phủ đang hướng tới phát triển BĐS bền vững — không còn là đầu cơ. Đây là tín hiệu cấu trúc tích cực dài hạn.
+- **TOD (Transit-Oriented Development):** Hà Nội đặt mục tiêu vận hành 2-3 KĐT đa mục tiêu đến 2030 — mô hình TOD chính thức được triển khai. Đây có thể là catalyst lớn cho các doanh nghiệp BĐS có quỹ đất dọc các tuyến metro.
+- **Nhà ở cho thuê là chiến lược quốc gia:** Đây là thay đổi cấu trúc quan trọng — chuyển từ sở hữu sang thuê. Các doanh nghiệp có mảng cho thuê (VHM, NLG) hưởng lợi dài hạn.
+- **Rủi ro:** Giá nhà vẫn cao (Hà Nội ~100 triệu/m2), bảng giá đất mới tăng 26%. Lãi suất cho vay mua nhà 10-12% — sức mua bị hạn chế.
+
+**Kết luận:** Diễn đàn BĐS Việt Nam 2026 hôm nay là sự kiện quan trọng — xác nhận định hướng phát triển bền vững của Chính phủ. TOD và nhà ở cho thuê là hai mảng chiến lược mới. Giá nhà cao và lãi suất vẫn là rủi ro chính cho sức mua.
+
+---
+
+### 6. Cảng Biển & Logistics (Marine Port)
+
+**Tin tức mới (24-48h qua):**
+- **Sản lượng container duy trì đà tăng — 5 tháng 2026 ghi nhận +14-15%**
+- **MSC ra mắt tuyến Ochna kết nối Trung Quốc - Việt Nam** (tuyến mới, tăng cường kết nối thương mại)
+- **Khủng hoảng Hormuz & Biển Đỏ tiếp tục gây đứt gãy chuỗi cung ứng toàn cầu** — tàu phải đi vòng, cước vận tải tăng
+- Cảng Hải Phòng phấn đấu đạt 122 triệu tấn hàng hóa trong 2026 (mục tiêu tham vọng)
+- Siêu cảng Cần Giờ được Politburo chỉ đạo hoàn thành (571ha, ~5 tỷ USD, 16.9 triệu TEU)
+- Mở rộng luồng Lạch Huyện cấp thiết — tàu 197,000 DWT liên tục cập cảng
+
+**Phân tích Buffett/Munger:**
+- **Moat — Tự nhiên & đang mở rộng.** VN với bờ biển dài 3,260km, vị trí chiến lược trên tuyến hàng hải quốc tế, và chính sách đầu tư cảng nước sâu đồng bộ — đây là moat địa lý khó thay thế. MSC mở tuyến Ochna mới xác nhận VN đang lên vị thế trong logistics toàn cầu.
+- **Khủng hoảng kép — Inversion (Munger):** Xung đột Hormuz & Biển Đỏ tạo cơ hội ngắn hạn (cước tăng, trung chuyển) nhưng cũng là rủi ro dài hạn — nếu xung đột leo thang, thương mại toàn cầu bị đình trệ, VN chịu ảnh hưởng.
+- **Cơ hội:** (1) Chuỗi cung ứng dịch chuyển khỏi Trung Quốc. (2) FDI vào VN +32% trong 4 tháng = nguồn hàng xuất nhập khẩu tăng. (3) Đầu tư công cho cảng biển (Cần Giờ, Lạch Huyện, Gemalink).
+- **Rủi ro:** Cước tàu tăng có thể hạ nhiệt nếu Hormuz hòa bình; vốn đầu tư cảng lớn, thời gian thu hồi dài.
+
+**Kết luận:** Ngành cảng biển tiếp tục xu hướng tăng trưởng mạnh (+14-15%). MSC mở tuyến Ochna và Cảng Hải Phòng đặt mục tiêu 122 triệu tấn cho thấy động lực tích cực. Khủng hoảng Hormuz & Biển Đỏ vừa là cơ hội (cước tăng) vừa là rủi ro (đứt gãy chuỗi cung ứng).
+
+---
+
+### 7. Ống Nhựa (Plastic Pipes)
+
+**Tin tức mới (24-48h qua):**
+- **BMP P/E 9.13** — định giá hấp dẫn cho doanh nghiệp ROE 42.7%, không nợ vay
+- **BMP cổ tức đợt 2/2025 tỷ lệ 83.6% (14,860 đ/cp)** — ngày thanh toán 10/6
+- Chủ tịch BMP Sakchai nhận định: giá nguyên liệu PVC khó quay về mức cũ (trước xung đột)
+- Nhu cầu ống nhựa tăng nhờ đầu tư công hạ tầng nước và thủy lợi
+- Trung Quốc bãi bỏ hoàn thuế VAT 13% xuất khẩu PVC từ 1/4 — giảm áp lực cạnh tranh từ PVC TQ
+- Tổ hợp hóa dầu Long Sơn (SCG) tạm dừng hoạt động — ảnh hưởng nguồn cung PVC nội địa
+
+**Phân tích Buffett/Munger:**
+- **Moat — Vững chắc (BMP).** ROE 42.7%, không nợ vay, 63.5% tài sản là tiền gửi, P/E 9.13 — đây là định giá hấp dẫn cho chất lượng doanh nghiệp hàng đầu. BMP là minh chứng cho "quality at a reasonable price".
+- **Inversion (Munger):** (1) Giá PVC cao hơn dự kiến do xung đột Trung Đông kéo dài — biên gộp giảm từ 47% về 41-43% (dự báo SSV). (2) Long Sơn (SCG) dừng hoạt động — nguồn cung PVC nội bộ cho BMP từ TPC Vina bị ảnh hưởng. (3) Lợi nhuận cao thu hút cạnh tranh.
+- **Cơ hội:** Đầu tư công 320 tỷ USD 2026-2030 tạo nhu cầu ống nhựa dài hạn. BMP mở rộng sang ống nông nghiệp và thị trường miền Bắc. Trung Quốc bỏ hoàn thuế VAT PVC giảm áp lực giá rẻ từ TQ.
+- **Cổ tức:** 83.6% mặt bằng cũ (14,860 đ/cp) với tiền mặt 2,420 tỷ — khả năng chi trả cổ tức cực kỳ an toàn. Dividend yield ~8.5%.
+
+**Kết luận:** BMP tiếp tục là viên ngọc trong ngành nhựa. P/E 9.13, ROE 42.7%, không nợ, cổ tức ~8.5% — tổ hợp hiếm thấy. Rủi ro chính là giá PVC và việc Long Sơn dừng hoạt động. Nhưng nền tảng tài chính cho phép vượt qua chu kỳ khó khăn. Chủ tịch Sakchai nhận định giá nguyên liệu khó quay về mức cũ — cần quản lý kỳ vọng biên lợi nhuận.
+
+---
+
+### 8. Công Nghệ & IT (Technology)
+
+**Tin tức mới (24-48h qua):**
+- **🔥 FPT ký 6 hợp tác chuyển đổi AI với các tập đoàn lớn tại Thái Lan & Singapore** — mở rộng mạnh AI solutions ra Đông Nam Á
+- **FPT bổ nhiệm Giám đốc Chuyển đổi AI** — thể hiện cam kết chiến lược AI cấp cao nhất
+- FPT nhà máy testing & packaging bán dẫn tại Bắc Ninh: Phase 1 (2026-27) với 1,600m2
+- FPT đã nhận đơn hàng 70 triệu chip từ Nhật, Hàn, Đài Loan, Úc
+- **Google ra mắt Gemini 3.5** — bước tiến mới trong AI cạnh tranh với OpenAI, có thể ảnh hưởng nhu cầu AI toàn cầu
+- FPT hợp tác Viettel phát triển AI-on-Edge SoC 28-32nm cho camera, drone, UAV
+- FPT xuất khẩu lô chip thương mại đầu tiên sang Nhật (PMIC)
+- Dịch chuyển chuỗi cung ứng bán dẫn khỏi Trung Quốc mang lại cơ hội cho VN
+
+**Phân tích Buffett/Munger:**
+- **Moat — Mở rộng nhanh (FPT).** FPT đang mở rộng chiến lược AI ra Đông Nam Á (6 hợp đồng tại Thái Lan & Singapore) — đây là moat địa lý và năng lực triển khai. Bổ nhiệm Giám đốc Chuyển đổi AI là tín hiệu tổ chức hóa năng lực AI, không còn là dự án lẻ.
+- **Cơ hội dài hạn:** Gemini 3.5 ra mắt cho thấy cuộc đua AI toàn cầu tiếp tục nóng. Nhu cầu AI solutions của doanh nghiệp Đông Nam Á tăng mạnh — FPT với positioning "AI-first" có lợi thế đi trước. Nhà máy chip là moat mới nhưng cần 3-5 năm.
+- **Rủi ro:** (1) Cạnh tranh AI toàn cầu khốc liệt — các ông lớn (Google, OpenAI, Meta) có tài nguyên gấp bội. FPT chỉ có thể cạnh tranh ở phân khúc ứng dụng, không phải foundation model. (2) Chảy máu chất xám — Foxconn, Nvidia hút kỹ sư VN. (3) Đầu tư nhà máy chip cần vốn lớn, rủi ro kỹ thuật.
+- **Lưu ý:** Gemini 3.5 là sự kiện quan trọng với toàn ngành AI. Công nghệ tiến quá nhanh có thể làm giảm lợi thế của các công ty AI ứng dụng nếu Big Tech làm hết mọi thứ.
+
+**Kết luận:** FPT đang cho thấy năng lực mở rộng AI solutions ra khu vực — 6 hợp đồng tại Thái Lan & Singapore + Giám đốc Chuyển đổi AI mới là tín hiệu chiến lược rõ ràng. Nhà máy chip là moat dài hạn. Tuy nhiên, cuộc đua AI thế giới (Gemini 3.5) ngày càng khốc liệt — FPT phải chọn phân khúc phù hợp. Đây vẫn là doanh nghiệp tech đáng theo dõi nhất tại VN.
+
+---
+
+### Tổng quan Buffett/Munger hôm nay
+
+**Buffett nhận xét:**
+> "Đầu tháng 6, thị trường giằng co, thanh khoản thấp, khối ngoại bán ròng — đây là thời điểm mà nhà đầu tư dài hạn cần kiên nhẫn. Hôm nay tôi thấy nhiều tín hiệu tích cực: (1) SCIC mua 1 triệu VNM — tổ chức nhà nước đặt niềm tin vào giá trị nội tại, đây là tín hiệu xác nhận. (2) Lãnh đạo MWG đồng loạt mua DMX — khi người quản lý doanh nghiệp dùng tiền túi của họ, tôi lắng nghe. (3) FPT ký 6 hợp đồng AI tại Thái & Singapore — mở rộng ra khu vực là bước đi đúng. Tuy nhiên, tôi vẫn thận trọng về thanh khoản thị trường và dòng vốn ngoại. Khi thủy triều rút, chúng ta mới biết ai mặc đồ bơi — và hôm nay, nhiều người đang ở trên bờ. Mua vào với biên an toàn, không FOMO. Hãy để thị trường đến với bạn, đừng chạy theo nó."
+
+**Munger inversion check:**
+> "Hãy đảo ngược vấn đề: Điều gì sẽ giết chết cơ hội đầu tư tháng 6 này? (1) DMX IPO thất bại — lượng đăng ký thấp — kỳ vọng mở khóa giá trị của MWG sụp đổ — toàn bộ ngành bán lẻ bị nghi ngờ. (2) Lãi suất liên ngân hàng bất ngờ tăng vọt do căng thẳng thanh khoản — NHNN mất kiểm soát — BĐS và ngân hàng lao dốc. (3) Dự án Thạch Khê bị từ chối vì môi trường — HPG mất kỳ vọng tự chủ nguyên liệu — giá giảm 20-30%. (4) Giá PVC tiếp tục leo thang (Long Sơn dừng, Trung Đông căng) — biên BMP giảm mạnh hơn dự báo. (5) Hormuz leo thang thành xung đột toàn diện — thương mại toàn cầu đình trệ — tất cả các ngành xuất khẩu chịu ảnh hưởng. (6) Gemini 3.5 làm thay đổi cuộc chơi AI — các doanh nghiệp AI ứng dụng bị 'bỏ lại phía sau'. Cả 6 kịch bản đều có xác suất thực tế. Kẻ thông minh không chỉ hỏi 'Tôi sẽ kiếm được gì?' mà còn hỏi 'Tôi sẽ mất gì nếu sai?'. Đó là lý do tôi luôn đảo ngược vấn đề — inversion không làm bạn giàu, nhưng giữ bạn khỏi phá sản."
+
+---
+
+*Cập nhật bởi AI Investment Agent — Daily Industry Learning System*
+*Nguồn: Tổng hợp web search — ngày 2026-06-02*
