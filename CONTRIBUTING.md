@@ -8,10 +8,10 @@ Kiến trúc dự án được thiết kế dưới dạng **Monorepo (npm works
 
 Dự án hiện tại được chia thành **2 workspaces**:
 
-| Workspace | Mục đích |
-|-----------|----------|
-| `mcp-server` | Server MCP kết nối API Fireant (dữ liệu thị trường, cơ bản, tài chính) |
-| `mcp-server-dnse` | Server MCP kết nối DNSE OpenAPI (giao dịch, nến giá OHLCV) |
+| Workspace         | Mục đích                                                               |
+| ----------------- | ---------------------------------------------------------------------- |
+| `mcp-server`      | Server MCP kết nối API Fireant (dữ liệu thị trường, cơ bản, tài chính) |
+| `mcp-server-dnse` | Server MCP kết nối DNSE OpenAPI (giao dịch, nến giá OHLCV)             |
 
 Các file cấu hình ở root (`package.json`, `tsconfig.base.json`, `.prettierrc`, `eslint.config.js`) định nghĩa quy tắc phát triển chung.
 
@@ -20,23 +20,29 @@ Các file cấu hình ở root (`package.json`, `tsconfig.base.json`, `.prettier
 ## ⚡ Các Lệnh Phát Triển Chính (Chạy từ Root)
 
 - **Cài đặt toàn bộ dependencies:**
+
   ```bash
   npm run install:all
   ```
-  *(npm sẽ tự động phân bổ và cài đặt dependencies cho tất cả các workspace).*
+
+  _(npm sẽ tự động phân bổ và cài đặt dependencies cho tất cả các workspace)._
 
 - **Biên dịch TypeScript (Build):**
+
   ```bash
   npm run build
   ```
-  *(Biên dịch mã nguồn của cả hai workspace sang JS tương thích ESM trong thư mục `build/` tương ứng).*
+
+  _(Biên dịch mã nguồn của cả hai workspace sang JS tương thích ESM trong thư mục `build/` tương ứng)._
 
 - **Kiểm tra kiểu TypeScript (Typecheck):**
+
   ```bash
   npm run typecheck
   ```
 
 - **Kiểm tra lỗi Lint (Linting):**
+
   ```bash
   npm run lint
   ```
@@ -56,6 +62,7 @@ Khi tạo thêm công cụ (tool) mới, vui lòng tuân thủ các quy tắc ki
 
 Mọi tool handler đăng ký vào MCP server cần phải được bọc bởi `safeHandler` (được định nghĩa trong `src/tools/types.ts` của mỗi server).
 `safeHandler` giúp:
+
 - Bắt tất cả lỗi ném ra từ API bên thứ ba (mất mạng, hết hạn token, lỗi cú pháp).
 - Định dạng lỗi thành phản hồi dạng văn bản an toàn kèm flag `isError: true` của MCP thay vì làm crash luồng Stdio của server.
 
@@ -73,10 +80,12 @@ Nếu thiếu các biến này, server DNSE sẽ **in cảnh báo ra stderr như
 ## 🚀 Kiểm Tra Trước Khi Commit
 
 Trước khi commit và push code mới, luôn chạy:
+
 ```bash
 npm run format
 npm run lint
 npm run typecheck
 npm run build
 ```
+
 Đảm bảo tất cả lệnh trên đều vượt qua thành công không báo lỗi.

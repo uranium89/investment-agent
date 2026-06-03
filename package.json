@@ -6,7 +6,8 @@
   "type": "module",
   "workspaces": [
     "mcp-server",
-    "mcp-server-dnse"
+    "mcp-server-dnse",
+    "mcp-server-tcbs"
   ],
   "scripts": {
     "install:all": "npm install",

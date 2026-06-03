@@ -7,6 +7,10 @@
     "dnse-mcp": {
       "type": "local",
       "command": ["node", "mcp-server-dnse/build/index.js"]
+    },
+    "tcbs-mcp": {
+      "type": "local",
+      "command": ["node", "mcp-server-tcbs/build/index.js"]
     }
   }
 }

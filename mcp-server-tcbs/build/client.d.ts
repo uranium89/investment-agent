@@ -1,7 +1,7 @@
 import { AuthConfig } from "./auth.js";
-export declare class DNSEOpenAPIClient {
-  private config;
-  constructor(config: AuthConfig);
+export declare class TCBSOpenAPIClient {
+  private configGetter;
+  constructor(configGetter: () => AuthConfig);
   private request;
   private buildUrl;
   get<T>(

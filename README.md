@@ -10,17 +10,20 @@ Vietnamese Stock Market MCP servers designed for integration with AI clients (li
 ## 🚀 Installation & Build
 
 ### Requirements
+
 - Node.js (ESM-compatible version)
 - npm
 
 ### Steps
 
 1. **Install dependencies for all workspaces:**
+
    ```bash
    npm run install:all
    ```
 
 2. **Build all MCP Servers:**
+
    ```bash
    npm run build
    ```
@@ -52,7 +55,7 @@ To integrate these servers with your AI Client (e.g., Claude Desktop, Cursor), a
 }
 ```
 
-*Note: Replace `/path/to/` with the absolute path of the repository on your local machine.*
+_Note: Replace `/path/to/` with the absolute path of the repository on your local machine._
 
 ## 🛠️ Built With
 
