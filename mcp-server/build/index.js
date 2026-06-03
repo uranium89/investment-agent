@@ -15,7 +15,6 @@ const allTools = [
     ...getPostsTools(client),
     ...getSearchTools(client),
     ...getOtherTools(client),
-    // Knowledge tools moved to mcp-server-buffett and mcp-server-munger
 ];
 for (const tool of allTools) {
     server.registerTool(tool.name, {

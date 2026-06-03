@@ -7,18 +7,6 @@
     "dnse-mcp": {
       "type": "local",
       "command": ["node", "mcp-server-dnse/build/index.js"]
-    },
-    "buffett-mcp": {
-      "type": "local",
-      "command": ["node", "mcp-server-buffett/build/index.js"]
-    },
-    "munger-mcp": {
-      "type": "local",
-      "command": ["node", "mcp-server-munger/build/index.js"]
-    },
-    "industry-mcp": {
-      "type": "local",
-      "command": ["node", "mcp-server-industry/build/index.js"]
     }
   }
 }
